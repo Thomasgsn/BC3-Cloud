@@ -1,0 +1,11 @@
+{
+  "event": "restart_recovery",
+  "ticket_and_object_persisted": true,
+  "worker_stopped_when_job_created": true,
+  "postgres_api_object_queue_restarted_between_phases": true,
+  "durable_sql_job_reemitted_and_completed": true,
+  "attempts": 1,
+  "active_volume_deleted": false,
+  "fixture_scope": "Synthetic test ticket/file only",
+  "elapsed_since_prepare_seconds": 132.61224126815796
+}

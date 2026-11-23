@@ -1,0 +1,173 @@
+{
+  "cluster": "kind-rncp-bc3",
+  "baseline_revision": "17",
+  "api_image": "rncp-bc3-api:8",
+  "load_driver_image": "rncp-bc3-api:8",
+  "samples": [
+    {
+      "seconds": 0.18781117999969865,
+      "hpa_current": 1,
+      "hpa_desired": 1,
+      "ready_api": 1
+    },
+    {
+      "seconds": 10.36527790800028,
+      "hpa_current": 1,
+      "hpa_desired": 1,
+      "ready_api": 1
+    },
+    {
+      "seconds": 20.55935906400191,
+      "hpa_current": 1,
+      "hpa_desired": 3,
+      "ready_api": 1
+    },
+    {
+      "seconds": 30.83280924599967,
+      "hpa_current": 1,
+      "hpa_desired": 3,
+      "ready_api": 3
+    },
+    {
+      "seconds": 41.12939417800226,
+      "hpa_current": 3,
+      "hpa_desired": 3,
+      "ready_api": 3
+    },
+    {
+      "seconds": 51.657457281999086,
+      "hpa_current": 3,
+      "hpa_desired": 3,
+      "ready_api": 3
+    },
+    {
+      "seconds": 61.89712722100012,
+      "hpa_current": 3,
+      "hpa_desired": 3,
+      "ready_api": 3
+    },
+    {
+      "seconds": 72.29175142500026,
+      "hpa_current": 3,
+      "hpa_desired": 3,
+      "ready_api": 3
+    },
+    {
+      "seconds": 100.4487454500013,
+      "hpa_current": 3,
+      "hpa_desired": 3,
+      "ready_api": 3
+    },
+    {
+      "seconds": 110.62636603300052,
+      "hpa_current": 3,
+      "hpa_desired": 1,
+      "ready_api": 1
+    },
+    {
+      "seconds": 120.81584989800103,
+      "hpa_current": 3,
+      "hpa_desired": 1,
+      "ready_api": 1
+    },
+    {
+      "seconds": 130.99962575600148,
+      "hpa_current": 1,
+      "hpa_desired": 3,
+      "ready_api": 3
+    },
+    {
+      "seconds": 141.18674514099985,
+      "hpa_current": 3,
+      "hpa_desired": 3,
+      "ready_api": 3
+    },
+    {
+      "seconds": 151.37453353800083,
+      "hpa_current": 3,
+      "hpa_desired": 3,
+      "ready_api": 3
+    },
+    {
+      "seconds": 161.5608052560019,
+      "hpa_current": 3,
+      "hpa_desired": 3,
+      "ready_api": 3
+    },
+    {
+      "seconds": 171.74732796199896,
+      "hpa_current": 3,
+      "hpa_desired": 3,
+      "ready_api": 3
+    },
+    {
+      "seconds": 181.9318287440001,
+      "hpa_current": 3,
+      "hpa_desired": 3,
+      "ready_api": 3
+    },
+    {
+      "seconds": 192.11188160299935,
+      "hpa_current": 3,
+      "hpa_desired": 3,
+      "ready_api": 3
+    },
+    {
+      "seconds": 202.28702768400035,
+      "hpa_current": 3,
+      "hpa_desired": 3,
+      "ready_api": 3
+    },
+    {
+      "seconds": 212.4698535589996,
+      "hpa_current": 3,
+      "hpa_desired": 3,
+      "ready_api": 3
+    },
+    {
+      "seconds": 222.6588292580018,
+      "hpa_current": 3,
+      "hpa_desired": 3,
+      "ready_api": 3
+    },
+    {
+      "seconds": 232.84470295999927,
+      "hpa_current": 3,
+      "hpa_desired": 3,
+      "ready_api": 3
+    },
+    {
+      "seconds": 243.03399868600172,
+      "hpa_current": 3,
+      "hpa_desired": 3,
+      "ready_api": 3
+    }
+  ],
+  "events": [
+    {
+      "kind": "pod_deleted",
+      "pod_uid": "bdb98163-1ae8-4d17-9d41-694bbb46616e",
+      "seconds": 30.83280924599967
+    },
+    {
+      "kind": "invalid_configuration_deployed",
+      "seconds": 41.12939417800226
+    },
+    {
+      "kind": "configuration_rollback",
+      "seconds": 62.09269096099888
+    },
+    {
+      "kind": "successful_rolling_restart",
+      "seconds": 90.26513390000036
+    }
+  ],
+  "pod_recovery_seconds": 10.202922979002324,
+  "healthy_replicas_during_rejected_candidate": 3,
+  "pod_fault_exercised": true,
+  "bad_configuration_rolled_back": true,
+  "rolling_restart_completed": true,
+  "max_hpa_current": 3,
+  "qualification": "Configuration rollback is real; earlier image v1\u2192v2 upgrade separately executed. No binary rollback is falsely claimed.",
+  "pod_recovery_qualification": "Observed polling delay, samples approximately every 10 s; not exact physical restart time or contractual RTO"
+}

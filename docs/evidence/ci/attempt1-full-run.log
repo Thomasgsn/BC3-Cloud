@@ -1,0 +1,964 @@
+{"event": "local_initialization_ready", "secrets_printed": false, "existing_files_preserved": true, "host_trust_store_modified": false}
+ Image rncp-bc3-quality:1 Building 
+ Image rncp-bc3-training:1 Building 
+#1 [internal] load local bake definitions
+#1 reading from stdin 1.05kB done
+#1 DONE 0.0s
+
+#2 [training internal] load build definition from training.Dockerfile
+#2 transferring dockerfile:
+#2 transferring dockerfile: 420B 0.0s done
+#2 DONE 0.2s
+
+#3 [quality internal] load build definition from quality.Dockerfile
+#3 transferring dockerfile: 419B 0.0s done
+#3 DONE 0.2s
+
+#4 [training internal] load metadata for docker.io/library/python:3.12-slim-trixie@sha256:5e2bdb1b0d542d5039cffb8181c65930093949194a65c365dfb1b0fe13a4fa5b
+#4 DONE 2.3s
+
+#5 [quality internal] load .dockerignore
+#5 transferring context:
+#5 transferring context: 392B 0.0s done
+#5 DONE 0.2s
+
+#6 [quality 1/4] FROM docker.io/library/python:3.12-slim-trixie@sha256:5e2bdb1b0d542d5039cffb8181c65930093949194a65c365dfb1b0fe13a4fa5b
+#6 resolve docker.io/library/python:3.12-slim-trixie@sha256:5e2bdb1b0d542d5039cffb8181c65930093949194a65c365dfb1b0fe13a4fa5b 0.1s done
+#6 DONE 0.1s
+
+#7 [quality internal] load build context
+#7 transferring context: 31.98kB 0.0s done
+#7 DONE 0.1s
+
+#8 [training internal] load build context
+#8 transferring context: 54.06kB 0.0s done
+#8 DONE 0.1s
+
+#9 [training 2/4] COPY requirements.lock /tmp/requirements.lock
+#9 CACHED
+
+#10 [training 3/4] RUN pip install --no-cache-dir --only-binary=:all: --require-hashes -r /tmp/requirements.lock
+#10 CACHED
+
+#11 [training 4/4] WORKDIR /workspace
+#11 CACHED
+
+#12 [quality 2/4] COPY requirements.quality.lock /tmp/requirements.lock
+#12 CACHED
+
+#13 [quality 3/4] RUN pip install --no-cache-dir --only-binary=:all: --require-hashes -r /tmp/requirements.lock
+#13 CACHED
+
+#14 [quality 4/4] WORKDIR /workspace
+#14 CACHED
+
+#15 [quality] exporting to image
+#15 exporting layers done
+#15 exporting manifest sha256:7317871d390fa902b66fa2ddc173589e0f465a8f87d1adcae73a2ed795b74238 0.0s done
+#15 exporting config sha256:da278373d78c5e05768a955ee6f9752993505d40447b7f8d9a873357b5bce34a
+#15 exporting config sha256:da278373d78c5e05768a955ee6f9752993505d40447b7f8d9a873357b5bce34a 0.0s done
+#15 exporting attestation manifest sha256:01db1abafe861f46ccafa78dbd23c1cdf27abce9401174710d84047a91197dc2 0.0s done
+#15 exporting manifest list sha256:abba74057dcec2482e895e1ebc5de704300435bbe6dea93e3dacea8441d1e6c1
+#15 exporting manifest list sha256:abba74057dcec2482e895e1ebc5de704300435bbe6dea93e3dacea8441d1e6c1 0.0s done
+#15 naming to docker.io/library/rncp-bc3-quality:1 done
+#15 unpacking to docker.io/library/rncp-bc3-quality:1 0.0s done
+#15 DONE 0.3s
+
+#16 [training] exporting to image
+#16 exporting layers done
+#16 exporting manifest sha256:2f8f0d2b9df2c180ff3165d9272551723693acfeb8007da7c31d87df08b19a94 0.1s done
+#16 exporting config sha256:cbe8a8aecca766d81580b31ee63638884fc0e24cffd6d07c8b2570c51fc13ad3 0.0s done
+#16 exporting attestation manifest sha256:cff025faa2c10df14a19c14f9e45e958541ebe63a1384d6401869e4cc3563109 0.1s done
+#16 exporting manifest list sha256:5acd1c00c3da72e2204eb8d670a325e1ba4a209937a12ac8385e9aaa5ed1be50 0.0s done
+#16 naming to docker.io/library/rncp-bc3-training:1 done
+#16 unpacking to docker.io/library/rncp-bc3-training:1 0.0s done
+#16 DONE 0.3s
+
+#17 [quality] resolving provenance for metadata file
+#17 DONE 0.0s
+
+#18 [training] resolving provenance for metadata file
+#18 DONE 0.0s
+ Image rncp-bc3-training:1 Built 
+ Image rncp-bc3-quality:1 Built 
+ Container rncp-bc3-training-run-9dcb66d45d37 Creating 
+ Container rncp-bc3-training-run-9dcb66d45d37 Created 
+{"verified_original_files": 4, "revision": "57ec275d8078af65b7731c2a98be812d844a6d6b", "license": "CC BY 4.0, original LICENSE verified"}
+ Container rncp-bc3-quality-run-b9e3530029ca Creating 
+ Container rncp-bc3-quality-run-b9e3530029ca Created 
+All checks passed!
+ Container rncp-bc3-quality-run-8d875c1b1820 Creating 
+ Container rncp-bc3-quality-run-8d875c1b1820 Created 
+39 files already formatted
+ Container rncp-bc3-quality-run-7f76cf17ef1d Creating 
+ Container rncp-bc3-quality-run-7f76cf17ef1d Created 
+WARNING:pip_audit._cli:--no-deps is supported, but users are encouraged to fully hash their pinned dependencies
+WARNING:pip_audit._cli:Consider using a tool like `pip-compile`: https://pip-tools.readthedocs.io/en/latest/#using-hashes
+No known vulnerabilities found
+ Container rncp-bc3-training-run-c831745fd820 Creating 
+ Container rncp-bc3-training-run-c831745fd820 Created 
+{"version": "banking77-c0-25", "validation_macro_f1": 0.8800274940179905, "validation_accuracy": 0.879560219890055}
+{"version": "banking77-c1-0", "validation_macro_f1": 0.8908869505819255, "validation_accuracy": 0.8905547226386806}
+{"selected_version": "banking77-c1-0", "test_accuracy": 0.8831168831168831, "test_macro_f1": 0.8828432782475453, "test_top3_accuracy": 0.961038961038961}
+ Container rncp-bc3-training-run-8ee6d2856a4f Creating 
+ Container rncp-bc3-training-run-8ee6d2856a4f Created 
+{"registry_checks_passed": 6}
+ Image rncp-bc3-db:1 Building 
+ Image rncp-bc3-browser:1 Building 
+ Image rncp-bc3-queue-tls:1 Building 
+ Image rncp-bc3-worker:4 Building 
+ Image rncp-bc3-api:7 Building 
+ Image rncp-bc3-front:4 Building 
+#1 [internal] load local bake definitions
+#1 reading from stdin 2.96kB done
+#1 DONE 0.0s
+
+#2 [api internal] load build definition from Dockerfile
+#2 transferring dockerfile: 1.08kB 0.0s done
+#2 DONE 0.0s
+
+#3 [worker internal] load build definition from worker.Dockerfile
+#3 transferring dockerfile: 979B 0.0s done
+#3 DONE 0.0s
+
+#4 [browser internal] load build definition from Dockerfile
+#4 transferring dockerfile: 547B 0.0s done
+#4 DONE 0.1s
+
+#5 [worker internal] load metadata for docker.io/library/python:3.12-slim-trixie@sha256:5e2bdb1b0d542d5039cffb8181c65930093949194a65c365dfb1b0fe13a4fa5b
+#5 DONE 0.0s
+
+#6 [worker internal] load .dockerignore
+#6 transferring context: 392B 0.0s done
+#6 DONE 0.1s
+
+#7 [db internal] load build definition from Dockerfile
+#7 transferring dockerfile: 361B 0.0s done
+#7 DONE 0.1s
+
+#8 [queue-tls internal] load build definition from Dockerfile
+#8 transferring dockerfile: 265B 0.0s done
+#8 DONE 0.1s
+
+#9 [front internal] load build definition from Dockerfile
+#9 transferring dockerfile: 512B 0.0s done
+#9 DONE 0.1s
+
+#10 [api dependencies 1/3] FROM docker.io/library/python:3.12-slim-trixie@sha256:5e2bdb1b0d542d5039cffb8181c65930093949194a65c365dfb1b0fe13a4fa5b
+#10 resolve docker.io/library/python:3.12-slim-trixie@sha256:5e2bdb1b0d542d5039cffb8181c65930093949194a65c365dfb1b0fe13a4fa5b 0.0s done
+#10 DONE 0.0s
+
+#11 [worker internal] load build context
+#11 transferring context: 34.53kB 0.0s done
+#11 DONE 0.0s
+
+#12 [worker runtime 5/7] COPY --from=dependencies /install /usr/local/lib/python3.12/site-packages
+#12 CACHED
+
+#13 [worker runtime 6/7] COPY src/rncp_bc3/__init__.py src/rncp_bc3/config.py src/rncp_bc3/db.py src/rncp_bc3/security.py src/rncp_bc3/storage.py src/rncp_bc3/worker.py /app/src/rncp_bc3/
+#13 CACHED
+
+#14 [worker runtime 4/7] WORKDIR /app
+#14 CACHED
+
+#15 [worker dependencies 2/3] COPY requirements.worker.lock /tmp/requirements.lock
+#15 CACHED
+
+#16 [worker dependencies 3/3] RUN pip install --no-cache-dir --target=/install --only-binary=:all: --require-hashes -r /tmp/requirements.lock
+#16 CACHED
+
+#17 [worker runtime 2/7] RUN apt-get update && apt-get install -y --only-upgrade zlib1g && rm -rf /var/lib/apt/lists/*
+#17 CACHED
+
+#18 [worker runtime 3/7] RUN python -m pip uninstall -y pip
+#18 CACHED
+
+#19 [worker runtime 7/7] RUN useradd --uid 10001 --create-home bc3
+#19 CACHED
+
+#20 [worker] exporting to image
+#20 exporting layers 0.0s done
+#20 exporting manifest sha256:d7348eaa87d3b40d2c2f99de19326068e4ee02c0e80ca651d7ef6e99b5e5e3c4 0.0s done
+#20 exporting config sha256:a53989a1911c5358b906a3af4a16310d2ffc08961f42e402a521a14a0961b773 0.0s done
+#20 exporting attestation manifest sha256:5edfafac271ba88806cd20e2bc2a5f4a35e6fcb225dc562656acd7bf55148677
+#20 ...
+
+#21 [browser internal] load metadata for mcr.microsoft.com/playwright/python:v1.58.0-noble@sha256:678457c4c323b981d8b4befc57b95366bb1bb6aa30057b1269f6b171e8d9975a
+#21 DONE 0.3s
+
+#22 [api internal] load build context
+#22 transferring context: 4.55MB 0.2s done
+#22 DONE 0.2s
+
+#20 [worker] exporting to image
+#20 exporting attestation manifest sha256:5edfafac271ba88806cd20e2bc2a5f4a35e6fcb225dc562656acd7bf55148677 0.0s done
+#20 exporting manifest list sha256:930437c80ac318bbc64b6496c52d3b6f15763c8acbe3aac442acd42fdca4ee8c 0.0s done
+#20 naming to docker.io/library/rncp-bc3-worker:4 done
+#20 unpacking to docker.io/library/rncp-bc3-worker:4 0.0s done
+#20 DONE 0.2s
+
+#23 [api dependencies 3/3] RUN pip install --no-cache-dir --target=/install --only-binary=:all: --require-hashes -r /tmp/requirements.lock
+#23 CACHED
+
+#24 [api runtime  2/10] RUN apt-get update && apt-get install -y --no-install-recommends ca-certificates zlib1g && rm -rf /var/lib/apt/lists/*
+#24 CACHED
+
+#25 [api runtime  3/10] RUN python -m pip uninstall -y pip
+#25 CACHED
+
+#26 [api runtime  4/10] WORKDIR /app
+#26 CACHED
+
+#27 [api runtime  5/10] COPY --from=dependencies /install /usr/local/lib/python3.12/site-packages
+#27 CACHED
+
+#28 [api dependencies 2/3] COPY requirements.lock /tmp/requirements.lock
+#28 CACHED
+
+#29 [api runtime  6/10] COPY src /app/src
+#29 CACHED
+
+#30 [browser internal] load .dockerignore
+#30 transferring context: 2B done
+#30 DONE 0.0s
+
+#31 [browser 1/5] FROM mcr.microsoft.com/playwright/python:v1.58.0-noble@sha256:678457c4c323b981d8b4befc57b95366bb1bb6aa30057b1269f6b171e8d9975a
+#31 resolve mcr.microsoft.com/playwright/python:v1.58.0-noble@sha256:678457c4c323b981d8b4befc57b95366bb1bb6aa30057b1269f6b171e8d9975a 0.1s done
+#31 DONE 0.1s
+
+#32 [browser 4/5] RUN echo 'e9e5863c33a874f09bc01acd9234b7e3c871479f5eef8802fa582544465e6d01  /opt/axe.min.js' | sha256sum -c -
+#32 CACHED
+
+#33 [browser 2/5] RUN pip install --no-cache-dir playwright==1.58.0 greenlet==3.5.6 pyee==13.0.1 typing-extensions==4.16.0
+#33 CACHED
+
+#34 [browser 3/5] RUN python -c "import urllib.request; urllib.request.urlretrieve('https://cdnjs.cloudflare.com/ajax/libs/axe-core/4.11.0/axe.min.js','/opt/axe.min.js')"
+#34 CACHED
+
+#35 [browser 5/5] WORKDIR /app
+#35 CACHED
+
+#36 [api runtime  7/10] COPY scripts/bootstrap_database.py scripts/create_user.py /app/scripts/
+#36 DONE 0.1s
+
+#37 [browser] exporting to image
+#37 exporting layers done
+#37 exporting manifest sha256:960719b37b722d18a52e5cde4d0c62fe2a214470b34a7bf3d8c611a83554e6c4 0.0s done
+#37 exporting config sha256:70936f19ed4ad197489082e955250b98b727f5e27bbd55d2f0b15a90bd6af482 0.0s done
+#37 exporting attestation manifest sha256:c8ca14e203b80133fa4af4037cdbb1858108dad763b55f52740a2e01e0ce36ca
+#37 ...
+
+#38 [worker] resolving provenance for metadata file
+#38 DONE 0.0s
+
+#37 [browser] exporting to image
+#37 exporting attestation manifest sha256:c8ca14e203b80133fa4af4037cdbb1858108dad763b55f52740a2e01e0ce36ca 0.0s done
+#37 exporting manifest list sha256:d96e7d0379442566e2fde8e2d102dcea754f8b619671ecd646bdfdd02c29d4f5 0.0s done
+#37 naming to docker.io/library/rncp-bc3-browser:1 done
+#37 unpacking to docker.io/library/rncp-bc3-browser:1 0.0s done
+#37 DONE 0.3s
+
+#39 [api runtime  8/10] COPY models /app/models
+#39 DONE 0.3s
+
+#40 [api runtime  9/10] COPY data/raw/banking77/LICENSE /app/THIRD-PARTY-BANKING77-LICENSE
+#40 DONE 0.1s
+
+#41 [front internal] load metadata for docker.io/library/node:24-alpine@sha256:116b800c3754b440ee0aa3ed2f20f5bf3d99a554bfd9adeea09ea8017f6e85f5
+#41 DONE 0.8s
+
+#42 [queue-tls internal] load metadata for docker.io/library/alpine:3.23@sha256:469c9ea410b9215eaee7976ba6c0639039b444be8e5d638f7abbada189971eb2
+#42 DONE 0.8s
+
+#43 [db internal] load metadata for docker.io/library/postgres:17-alpine@sha256:526f86d93c6ea08fd3f1fe5605650cacc781b2c6013169a0ad8f42c7d3d84f32
+#43 DONE 0.8s
+
+#44 [front internal] load metadata for docker.io/nginxinc/nginx-unprivileged:alpine@sha256:b5047b9b76845eac124358373c6852377c52e4b05834a47647e955dd91cb8f1e
+#44 DONE 0.8s
+
+#45 [db internal] load .dockerignore
+#45 transferring context: 2B 0.0s done
+#45 DONE 0.1s
+
+#46 [queue-tls internal] load .dockerignore
+#46 transferring context: 2B done
+#46 DONE 0.1s
+
+#47 [front internal] load .dockerignore
+#47 transferring context: 58B 0.0s done
+#47 DONE 0.1s
+
+#48 [browser] resolving provenance for metadata file
+#48 DONE 0.0s
+
+#49 [db internal] load build context
+#49 transferring context: 354B 0.0s done
+#49 DONE 0.1s
+
+#50 [db 1/2] FROM docker.io/library/postgres:17-alpine@sha256:526f86d93c6ea08fd3f1fe5605650cacc781b2c6013169a0ad8f42c7d3d84f32
+#50 resolve docker.io/library/postgres:17-alpine@sha256:526f86d93c6ea08fd3f1fe5605650cacc781b2c6013169a0ad8f42c7d3d84f32 0.1s done
+#50 DONE 0.1s
+
+#51 [queue-tls 1/3] FROM docker.io/library/alpine:3.23@sha256:469c9ea410b9215eaee7976ba6c0639039b444be8e5d638f7abbada189971eb2
+#51 resolve docker.io/library/alpine:3.23@sha256:469c9ea410b9215eaee7976ba6c0639039b444be8e5d638f7abbada189971eb2 0.1s done
+#51 DONE 0.1s
+
+#52 [front build 1/6] FROM docker.io/library/node:24-alpine@sha256:116b800c3754b440ee0aa3ed2f20f5bf3d99a554bfd9adeea09ea8017f6e85f5
+#52 resolve docker.io/library/node:24-alpine@sha256:116b800c3754b440ee0aa3ed2f20f5bf3d99a554bfd9adeea09ea8017f6e85f5 0.1s done
+#52 DONE 0.1s
+
+#53 [db 2/2] COPY start.sh /usr/local/bin/bc3-start
+#53 CACHED
+
+#54 [queue-tls internal] load build context
+#54 transferring context: 225B 0.0s done
+#54 DONE 0.1s
+
+#55 [front runtime 1/4] FROM docker.io/nginxinc/nginx-unprivileged:alpine@sha256:b5047b9b76845eac124358373c6852377c52e4b05834a47647e955dd91cb8f1e
+#55 resolve docker.io/nginxinc/nginx-unprivileged:alpine@sha256:b5047b9b76845eac124358373c6852377c52e4b05834a47647e955dd91cb8f1e 0.1s done
+#55 DONE 0.1s
+
+#56 [queue-tls 2/3] RUN apk add --no-cache stunnel
+#56 CACHED
+
+#57 [queue-tls 3/3] COPY stunnel.conf /etc/stunnel/stunnel.conf
+#57 CACHED
+
+#58 [front internal] load build context
+#58 transferring context: 73.88kB 0.0s done
+#58 DONE 0.1s
+
+#59 [db] exporting to image
+#59 exporting layers done
+#59 exporting manifest sha256:65bffc085069973c9c3385c2321ef187d4afeae0a239145af6bdd61116326055 0.0s done
+#59 exporting config sha256:977c28e53e8b4d88614c9ded88b9ba5e69ae9c29b10380c1f526f0a86e0bea4f
+#59 ...
+
+#60 [front build 5/6] COPY . .
+#60 CACHED
+
+#61 [front runtime 2/4] RUN apk upgrade --no-cache
+#61 CACHED
+
+#62 [front runtime 3/4] COPY --from=build /build/dist /usr/share/nginx/html
+#62 CACHED
+
+#63 [front build 2/6] WORKDIR /build
+#63 CACHED
+
+#64 [front build 3/6] COPY package*.json ./
+#64 CACHED
+
+#65 [front build 6/6] RUN npm run build
+#65 CACHED
+
+#66 [front build 4/6] RUN npm ci --ignore-scripts
+#66 CACHED
+
+#67 [front runtime 4/4] COPY nginx.conf /etc/nginx/conf.d/default.conf
+#67 CACHED
+
+#59 [db] exporting to image
+#59 exporting config sha256:977c28e53e8b4d88614c9ded88b9ba5e69ae9c29b10380c1f526f0a86e0bea4f 0.0s done
+#59 exporting attestation manifest sha256:ed8d3b103d798b072a78fa36ff7ee69766e531e17c539bf0b0d77f5e0f0ede3b 0.1s done
+#59 exporting manifest list sha256:4e6ddefdc39f40e3a48cc1ed8e99cba956e1673e66d038eb336d5869ef27ccfb
+#59 exporting manifest list sha256:4e6ddefdc39f40e3a48cc1ed8e99cba956e1673e66d038eb336d5869ef27ccfb 0.0s done
+#59 naming to docker.io/library/rncp-bc3-db:1 0.0s done
+#59 unpacking to docker.io/library/rncp-bc3-db:1 0.0s done
+#59 DONE 0.3s
+
+#68 [queue-tls] exporting to image
+#68 exporting layers done
+#68 exporting manifest sha256:f3f9731ae3098dc1e2a51df16dc01b1452b1c67fb6e8a067eae7b43a7ffbf54b 0.0s done
+#68 exporting config sha256:436343efc2e046ec5c592c854635d91b8111b038110951bee17d4b1427c3bcca 0.0s done
+#68 exporting attestation manifest sha256:a4eaad6f44dea20210fdc81a102b9b08b907f0825ad2305a3894c4a158364b3c 0.1s done
+#68 exporting manifest list sha256:c7ce390c44ee4404a6707a52fd59376f7f02b8ff77b99cae64aaea59af6199f6 0.0s done
+#68 naming to docker.io/library/rncp-bc3-queue-tls:1 0.0s done
+#68 unpacking to docker.io/library/rncp-bc3-queue-tls:1 0.0s done
+#68 DONE 0.3s
+
+#69 [front] exporting to image
+#69 exporting layers 0.0s done
+#69 exporting manifest sha256:dd1828eff06d0ad3ce5de5b5d1882583dcf8a5b7d15c1658f15c09f2fdd3a8d7 0.0s done
+#69 exporting config sha256:da35c2e10a40910342de26fec02dffd0956f45fa03cffc5976dab183e5c8e3df 0.0s done
+#69 exporting attestation manifest sha256:9bf58ab506a4e1704a99f60f06991ef429b22e536ccb608aa14ea2e05da92313 0.0s done
+#69 exporting manifest list sha256:c1b3c83a8692c524b8f9997c3652b54a21e078b7dee9e793d29dbb0a4e5df391 0.0s done
+#69 naming to docker.io/library/rncp-bc3-front:4 done
+#69 unpacking to docker.io/library/rncp-bc3-front:4 0.0s done
+#69 DONE 0.3s
+
+#70 [api runtime 10/10] RUN useradd --uid 10001 --create-home bc3
+#70 ...
+
+#71 [queue-tls] resolving provenance for metadata file
+#71 DONE 0.1s
+
+#72 [db] resolving provenance for metadata file
+#72 DONE 0.1s
+
+#73 [front] resolving provenance for metadata file
+#73 DONE 0.0s
+
+#70 [api runtime 10/10] RUN useradd --uid 10001 --create-home bc3
+#70 DONE 1.4s
+
+#74 [api] exporting to image
+#74 exporting layers 0.5s done
+#74 exporting manifest sha256:f736fb40c960a2ea45484932faafaf5a99ff760b98aeaffe7658dfaf30f459d3 0.0s done
+#74 exporting config sha256:c93eeb2e0613d982eefcba6f10811946473e45dcc95e9c85a54c6886a69f0888 0.0s done
+#74 exporting attestation manifest sha256:02c687f776ce20d9d6f03612eed24a12457a35935174c31c55fe16ee94c35787 0.0s done
+#74 exporting manifest list sha256:b40f30adec19401e1e73ca1c396231cf0ae952c96250bc342e169855e242543a 0.0s done
+#74 naming to docker.io/library/rncp-bc3-api:7 done
+#74 unpacking to docker.io/library/rncp-bc3-api:7
+#74 unpacking to docker.io/library/rncp-bc3-api:7 0.2s done
+#74 DONE 0.9s
+
+#75 [api] resolving provenance for metadata file
+#75 DONE 0.0s
+ Image rncp-bc3-queue-tls:1 Built 
+ Image rncp-bc3-front:4 Built 
+ Image rncp-bc3-browser:1 Built 
+ Image rncp-bc3-api:7 Built 
+ Image rncp-bc3-worker:4 Built 
+ Image rncp-bc3-db:1 Built 
+ Image rncp-bc3-backup:2 Building 
+#1 [internal] load local bake definitions
+#1 reading from stdin 576B done
+#1 DONE 0.0s
+
+#2 [internal] load build definition from backup.Dockerfile
+#2 transferring dockerfile: 269B 0.0s done
+#2 DONE 0.0s
+
+#3 [internal] load metadata for docker.io/library/rncp-bc3-api:7
+#3 DONE 0.0s
+
+#4 [internal] load .dockerignore
+#4 transferring context: 392B 0.0s done
+#4 DONE 0.0s
+
+#5 [internal] load build context
+#5 transferring context: 4.46kB 0.0s done
+#5 DONE 0.0s
+
+#6 [1/3] FROM docker.io/library/rncp-bc3-api:7@sha256:b40f30adec19401e1e73ca1c396231cf0ae952c96250bc342e169855e242543a
+#6 resolve docker.io/library/rncp-bc3-api:7@sha256:b40f30adec19401e1e73ca1c396231cf0ae952c96250bc342e169855e242543a 0.0s done
+#6 DONE 0.1s
+
+#7 [2/3] RUN apt-get update && apt-get install -y --no-install-recommends postgresql-client && rm -rf /var/lib/apt/lists/*
+#7 0.741 Get:1 http://deb.debian.org/debian trixie InRelease [140 kB]
+#7 0.835 Get:2 http://deb.debian.org/debian trixie-updates InRelease [47.3 kB]
+#7 0.870 Get:3 http://deb.debian.org/debian-security trixie-security InRelease [43.4 kB]
+#7 0.907 Get:4 http://deb.debian.org/debian trixie/main amd64 Packages [9678 kB]
+#7 1.232 Get:5 http://deb.debian.org/debian trixie-updates/main amd64 Packages [1108 B]
+#7 1.267 Get:6 http://deb.debian.org/debian-security trixie-security/main amd64 Packages [306 kB]
+#7 2.295 Fetched 10.2 MB in 2s (5430 kB/s)
+#7 2.295 Reading package lists...
+#7 3.020 Reading package lists...
+#7 3.693 Building dependency tree...
+#7 3.887 Reading state information...
+#7 4.146 The following additional packages will be installed:
+#7 4.146   libcom-err2 libgdbm-compat4t64 libgssapi-krb5-2 libk5crypto3 libkeyutils1
+#7 4.147   libkrb5-3 libkrb5support0 libldap2 libperl5.40 libpq5 libsasl2-2
+#7 4.147   libsasl2-modules-db perl perl-modules-5.40 postgresql-client-17
+#7 4.148   postgresql-client-common sensible-utils
+#7 4.151 Suggested packages:
+#7 4.151   krb5-doc krb5-user perl-doc libterm-readline-gnu-perl
+#7 4.151   | libterm-readline-perl-perl make libtap-harness-archive-perl postgresql-17
+#7 4.151   postgresql-doc-17
+#7 4.151 Recommended packages:
+#7 4.151   krb5-locales libldap-common libsasl2-modules
+#7 4.307 The following NEW packages will be installed:
+#7 4.308   libcom-err2 libgdbm-compat4t64 libgssapi-krb5-2 libk5crypto3 libkeyutils1
+#7 4.309   libkrb5-3 libkrb5support0 libldap2 libperl5.40 libpq5 libsasl2-2
+#7 4.310   libsasl2-modules-db perl perl-modules-5.40 postgresql-client
+#7 4.311   postgresql-client-17 postgresql-client-common sensible-utils
+#7 4.452 0 upgraded, 18 newly installed, 0 to remove and 0 not upgraded.
+#7 4.452 Need to get 10.9 MB of archives.
+#7 4.452 After this operation, 66.7 MB of additional disk space will be used.
+#7 4.452 Get:1 http://deb.debian.org/debian trixie/main amd64 sensible-utils all 0.0.25 [25.0 kB]
+#7 4.487 Get:2 http://deb.debian.org/debian trixie/main amd64 perl-modules-5.40 all 5.40.1-6+deb13u1 [3014 kB]
+#7 4.586 Get:3 http://deb.debian.org/debian trixie/main amd64 libgdbm-compat4t64 amd64 1.24-2 [50.3 kB]
+#7 4.587 Get:4 http://deb.debian.org/debian trixie/main amd64 libperl5.40 amd64 5.40.1-6+deb13u1 [4326 kB]
+#7 4.681 Get:5 http://deb.debian.org/debian trixie/main amd64 perl amd64 5.40.1-6+deb13u1 [268 kB]
+#7 4.692 Get:6 http://deb.debian.org/debian trixie/main amd64 libcom-err2 amd64 1.47.2-3+b12 [25.0 kB]
+#7 4.695 Get:7 http://deb.debian.org/debian trixie/main amd64 libkrb5support0 amd64 1.21.3-5+deb13u1 [33.1 kB]
+#7 4.695 Get:8 http://deb.debian.org/debian trixie/main amd64 libk5crypto3 amd64 1.21.3-5+deb13u1 [81.2 kB]
+#7 4.697 Get:9 http://deb.debian.org/debian trixie/main amd64 libkeyutils1 amd64 1.6.3-6 [9456 B]
+#7 4.699 Get:10 http://deb.debian.org/debian trixie/main amd64 libkrb5-3 amd64 1.21.3-5+deb13u1 [326 kB]
+#7 4.701 Get:11 http://deb.debian.org/debian trixie/main amd64 libgssapi-krb5-2 amd64 1.21.3-5+deb13u1 [138 kB]
+#7 4.703 Get:12 http://deb.debian.org/debian trixie/main amd64 libsasl2-modules-db amd64 2.1.28+dfsg1-9 [19.8 kB]
+#7 4.704 Get:13 http://deb.debian.org/debian trixie/main amd64 libsasl2-2 amd64 2.1.28+dfsg1-9 [57.5 kB]
+#7 4.723 Get:14 http://deb.debian.org/debian trixie/main amd64 libldap2 amd64 2.6.10+dfsg-1 [194 kB]
+#7 4.732 Get:15 http://deb.debian.org/debian-security trixie-security/main amd64 libpq5 amd64 17.12-0+deb13u1 [236 kB]
+#7 4.739 Get:16 http://deb.debian.org/debian trixie/main amd64 postgresql-client-common all 278 [47.1 kB]
+#7 4.739 Get:17 http://deb.debian.org/debian-security trixie-security/main amd64 postgresql-client-17 amd64 17.12-0+deb13u1 [2067 kB]
+#7 4.796 Get:18 http://deb.debian.org/debian trixie/main amd64 postgresql-client all 17+278 [14.0 kB]
+#7 5.084 debconf: unable to initialize frontend: Dialog
+#7 5.084 debconf: (TERM is not set, so the dialog frontend is not usable.)
+#7 5.084 debconf: falling back to frontend: Readline
+#7 5.084 debconf: unable to initialize frontend: Readline
+#7 5.084 debconf: (Can't locate Term/ReadLine.pm in @INC (you may need to install the Term::ReadLine module) (@INC entries checked: /etc/perl /usr/local/lib/x86_64-linux-gnu/perl/5.40.1 /usr/local/share/perl/5.40.1 /usr/lib/x86_64-linux-gnu/perl5/5.40 /usr/share/perl5 /usr/lib/x86_64-linux-gnu/perl-base /usr/lib/x86_64-linux-gnu/perl/5.40 /usr/share/perl/5.40 /usr/local/lib/site_perl) at /usr/share/perl5/Debconf/FrontEnd/Readline.pm line 8, <STDIN> line 18.)
+#7 5.084 debconf: falling back to frontend: Teletype
+#7 5.093 debconf: unable to initialize frontend: Teletype
+#7 5.093 debconf: (This frontend requires a controlling tty.)
+#7 5.093 debconf: falling back to frontend: Noninteractive
+#7 5.967 Fetched 10.9 MB in 0s (23.8 MB/s)
+#7 6.002 Selecting previously unselected package sensible-utils.
+#7 6.002 (Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 5657 files and directories currently installed.)
+#7 6.049 Preparing to unpack .../00-sensible-utils_0.0.25_all.deb ...
+#7 6.052 Unpacking sensible-utils (0.0.25) ...
+#7 6.096 Selecting previously unselected package perl-modules-5.40.
+#7 6.098 Preparing to unpack .../01-perl-modules-5.40_5.40.1-6+deb13u1_all.deb ...
+#7 6.102 Unpacking perl-modules-5.40 (5.40.1-6+deb13u1) ...
+#7 7.491 Selecting previously unselected package libgdbm-compat4t64:amd64.
+#7 7.493 Preparing to unpack .../02-libgdbm-compat4t64_1.24-2_amd64.deb ...
+#7 7.500 Unpacking libgdbm-compat4t64:amd64 (1.24-2) ...
+#7 7.553 Selecting previously unselected package libperl5.40:amd64.
+#7 7.554 Preparing to unpack .../03-libperl5.40_5.40.1-6+deb13u1_amd64.deb ...
+#7 7.557 Unpacking libperl5.40:amd64 (5.40.1-6+deb13u1) ...
+#7 8.464 Selecting previously unselected package perl.
+#7 8.466 Preparing to unpack .../04-perl_5.40.1-6+deb13u1_amd64.deb ...
+#7 8.470 Unpacking perl (5.40.1-6+deb13u1) ...
+#7 8.535 Selecting previously unselected package libcom-err2:amd64.
+#7 8.536 Preparing to unpack .../05-libcom-err2_1.47.2-3+b12_amd64.deb ...
+#7 8.540 Unpacking libcom-err2:amd64 (1.47.2-3+b12) ...
+#7 8.577 Selecting previously unselected package libkrb5support0:amd64.
+#7 8.578 Preparing to unpack .../06-libkrb5support0_1.21.3-5+deb13u1_amd64.deb ...
+#7 8.582 Unpacking libkrb5support0:amd64 (1.21.3-5+deb13u1) ...
+#7 8.625 Selecting previously unselected package libk5crypto3:amd64.
+#7 8.626 Preparing to unpack .../07-libk5crypto3_1.21.3-5+deb13u1_amd64.deb ...
+#7 8.629 Unpacking libk5crypto3:amd64 (1.21.3-5+deb13u1) ...
+#7 8.686 Selecting previously unselected package libkeyutils1:amd64.
+#7 8.687 Preparing to unpack .../08-libkeyutils1_1.6.3-6_amd64.deb ...
+#7 8.690 Unpacking libkeyutils1:amd64 (1.6.3-6) ...
+#7 8.723 Selecting previously unselected package libkrb5-3:amd64.
+#7 8.725 Preparing to unpack .../09-libkrb5-3_1.21.3-5+deb13u1_amd64.deb ...
+#7 8.728 Unpacking libkrb5-3:amd64 (1.21.3-5+deb13u1) ...
+#7 8.782 Selecting previously unselected package libgssapi-krb5-2:amd64.
+#7 8.784 Preparing to unpack .../10-libgssapi-krb5-2_1.21.3-5+deb13u1_amd64.deb ...
+#7 8.787 Unpacking libgssapi-krb5-2:amd64 (1.21.3-5+deb13u1) ...
+#7 8.834 Selecting previously unselected package libsasl2-modules-db:amd64.
+#7 8.836 Preparing to unpack .../11-libsasl2-modules-db_2.1.28+dfsg1-9_amd64.deb ...
+#7 8.839 Unpacking libsasl2-modules-db:amd64 (2.1.28+dfsg1-9) ...
+#7 8.876 Selecting previously unselected package libsasl2-2:amd64.
+#7 8.878 Preparing to unpack .../12-libsasl2-2_2.1.28+dfsg1-9_amd64.deb ...
+#7 8.881 Unpacking libsasl2-2:amd64 (2.1.28+dfsg1-9) ...
+#7 8.918 Selecting previously unselected package libldap2:amd64.
+#7 8.920 Preparing to unpack .../13-libldap2_2.6.10+dfsg-1_amd64.deb ...
+#7 8.923 Unpacking libldap2:amd64 (2.6.10+dfsg-1) ...
+#7 8.969 Selecting previously unselected package libpq5:amd64.
+#7 8.971 Preparing to unpack .../14-libpq5_17.12-0+deb13u1_amd64.deb ...
+#7 8.974 Unpacking libpq5:amd64 (17.12-0+deb13u1) ...
+#7 9.031 Selecting previously unselected package postgresql-client-common.
+#7 9.032 Preparing to unpack .../15-postgresql-client-common_278_all.deb ...
+#7 9.047 Unpacking postgresql-client-common (278) ...
+#7 9.085 Selecting previously unselected package postgresql-client-17.
+#7 9.087 Preparing to unpack .../16-postgresql-client-17_17.12-0+deb13u1_amd64.deb ...
+#7 9.090 Unpacking postgresql-client-17 (17.12-0+deb13u1) ...
+#7 9.338 Selecting previously unselected package postgresql-client.
+#7 9.339 Preparing to unpack .../17-postgresql-client_17+278_all.deb ...
+#7 9.343 Unpacking postgresql-client (17+278) ...
+#7 9.376 Setting up libkeyutils1:amd64 (1.6.3-6) ...
+#7 9.383 Setting up libgdbm-compat4t64:amd64 (1.24-2) ...
+#7 9.389 Setting up libcom-err2:amd64 (1.47.2-3+b12) ...
+#7 9.394 Setting up libkrb5support0:amd64 (1.21.3-5+deb13u1) ...
+#7 9.401 Setting up libsasl2-modules-db:amd64 (2.1.28+dfsg1-9) ...
+#7 9.407 Setting up libk5crypto3:amd64 (1.21.3-5+deb13u1) ...
+#7 9.414 Setting up libsasl2-2:amd64 (2.1.28+dfsg1-9) ...
+#7 9.421 Setting up perl-modules-5.40 (5.40.1-6+deb13u1) ...
+#7 9.427 Setting up sensible-utils (0.0.25) ...
+#7 9.434 Setting up libkrb5-3:amd64 (1.21.3-5+deb13u1) ...
+#7 9.441 Setting up libldap2:amd64 (2.6.10+dfsg-1) ...
+#7 9.447 Setting up libperl5.40:amd64 (5.40.1-6+deb13u1) ...
+#7 9.455 Setting up perl (5.40.1-6+deb13u1) ...
+#7 9.470 Setting up libgssapi-krb5-2:amd64 (1.21.3-5+deb13u1) ...
+#7 9.477 Setting up postgresql-client-common (278) ...
+#7 9.497 Setting up libpq5:amd64 (17.12-0+deb13u1) ...
+#7 9.505 Setting up postgresql-client-17 (17.12-0+deb13u1) ...
+#7 10.48 update-alternatives: using /usr/share/postgresql/17/man/man1/psql.1.gz to provide /usr/share/man/man1/psql.1.gz (psql.1.gz) in auto mode
+#7 10.61 Setting up postgresql-client (17+278) ...
+#7 10.62 Processing triggers for libc-bin (2.41-12+deb13u4) ...
+#7 DONE 11.0s
+
+#8 [3/3] COPY scripts/backup.py /app/scripts/backup.py
+#8 DONE 0.1s
+
+#9 exporting to image
+#9 exporting layers
+#9 exporting layers 4.2s done
+#9 exporting manifest sha256:586134e7eb6c10ee7c2d263ae9af1dec42737dfaf20e68a206f8a6f3b16f648d 0.0s done
+#9 exporting config sha256:f843cd958d3b9d0bcaa3549259c34f3961fc73a737890ed052ef16bdb49daa19 0.0s done
+#9 exporting attestation manifest sha256:e06ad9484e356ceb237355354dd2d0b61725cd33691372931c0702cd2e0f3b8a 0.0s done
+#9 exporting manifest list sha256:2d9d9f7fe26099579af1f3e35c1d31de56bfa23dc2223902dbc054d2da1b6b47 0.0s done
+#9 naming to docker.io/library/rncp-bc3-backup:2 done
+#9 unpacking to docker.io/library/rncp-bc3-backup:2
+#9 unpacking to docker.io/library/rncp-bc3-backup:2 3.0s done
+#9 DONE 7.3s
+
+#10 resolving provenance for metadata file
+#10 DONE 0.0s
+ Image rncp-bc3-backup:2 Built 
+ Image node:24-alpine@sha256:116b800c3754b440ee0aa3ed2f20f5bf3d99a554bfd9adeea09ea8017f6e85f5 Pulling 
+ Image node:24-alpine@sha256:116b800c3754b440ee0aa3ed2f20f5bf3d99a554bfd9adeea09ea8017f6e85f5 Pulled 
+ Container rncp-bc3-frontend-tools-run-45053400e666 Creating 
+ Container rncp-bc3-frontend-tools-run-45053400e666 Created 
+npm notice
+npm notice New major version of npm available! 11.19.1 -> 12.2.3
+npm notice Changelog: https://github.com/npm/cli/releases/tag/v12.2.3
+npm notice To update run: npm install -g npm@12.2.3
+npm notice
+ Image rncp-bc3-security:1 Building 
+#1 [internal] load local bake definitions
+#1 reading from stdin 592B done
+#1 DONE 0.0s
+
+#2 [internal] load build definition from Dockerfile
+#2 transferring dockerfile: 487B 0.0s done
+#2 DONE 0.0s
+
+#3 [internal] load metadata for docker.io/library/docker:29-cli@sha256:34507eb5069d8be82c95dd3b6987d4250fd5fee49b82e2509b7d7a7030740d6d
+#3 DONE 0.7s
+
+#4 [internal] load .dockerignore
+#4 transferring context: 2B done
+#4 DONE 0.0s
+
+#5 [1/3] FROM docker.io/library/docker:29-cli@sha256:34507eb5069d8be82c95dd3b6987d4250fd5fee49b82e2509b7d7a7030740d6d
+#5 resolve docker.io/library/docker:29-cli@sha256:34507eb5069d8be82c95dd3b6987d4250fd5fee49b82e2509b7d7a7030740d6d 0.0s done
+#5 DONE 0.0s
+
+#6 [2/3] RUN apk add --no-cache curl
+#6 CACHED
+
+#7 [3/3] RUN curl -fsSL https://github.com/aquasecurity/trivy/releases/download/v0.76.2/trivy_0.76.2_Linux-64bit.tar.gz -o /tmp/trivy.tgz && echo 'bc0fc726e017b8927a62b2d3531d7a84ee01769daf5c99ed866dced54089fdbf  /tmp/trivy.tgz' | sha256sum -c - && tar xzf /tmp/trivy.tgz -C /usr/local/bin trivy && rm /tmp/trivy.tgz
+#7 CACHED
+
+#8 exporting to image
+#8 exporting layers done
+#8 exporting manifest sha256:d763b53d8448730b6fb6a3cdd1ee0313bf05de1694dd789f825d5dd608ed8a47 done
+#8 exporting config sha256:4cd09266a72c5fecb3988ce650e9f6ec426fd2eacc79fc3e2d038a80ce18ae8e 0.0s done
+#8 exporting attestation manifest sha256:88f2f21cd9aff27553d0e3425ae4d70dcb2b92de7b8ff4ae9b297b9d1bc82151 0.0s done
+#8 exporting manifest list sha256:c8d474c842c25082468eec6bc4b28337d68a93621da8ddf4e1f741b5e3ae1bfc 0.0s done
+#8 naming to docker.io/library/rncp-bc3-security:1 done
+#8 unpacking to docker.io/library/rncp-bc3-security:1 done
+#8 DONE 0.1s
+
+#9 resolving provenance for metadata file
+#9 DONE 0.0s
+ Image rncp-bc3-security:1 Built 
+ Container rncp-bc3-security-scanner-run-2c47c24a244f Creating 
+ Container rncp-bc3-security-scanner-run-2c47c24a244f Created 
+2026-11-20T16:22:53Z	INFO	[vuln] Vulnerability scanning is enabled
+2026-11-20T16:23:09Z	INFO	Detected OS	family="debian" version="13.7"
+2026-11-20T16:23:09Z	INFO	[debian] Detecting vulnerabilities...	os_version="13" pkg_num=87
+2026-11-20T16:23:09Z	INFO	Number of language-specific files	num=1
+2026-11-20T16:23:09Z	INFO	[python-pkg] Detecting vulnerabilities...
+2026-11-20T16:23:09Z	WARN	Using severities from other vendors for some vulnerabilities. Read https://trivy.dev/docs/v0.76/guide/scanner/vulnerability#severity-selection for details.
+ Container rncp-bc3-security-scanner-run-9408f5df7e94 Creating 
+ Container rncp-bc3-security-scanner-run-9408f5df7e94 Created 
+2026-11-20T16:23:10Z	INFO	[vuln] Vulnerability scanning is enabled
+2026-11-20T16:23:10Z	INFO	Detected OS	family="debian" version="13.7"
+2026-11-20T16:23:10Z	INFO	[debian] Detecting vulnerabilities...	os_version="13" pkg_num=87
+2026-11-20T16:23:11Z	INFO	Number of language-specific files	num=1
+2026-11-20T16:23:11Z	INFO	[python-pkg] Detecting vulnerabilities...
+2026-11-20T16:23:11Z	WARN	Using severities from other vendors for some vulnerabilities. Read https://trivy.dev/docs/v0.76/guide/scanner/vulnerability#severity-selection for details.
+ Container rncp-bc3-security-scanner-run-d9d2ab45f041 Creating 
+ Container rncp-bc3-security-scanner-run-d9d2ab45f041 Created 
+2026-11-20T16:23:12Z	INFO	[vuln] Vulnerability scanning is enabled
+2026-11-20T16:23:12Z	INFO	Detected OS	family="alpine" version="3.24.2"
+2026-11-20T16:23:12Z	INFO	[alpine] Detecting vulnerabilities...	os_version="3.24" repository="3.24" pkg_num=71
+2026-11-20T16:23:12Z	INFO	Number of language-specific files	num=0
+{"scanned_images": 3, "fixable_high_critical": 0}
+ Container rncp-bc3-queue-tls-1 Recreate 
+ Container rncp-bc3-db-1 Recreate 
+ Container rncp-bc3-queue-tls-1 Recreated 
+ Container rncp-bc3-db-1 Recreated 
+ Container rncp-bc3-s3-1 Starting 
+ Container rncp-bc3-queue-1 Starting 
+ Container rncp-bc3-db-1 Starting 
+ Container rncp-bc3-s3-1 Started 
+ Container rncp-bc3-queue-1 Started 
+ Container rncp-bc3-queue-tls-1 Starting 
+ Container rncp-bc3-db-1 Started 
+ Container rncp-bc3-queue-tls-1 Started 
+ Container rncp-bc3-db-1 Waiting 
+ Container rncp-bc3-queue-tls-1 Waiting 
+ Container rncp-bc3-queue-1 Waiting 
+ Container rncp-bc3-s3-1 Waiting 
+ Container rncp-bc3-s3-1 Healthy 
+ Container rncp-bc3-queue-tls-1 Healthy 
+ Container rncp-bc3-queue-1 Healthy 
+ Container rncp-bc3-db-1 Healthy 
+ Container rncp-bc3-admin-tools-run-634d0ea95ff4 Creating 
+ Container rncp-bc3-admin-tools-run-634d0ea95ff4 Created 
+{"event": "database_bootstrap", "application_role": "bc3_app", "superuser": false, "create_database": false, "create_role": false, "schema_creation": false, "admin_secret_exposed_to_application": false}
+ Container rncp-bc3-queue-tls-1 Running 
+ Container rncp-bc3-s3-1 Running 
+ Container rncp-bc3-db-1 Running 
+ Container rncp-bc3-queue-1 Running 
+ Container rncp-bc3-api-1 Recreate 
+ Container rncp-bc3-api-1 Recreated 
+ Container rncp-bc3-worker-1 Recreate 
+ Container rncp-bc3-front-1 Recreate 
+ Container rncp-bc3-front-1 Recreated 
+ Container rncp-bc3-worker-1 Recreated 
+ Container rncp-bc3-db-1 Waiting 
+ Container rncp-bc3-db-1 Healthy 
+ Container rncp-bc3-api-1 Starting 
+ Container rncp-bc3-api-1 Started 
+ Container rncp-bc3-api-1 Waiting 
+ Container rncp-bc3-api-1 Healthy 
+ Container rncp-bc3-worker-1 Starting 
+ Container rncp-bc3-front-1 Starting 
+ Container rncp-bc3-worker-1 Started 
+ Container rncp-bc3-front-1 Started 
+ Container rncp-bc3-db-1 Waiting 
+ Container rncp-bc3-queue-1 Waiting 
+ Container rncp-bc3-worker-1 Waiting 
+ Container rncp-bc3-queue-tls-1 Waiting 
+ Container rncp-bc3-api-1 Waiting 
+ Container rncp-bc3-front-1 Waiting 
+ Container rncp-bc3-s3-1 Waiting 
+ Container rncp-bc3-db-1 Healthy 
+ Container rncp-bc3-queue-1 Healthy 
+ Container rncp-bc3-queue-tls-1 Healthy 
+ Container rncp-bc3-api-1 Healthy 
+ Container rncp-bc3-worker-1 Healthy 
+ Container rncp-bc3-s3-1 Healthy 
+ Container rncp-bc3-front-1 Healthy 
+ Container rncp-bc3-tools-run-843522e107db Creating 
+ Container rncp-bc3-tools-run-843522e107db Created 
+{"event": "user_already_exists_no_password_changed", "username": "thomas", "role": "agent", "secret_printed": false}
+ Container rncp-bc3-tools-run-c62688b3c5d9 Creating 
+ Container rncp-bc3-tools-run-c62688b3c5d9 Created 
+.................                                                        [100%]
+17 passed in 14.43s
+ Container rncp-bc3-browser-run-dd10f9c38f4b Creating 
+ Container rncp-bc3-browser-run-dd10f9c38f4b Created 
+{"event": "real_browser", "ticket_creation": true, "actual_intent_suggestion_visible": true, "inference_observed_seconds": 0.09000446199934231, "private_upload_download_exact": true, "async_export_download_contains_fixture": true, "keyboard_skip": true, "mobile_global_overflow": false, "javascript_errors": [], "axe_violations": [], "axe_incomplete": 0, "tls_scope": "Self-signed browser demo context ignores trust only; separate HTTPX tests verify CA and reject untrusted TLS", "screenshots": {"exports-desktop.png": "1dd69b3f7be6c6465ffe500b5842f8d4b72a48ebbe836718ab8e83f2fd4a2c10", "tickets-desktop.png": "5fab886e5b67720ec52376a0769432a8c451dca1ecdeb9a3dffa4779b11921e5", "tickets-mobile.png": "d1c36f0acff6331c9e038d9762a75b5e2e6962b114e455e2b08286603ddb87d1"}}
+ Image rncp-bc3-kube-tools:1 Building 
+#1 [internal] load local bake definitions
+#1 reading from stdin 588B done
+#1 DONE 0.0s
+
+#2 [internal] load build definition from Dockerfile
+#2 transferring dockerfile: 1.21kB 0.0s done
+#2 DONE 0.1s
+
+#3 [internal] load metadata for docker.io/library/docker:29-cli@sha256:34507eb5069d8be82c95dd3b6987d4250fd5fee49b82e2509b7d7a7030740d6d
+#3 DONE 0.0s
+
+#4 [internal] load .dockerignore
+#4 transferring context: 2B done
+#4 DONE 0.0s
+
+#5 [1/6] FROM docker.io/library/docker:29-cli@sha256:34507eb5069d8be82c95dd3b6987d4250fd5fee49b82e2509b7d7a7030740d6d
+#5 resolve docker.io/library/docker:29-cli@sha256:34507eb5069d8be82c95dd3b6987d4250fd5fee49b82e2509b7d7a7030740d6d 0.0s done
+#5 DONE 0.0s
+
+#6 [5/6] RUN curl -fsSL https://releases.hashicorp.com/terraform/1.17.2/terraform_1.17.2_linux_amd64.zip -o /tmp/terraform.zip && curl -fsSL https://releases.hashicorp.com/terraform/1.17.2/terraform_1.17.2_SHA256SUMS -o /tmp/terraform.sums && cd /tmp && awk '$2 == "terraform_1.17.2_linux_amd64.zip" {print $1 "  terraform.zip"}' terraform.sums | sha256sum -c - && unzip terraform.zip -d /usr/local/bin && rm terraform.zip
+#6 CACHED
+
+#7 [2/6] RUN apk add --no-cache bash curl unzip python3 openssl
+#7 CACHED
+
+#8 [3/6] RUN curl -fsSL https://github.com/kubernetes-sigs/kind/releases/download/v0.32.0/kind-linux-amd64 -o /usr/local/bin/kind && echo '50030de23cf40a18505f20426f6a8506bedf13c6e509244bd1fa9463721b0f54  /usr/local/bin/kind' | sha256sum -c - && chmod +x /usr/local/bin/kind
+#8 CACHED
+
+#9 [4/6] RUN curl -fsSL https://dl.k8s.io/release/v1.36.1/bin/linux/amd64/kubectl -o /usr/local/bin/kubectl && curl -fsSL https://dl.k8s.io/release/v1.36.1/bin/linux/amd64/kubectl.sha256 -o /tmp/kubectl.sha && echo "$(cat /tmp/kubectl.sha)  /usr/local/bin/kubectl" | sha256sum -c - && chmod +x /usr/local/bin/kubectl
+#9 CACHED
+
+#10 [6/6] WORKDIR /workspace
+#10 CACHED
+
+#11 exporting to image
+#11 exporting layers
+#11 exporting layers 0.0s done
+#11 exporting manifest sha256:0ce6d44011fa7adae7824e2ab05ea6f1ede4afea03d1dd0a825ce5ac214030c6 0.0s done
+#11 exporting config sha256:fa314c2c2d641207ba86b8c1260b988286e1449a91cbac18371a45427beebb8f 0.0s done
+#11 exporting attestation manifest sha256:6d2cc21a24119ce4bee8354334b4a29eaf9329b48a44be71f0d7a8f57a80d165 0.0s done
+#11 exporting manifest list sha256:873bd36fda521a2a4bcef2839f17b98ae5fd5fa539963e2cda19bb15f5237cc5 0.0s done
+#11 naming to docker.io/library/rncp-bc3-kube-tools:1 done
+#11 unpacking to docker.io/library/rncp-bc3-kube-tools:1 done
+#11 DONE 0.2s
+
+#12 resolving provenance for metadata file
+#12 DONE 0.0s
+ Image rncp-bc3-kube-tools:1 Built 
+ Container rncp-bc3-kube-tools-run-dd5e03a69ada Creating 
+ Container rncp-bc3-kube-tools-run-dd5e03a69ada Created 
+Set kubectl context to "kind-rncp-bc3"
+NAME                     STATUS   ROLES           AGE     VERSION   INTERNAL-IP   EXTERNAL-IP   OS-IMAGE                       KERNEL-VERSION            CONTAINER-RUNTIME
+rncp-bc3-control-plane   Ready    control-plane   6h38m   v1.36.1   172.18.0.3    <none>        Debian GNU/Linux 13 (trixie)   7.0.14-linuxkit (amd64)   containerd://2.3.1
+rncp-bc3-worker          Ready    <none>          6h38m   v1.36.1   172.18.0.2    <none>        Debian GNU/Linux 13 (trixie)   7.0.14-linuxkit (amd64)   containerd://2.3.1
+node/rncp-bc3-control-plane condition met
+node/rncp-bc3-worker condition met
+Image: "rncp-bc3-api:7" with ID "sha256:b40f30adec19401e1e73ca1c396231cf0ae952c96250bc342e169855e242543a" not yet present on node "rncp-bc3-control-plane", loading...
+Image: "rncp-bc3-api:7" with ID "sha256:b40f30adec19401e1e73ca1c396231cf0ae952c96250bc342e169855e242543a" not yet present on node "rncp-bc3-worker", loading...
+Image: "rncp-bc3-backup:2" with ID "sha256:2d9d9f7fe26099579af1f3e35c1d31de56bfa23dc2223902dbc054d2da1b6b47" not yet present on node "rncp-bc3-control-plane", loading...
+Image: "rncp-bc3-backup:2" with ID "sha256:2d9d9f7fe26099579af1f3e35c1d31de56bfa23dc2223902dbc054d2da1b6b47" not yet present on node "rncp-bc3-worker", loading...
+Image: "rncp-bc3-worker:4" with ID "sha256:930437c80ac318bbc64b6496c52d3b6f15763c8acbe3aac442acd42fdca4ee8c" not yet present on node "rncp-bc3-control-plane", loading...
+Image: "rncp-bc3-worker:4" with ID "sha256:930437c80ac318bbc64b6496c52d3b6f15763c8acbe3aac442acd42fdca4ee8c" not yet present on node "rncp-bc3-worker", loading...
+Image: "rncp-bc3-db:1" with ID "sha256:4e6ddefdc39f40e3a48cc1ed8e99cba956e1673e66d038eb336d5869ef27ccfb" not yet present on node "rncp-bc3-control-plane", loading...
+Image: "rncp-bc3-db:1" with ID "sha256:4e6ddefdc39f40e3a48cc1ed8e99cba956e1673e66d038eb336d5869ef27ccfb" not yet present on node "rncp-bc3-worker", loading...
+Image: "rncp-bc3-front:4" with ID "sha256:c1b3c83a8692c524b8f9997c3652b54a21e078b7dee9e793d29dbb0a4e5df391" not yet present on node "rncp-bc3-control-plane", loading...
+Image: "rncp-bc3-front:4" with ID "sha256:c1b3c83a8692c524b8f9997c3652b54a21e078b7dee9e793d29dbb0a4e5df391" not yet present on node "rncp-bc3-worker", loading...
+Image: "rncp-bc3-queue-tls:1" with ID "sha256:c7ce390c44ee4404a6707a52fd59376f7f02b8ff77b99cae64aaea59af6199f6" not yet present on node "rncp-bc3-control-plane", loading...
+Image: "rncp-bc3-queue-tls:1" with ID "sha256:c7ce390c44ee4404a6707a52fd59376f7f02b8ff77b99cae64aaea59af6199f6" not yet present on node "rncp-bc3-worker", loading...
+{"event": "etcd_encryption_configured", "cluster": "kind-rncp-bc3", "provider": "AES-GCM", "key_printed": false, "other_clusters_modified": false, "raw_etcd_proof": "To verify after runtime Secret creation"}
+namespace/bc3-prod unchanged
+namespace/bc3-test unchanged
+namespace/bc3-dev unchanged
+serviceaccount/application unchanged
+persistentvolumeclaim/pg unchanged
+persistentvolumeclaim/object unchanged
+configmap/queue-config configured
+configmap/queue-tls-config unchanged
+secret/runtime unchanged
+secret/api-tls unchanged
+secret/db-secret unchanged
+secret/s3-secret unchanged
+secret/queue-secret unchanged
+secret/front-runtime unchanged
+secret/front-tls unchanged
+secret/bootstrap unchanged
+statefulset.apps/db unchanged
+service/db unchanged
+statefulset.apps/s3 unchanged
+service/s3 unchanged
+deployment.apps/queue unchanged
+service/queue unchanged
+partitioned roll out complete: 1 new pods have been updated...
+partitioned roll out complete: 1 new pods have been updated...
+deployment "queue" successfully rolled out
+job.batch/database-bootstrap-v5 created
+job.batch/database-bootstrap-v5 condition met
+secret/worker-tls unchanged
+deployment.apps/api configured
+service/api unchanged
+deployment.apps/worker unchanged
+deployment.apps/front unchanged
+service/front unchanged
+horizontalpodautoscaler.autoscaling/api unchanged
+poddisruptionbudget.policy/api configured
+Waiting for deployment "api" rollout to finish: 1 old replicas are pending termination...
+Waiting for deployment spec update to be observed...
+Waiting for deployment "api" rollout to finish: 1 out of 3 new replicas have been updated...
+Waiting for deployment "api" rollout to finish: 1 out of 3 new replicas have been updated...
+Waiting for deployment "api" rollout to finish: 2 out of 3 new replicas have been updated...
+Waiting for deployment "api" rollout to finish: 2 out of 3 new replicas have been updated...
+Waiting for deployment "api" rollout to finish: 2 out of 3 new replicas have been updated...
+Waiting for deployment "api" rollout to finish: 2 out of 3 new replicas have been updated...
+Waiting for deployment "api" rollout to finish: 2 out of 3 new replicas have been updated...
+Waiting for deployment "api" rollout to finish: 2 out of 3 new replicas have been updated...
+Waiting for deployment "api" rollout to finish: 2 out of 3 new replicas have been updated...
+Waiting for deployment "api" rollout to finish: 1 old replicas are pending termination...
+Waiting for deployment "api" rollout to finish: 1 old replicas are pending termination...
+Waiting for deployment "api" rollout to finish: 1 old replicas are pending termination...
+deployment "api" successfully rolled out
+deployment "front" successfully rolled out
+deployment "worker" successfully rolled out
+NAME                              READY   STATUS        RESTARTS   AGE
+pod/api-7f4d85d9d7-9dw6b          1/1     Running       0          17s
+pod/api-7f4d85d9d7-slf2q          1/1     Running       0          6s
+pod/api-7f4d85d9d7-z7pg2          1/1     Running       0          19s
+pod/api-bcdbcbb8d-nqrks           1/1     Terminating   0          12m
+pod/database-bootstrap-v1-4rgpw   0/1     Error         0          6h29m
+pod/database-bootstrap-v1-9dkrh   0/1     Error         0          6h28m
+pod/database-bootstrap-v1-9r5w6   0/1     Error         0          6h29m
+pod/database-bootstrap-v1-cxkmj   0/1     Error         0          6h30m
+pod/database-bootstrap-v2-5pwkc   0/1     Completed     0          4h9m
+pod/database-bootstrap-v3-s69wg   0/1     Completed     0          171m
+pod/database-bootstrap-v5-48g2v   0/1     Completed     0          46s
+pod/db-0                          1/1     Running       0          13m
+pod/front-85fdcfc65c-s664s        1/1     Running       0          13m
+pod/grafana-54555559b8-dwwg2      1/1     Running       0          169m
+pod/ingress-588b6685c8-h9phx      1/1     Running       0          169m
+pod/prometheus-675d4545ff-87m52   1/1     Running       0          169m
+pod/queue-5bffbcb6f8-rd98s        2/2     Running       0          164m
+pod/s3-0                          1/1     Running       0          171m
+pod/worker-7648f4cc86-lw27l       1/1     Running       0          13m
+
+NAME                               STATUS   VOLUME                                     CAPACITY   ACCESS MODES   STORAGECLASS   VOLUMEATTRIBUTESCLASS   AGE
+persistentvolumeclaim/grafana      Bound    pvc-d31e27be-c5b7-41d2-86dd-9640d5f028d9   1Gi        RWO            standard       <unset>                 3h13m
+persistentvolumeclaim/object       Bound    pvc-59d6a9e2-b47e-458c-a070-d7b12d1a8d27   1Gi        RWO            standard       <unset>                 6h32m
+persistentvolumeclaim/pg           Bound    pvc-fe2dc01b-40cf-47f5-abe7-ba58608db614   1Gi        RWO            standard       <unset>                 6h32m
+persistentvolumeclaim/prometheus   Bound    pvc-13e5795d-e762-47d8-8ea3-4e62570932cb   1Gi        RWO            standard       <unset>                 3h13m
+
+NAME                 TYPE        CLUSTER-IP      EXTERNAL-IP   PORT(S)         AGE
+service/api          ClusterIP   10.96.247.39    <none>        8443/TCP        4h9m
+service/db           ClusterIP   10.96.132.121   <none>        5432/TCP        6h32m
+service/front        ClusterIP   10.96.206.109   <none>        8443/TCP        4h9m
+service/grafana      ClusterIP   10.96.191.74    <none>        3000/TCP        3h13m
+service/ingress      NodePort    10.96.219.197   <none>        443:30443/TCP   4h9m
+service/prometheus   ClusterIP   10.96.139.6     <none>        9090/TCP        3h13m
+service/queue        ClusterIP   10.96.106.45    <none>        9325/TCP        6h32m
+service/s3           ClusterIP   10.96.136.179   <none>        8343/TCP        6h32m
+
+NAME                                      REFERENCE        TARGETS         MINPODS   MAXPODS   REPLICAS   AGE
+horizontalpodautoscaler.autoscaling/api   Deployment/api   cpu: 136%/60%   1         3         3          4h9m
+configmap/trust unchanged
+serviceaccount/ingress-controller unchanged
+role.rbac.authorization.k8s.io/ingress-watch unchanged
+rolebinding.rbac.authorization.k8s.io/ingress-watch unchanged
+clusterrole.rbac.authorization.k8s.io/rncp-bc3-ingressclasses unchanged
+clusterrolebinding.rbac.authorization.k8s.io/rncp-bc3-ingressclasses unchanged
+configmap/traefik-dynamic unchanged
+deployment.apps/ingress unchanged
+service/ingress unchanged
+ingressclass.networking.k8s.io/bc3 unchanged
+ingress.networking.k8s.io/support unchanged
+serviceaccount/metrics-server unchanged
+clusterrole.rbac.authorization.k8s.io/system:aggregated-metrics-reader unchanged
+clusterrole.rbac.authorization.k8s.io/system:metrics-server unchanged
+rolebinding.rbac.authorization.k8s.io/metrics-server-auth-reader unchanged
+clusterrolebinding.rbac.authorization.k8s.io/metrics-server:system:auth-delegator unchanged
+clusterrolebinding.rbac.authorization.k8s.io/system:metrics-server unchanged
+service/metrics-server unchanged
+deployment.apps/metrics-server configured
+apiservice.apiregistration.k8s.io/v1beta1.metrics.k8s.io unchanged
+deployment "ingress" successfully rolled out
+deployment "metrics-server" successfully rolled out
+apiservice.apiregistration.k8s.io/v1beta1.metrics.k8s.io condition met
+NAME                     SERVICE                      AVAILABLE   AGE
+v1beta1.metrics.k8s.io   kube-system/metrics-server   True        4h9m
+secret/grafana-password unchanged
+secret/prometheus-tls unchanged
+persistentvolumeclaim/prometheus unchanged
+persistentvolumeclaim/grafana unchanged
+serviceaccount/monitor unchanged
+role.rbac.authorization.k8s.io/monitor-pods unchanged
+rolebinding.rbac.authorization.k8s.io/monitor-pods unchanged
+configmap/prometheus unchanged
+configmap/grafana-provisioning unchanged
+deployment.apps/prometheus unchanged
+service/prometheus unchanged
+service/grafana unchanged
+deployment.apps/grafana unchanged
+deployment "prometheus" successfully rolled out
+deployment "grafana" successfully rolled out
+tar: Removing leading `/' from member names
+.................                                                        [100%]
+17 passed in 13.66s
+
+
+job.batch/backup-check-039ecf18 created
+job.batch/backup-check-039ecf18 condition met
+error: cannot exec into a container in a completed pod; current phase is Succeeded
+Traceback (most recent call last):
+  File "/workspace/scripts/exercise_backup_k8s.py", line 33, in <module>
+    subprocess.run(
+    ~~~~~~~~~~~~~~^
+        [
+        ^
+    ...<7 lines>...
+        check=True,
+        ^^^^^^^^^^^
+    )
+    ^
+  File "/usr/lib/python3.14/subprocess.py", line 578, in run
+    raise CalledProcessError(retcode, process.args,
+                             output=stdout, stderr=stderr)
+subprocess.CalledProcessError: Command '['kubectl', '--context', 'kind-rncp-bc3', 'cp', 'bc3-test/backup-check-039ecf18-kfh94:/tmp/docs/evidence/p1/backup-restore.json', '/workspace/docs/evidence/k8s/backup-restore.json']' returned non-zero exit status 1.
+

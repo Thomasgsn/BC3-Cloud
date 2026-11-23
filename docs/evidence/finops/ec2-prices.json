@@ -1,0 +1,1054 @@
+{
+  "source": "https://pricing.us-east-1.amazonaws.com/offers/v1.0/aws/AmazonEC2/current/eu-west-3/index.json",
+  "publication_date": "2026-11-20T03:48:50Z",
+  "products": [
+    {
+      "sku": "CBGTKGZ5JHFFV7NE",
+      "product": {
+        "sku": "CBGTKGZ5JHFFV7NE",
+        "productFamily": "NAT Gateway",
+        "attributes": {
+          "servicecode": "AmazonEC2",
+          "location": "EU (Paris)",
+          "locationType": "AWS Region",
+          "group": "NGW:NatGateway",
+          "groupDescription": "Hourly charge for Regional NAT Gateways - CloudWANS2SVPN",
+          "usagetype": "EUW3-RegionalNatGateway-Hours",
+          "operation": "CloudWANS2SVPN",
+          "regionCode": "eu-west-3",
+          "servicename": "Amazon Elastic Compute Cloud"
+        }
+      },
+      "terms": {
+        "CBGTKGZ5JHFFV7NE.JRTCKXETXF": {
+          "offerTermCode": "JRTCKXETXF",
+          "sku": "CBGTKGZ5JHFFV7NE",
+          "effectiveDate": "2026-11-01T00:00:00Z",
+          "priceDimensions": {
+            "CBGTKGZ5JHFFV7NE.JRTCKXETXF.6YS6EN2CT7": {
+              "rateCode": "CBGTKGZ5JHFFV7NE.JRTCKXETXF.6YS6EN2CT7",
+              "description": "$0.05 per Regional NAT Gateway Hour (CloudWANS2SVPN)",
+              "beginRange": "0",
+              "endRange": "Inf",
+              "unit": "Hrs",
+              "pricePerUnit": {
+                "USD": "0.0500000000"
+              },
+              "appliesTo": []
+            }
+          },
+          "termAttributes": {}
+        }
+      }
+    },
+    {
+      "sku": "THHZXQRZVBEZ282K",
+      "product": {
+        "sku": "THHZXQRZVBEZ282K",
+        "productFamily": "NAT Gateway",
+        "attributes": {
+          "servicecode": "AmazonEC2",
+          "location": "EU (Paris)",
+          "locationType": "AWS Region",
+          "group": "NGW:NatGateway",
+          "groupDescription": "Charge for per GB data processed by NAT Gateways - TransitGatewayConcentratorVPN",
+          "usagetype": "EUW3-RegionalNatGateway-Bytes",
+          "operation": "TransitGatewayConcentratorVPN",
+          "regionCode": "eu-west-3",
+          "servicename": "Amazon Elastic Compute Cloud"
+        }
+      },
+      "terms": {
+        "THHZXQRZVBEZ282K.JRTCKXETXF": {
+          "offerTermCode": "JRTCKXETXF",
+          "sku": "THHZXQRZVBEZ282K",
+          "effectiveDate": "2026-11-01T00:00:00Z",
+          "priceDimensions": {
+            "THHZXQRZVBEZ282K.JRTCKXETXF.6YS6EN2CT7": {
+              "rateCode": "THHZXQRZVBEZ282K.JRTCKXETXF.6YS6EN2CT7",
+              "description": "$0.05 per GB data processed by Regional NAT Gateways (TransitGatewayConcentratorVPN)",
+              "beginRange": "0",
+              "endRange": "Inf",
+              "unit": "GB",
+              "pricePerUnit": {
+                "USD": "0.0500000000"
+              },
+              "appliesTo": []
+            }
+          },
+          "termAttributes": {}
+        }
+      }
+    },
+    {
+      "sku": "D9CBF8Q68GTMWHJC",
+      "product": {
+        "sku": "D9CBF8Q68GTMWHJC",
+        "productFamily": "NAT Gateway",
+        "attributes": {
+          "servicecode": "AmazonEC2",
+          "location": "EU (Paris)",
+          "locationType": "AWS Region",
+          "group": "NGW:NatGateway",
+          "groupDescription": "Charge for per GB data processed by NAT Gateways - TransitGatewayVPN",
+          "usagetype": "EUW3-RegionalNatGateway-Bytes",
+          "operation": "TransitGatewayVPN",
+          "regionCode": "eu-west-3",
+          "servicename": "Amazon Elastic Compute Cloud"
+        }
+      },
+      "terms": {
+        "D9CBF8Q68GTMWHJC.JRTCKXETXF": {
+          "offerTermCode": "JRTCKXETXF",
+          "sku": "D9CBF8Q68GTMWHJC",
+          "effectiveDate": "2026-11-01T00:00:00Z",
+          "priceDimensions": {
+            "D9CBF8Q68GTMWHJC.JRTCKXETXF.6YS6EN2CT7": {
+              "rateCode": "D9CBF8Q68GTMWHJC.JRTCKXETXF.6YS6EN2CT7",
+              "description": "$0.05 per GB data processed by Regional NAT Gateways (TransitGatewayVPN)",
+              "beginRange": "0",
+              "endRange": "Inf",
+              "unit": "GB",
+              "pricePerUnit": {
+                "USD": "0.0500000000"
+              },
+              "appliesTo": []
+            }
+          },
+          "termAttributes": {}
+        }
+      }
+    },
+    {
+      "sku": "QBM2FSFWP6GWWHMU",
+      "product": {
+        "sku": "QBM2FSFWP6GWWHMU",
+        "productFamily": "NAT Gateway",
+        "attributes": {
+          "servicecode": "AmazonEC2",
+          "location": "EU (Paris)",
+          "locationType": "AWS Region",
+          "group": "NGW:NatGateway",
+          "groupDescription": "Charge for per GB data processed by NatGateways",
+          "usagetype": "EUW3-NatGateway-Bytes",
+          "operation": "NatGateway",
+          "regionCode": "eu-west-3",
+          "servicename": "Amazon Elastic Compute Cloud"
+        }
+      },
+      "terms": {
+        "QBM2FSFWP6GWWHMU.JRTCKXETXF": {
+          "offerTermCode": "JRTCKXETXF",
+          "sku": "QBM2FSFWP6GWWHMU",
+          "effectiveDate": "2026-11-01T00:00:00Z",
+          "priceDimensions": {
+            "QBM2FSFWP6GWWHMU.JRTCKXETXF.6YS6EN2CT7": {
+              "rateCode": "QBM2FSFWP6GWWHMU.JRTCKXETXF.6YS6EN2CT7",
+              "description": "$0.05 per GB Data Processed by NAT Gateways",
+              "beginRange": "0",
+              "endRange": "Inf",
+              "unit": "GB",
+              "pricePerUnit": {
+                "USD": "0.0500000000"
+              },
+              "appliesTo": []
+            }
+          },
+          "termAttributes": {}
+        }
+      }
+    },
+    {
+      "sku": "M2U7KNBZMVR6G4KM",
+      "product": {
+        "sku": "M2U7KNBZMVR6G4KM",
+        "productFamily": "NAT Gateway",
+        "attributes": {
+          "servicecode": "AmazonEC2",
+          "location": "EU (Paris)",
+          "locationType": "AWS Region",
+          "group": "NGW:NatGateway",
+          "groupDescription": "Hourly charge for Regional NAT Gateways - TransitGatewayDirectConnect",
+          "usagetype": "EUW3-RegionalNatGateway-Hours",
+          "operation": "TransitGatewayDirectConnect",
+          "regionCode": "eu-west-3",
+          "servicename": "Amazon Elastic Compute Cloud"
+        }
+      },
+      "terms": {
+        "M2U7KNBZMVR6G4KM.JRTCKXETXF": {
+          "offerTermCode": "JRTCKXETXF",
+          "sku": "M2U7KNBZMVR6G4KM",
+          "effectiveDate": "2026-11-01T00:00:00Z",
+          "priceDimensions": {
+            "M2U7KNBZMVR6G4KM.JRTCKXETXF.6YS6EN2CT7": {
+              "rateCode": "M2U7KNBZMVR6G4KM.JRTCKXETXF.6YS6EN2CT7",
+              "description": "$0.05 per Regional NAT Gateway Hour (TransitGatewayDirectConnect)",
+              "beginRange": "0",
+              "endRange": "Inf",
+              "unit": "Hrs",
+              "pricePerUnit": {
+                "USD": "0.0500000000"
+              },
+              "appliesTo": []
+            }
+          },
+          "termAttributes": {}
+        }
+      }
+    },
+    {
+      "sku": "5XKU8DN3UY9RFZ9Z",
+      "product": {
+        "sku": "5XKU8DN3UY9RFZ9Z",
+        "productFamily": "NAT Gateway",
+        "attributes": {
+          "servicecode": "AmazonEC2",
+          "location": "EU (Paris)",
+          "locationType": "AWS Region",
+          "group": "NGW:NatGateway",
+          "groupDescription": "Hourly charge for Regional NAT Gateways - CloudWANConnect",
+          "usagetype": "EUW3-RegionalNatGateway-Hours",
+          "operation": "CloudWANConnect",
+          "regionCode": "eu-west-3",
+          "servicename": "Amazon Elastic Compute Cloud"
+        }
+      },
+      "terms": {
+        "5XKU8DN3UY9RFZ9Z.JRTCKXETXF": {
+          "offerTermCode": "JRTCKXETXF",
+          "sku": "5XKU8DN3UY9RFZ9Z",
+          "effectiveDate": "2026-11-01T00:00:00Z",
+          "priceDimensions": {
+            "5XKU8DN3UY9RFZ9Z.JRTCKXETXF.6YS6EN2CT7": {
+              "rateCode": "5XKU8DN3UY9RFZ9Z.JRTCKXETXF.6YS6EN2CT7",
+              "description": "$0.05 per Regional NAT Gateway Hour (CloudWANConnect)",
+              "beginRange": "0",
+              "endRange": "Inf",
+              "unit": "Hrs",
+              "pricePerUnit": {
+                "USD": "0.0500000000"
+              },
+              "appliesTo": []
+            }
+          },
+          "termAttributes": {}
+        }
+      }
+    },
+    {
+      "sku": "XCKADFE99D2BK5V6",
+      "product": {
+        "sku": "XCKADFE99D2BK5V6",
+        "productFamily": "Storage",
+        "attributes": {
+          "servicecode": "AmazonEC2",
+          "location": "EU (Paris)",
+          "locationType": "AWS Region",
+          "storageMedia": "SSD-backed",
+          "volumeType": "General Purpose",
+          "maxVolumeSize": "64 TiB",
+          "maxIopsvolume": "80000",
+          "maxThroughputvolume": "2000 MiB/s",
+          "group": "EBS Storage",
+          "usagetype": "EUW3-EBS:VolumeUsage.gp3",
+          "operation": "",
+          "ebsAzConfiguration": "single-az",
+          "regionCode": "eu-west-3",
+          "servicename": "Amazon Elastic Compute Cloud",
+          "volumeApiName": "gp3"
+        }
+      },
+      "terms": {
+        "XCKADFE99D2BK5V6.JRTCKXETXF": {
+          "offerTermCode": "JRTCKXETXF",
+          "sku": "XCKADFE99D2BK5V6",
+          "effectiveDate": "2026-11-01T00:00:00Z",
+          "priceDimensions": {
+            "XCKADFE99D2BK5V6.JRTCKXETXF.6YS6EN2CT7": {
+              "rateCode": "XCKADFE99D2BK5V6.JRTCKXETXF.6YS6EN2CT7",
+              "description": "$0.0928 per GB-month of General Purpose (gp3) provisioned storage - EU (Paris)",
+              "beginRange": "0",
+              "endRange": "Inf",
+              "unit": "GB-Mo",
+              "pricePerUnit": {
+                "USD": "0.0928000000"
+              },
+              "appliesTo": []
+            }
+          },
+          "termAttributes": {}
+        }
+      }
+    },
+    {
+      "sku": "MUUJP35XT5XN7VHX",
+      "product": {
+        "sku": "MUUJP35XT5XN7VHX",
+        "productFamily": "NAT Gateway",
+        "attributes": {
+          "servicecode": "AmazonEC2",
+          "location": "EU (Paris)",
+          "locationType": "AWS Region",
+          "group": "NGW:NatGateway",
+          "groupDescription": "Charge for per GB data processed by NAT Gateways - TransitGatewayDirectConnect",
+          "usagetype": "EUW3-RegionalNatGateway-Bytes",
+          "operation": "TransitGatewayDirectConnect",
+          "regionCode": "eu-west-3",
+          "servicename": "Amazon Elastic Compute Cloud"
+        }
+      },
+      "terms": {
+        "MUUJP35XT5XN7VHX.JRTCKXETXF": {
+          "offerTermCode": "JRTCKXETXF",
+          "sku": "MUUJP35XT5XN7VHX",
+          "effectiveDate": "2026-11-01T00:00:00Z",
+          "priceDimensions": {
+            "MUUJP35XT5XN7VHX.JRTCKXETXF.6YS6EN2CT7": {
+              "rateCode": "MUUJP35XT5XN7VHX.JRTCKXETXF.6YS6EN2CT7",
+              "description": "$0.05 per GB data processed by Regional NAT Gateways (TransitGatewayDirectConnect)",
+              "beginRange": "0",
+              "endRange": "Inf",
+              "unit": "GB",
+              "pricePerUnit": {
+                "USD": "0.0500000000"
+              },
+              "appliesTo": []
+            }
+          },
+          "termAttributes": {}
+        }
+      }
+    },
+    {
+      "sku": "ZP8QNJ2UY2XSY943",
+      "product": {
+        "sku": "ZP8QNJ2UY2XSY943",
+        "productFamily": "NAT Gateway",
+        "attributes": {
+          "servicecode": "AmazonEC2",
+          "location": "EU (Paris)",
+          "locationType": "AWS Region",
+          "group": "NGW:NatGateway",
+          "groupDescription": "Charge for per GB data processed by NAT Gateways",
+          "usagetype": "EUW3-RegionalNatGateway-Bytes",
+          "operation": "RegionalNatGateway",
+          "regionCode": "eu-west-3",
+          "servicename": "Amazon Elastic Compute Cloud"
+        }
+      },
+      "terms": {
+        "ZP8QNJ2UY2XSY943.JRTCKXETXF": {
+          "offerTermCode": "JRTCKXETXF",
+          "sku": "ZP8QNJ2UY2XSY943",
+          "effectiveDate": "2026-11-01T00:00:00Z",
+          "priceDimensions": {
+            "ZP8QNJ2UY2XSY943.JRTCKXETXF.6YS6EN2CT7": {
+              "rateCode": "ZP8QNJ2UY2XSY943.JRTCKXETXF.6YS6EN2CT7",
+              "description": "Charge for per GB data processed by NAT Gateways",
+              "beginRange": "0",
+              "endRange": "Inf",
+              "unit": "GB",
+              "pricePerUnit": {
+                "USD": "0.0500000000"
+              },
+              "appliesTo": []
+            }
+          },
+          "termAttributes": {}
+        }
+      }
+    },
+    {
+      "sku": "V2GNH6ANBMTC6K6T",
+      "product": {
+        "sku": "V2GNH6ANBMTC6K6T",
+        "productFamily": "NAT Gateway",
+        "attributes": {
+          "servicecode": "AmazonEC2",
+          "location": "EU (Paris)",
+          "locationType": "AWS Region",
+          "group": "NGW:NatGateway",
+          "groupDescription": "Charge for per GB data processed by NAT Gateways - TransitGatewayConnect",
+          "usagetype": "EUW3-RegionalNatGateway-Bytes",
+          "operation": "TransitGatewayConnect",
+          "regionCode": "eu-west-3",
+          "servicename": "Amazon Elastic Compute Cloud"
+        }
+      },
+      "terms": {
+        "V2GNH6ANBMTC6K6T.JRTCKXETXF": {
+          "offerTermCode": "JRTCKXETXF",
+          "sku": "V2GNH6ANBMTC6K6T",
+          "effectiveDate": "2026-11-01T00:00:00Z",
+          "priceDimensions": {
+            "V2GNH6ANBMTC6K6T.JRTCKXETXF.6YS6EN2CT7": {
+              "rateCode": "V2GNH6ANBMTC6K6T.JRTCKXETXF.6YS6EN2CT7",
+              "description": "$0.05 per GB data processed by Regional NAT Gateways (TransitGatewayConnect)",
+              "beginRange": "0",
+              "endRange": "Inf",
+              "unit": "GB",
+              "pricePerUnit": {
+                "USD": "0.0500000000"
+              },
+              "appliesTo": []
+            }
+          },
+          "termAttributes": {}
+        }
+      }
+    },
+    {
+      "sku": "MV4ZADG27D4XW8FV",
+      "product": {
+        "sku": "MV4ZADG27D4XW8FV",
+        "productFamily": "NAT Gateway",
+        "attributes": {
+          "servicecode": "AmazonEC2",
+          "location": "EU (Paris)",
+          "locationType": "AWS Region",
+          "group": "NGW:NatGateway",
+          "groupDescription": "Charge for per GB data processed by NAT Gateways - CloudWANS2SVPN",
+          "usagetype": "EUW3-RegionalNatGateway-Bytes",
+          "operation": "CloudWANS2SVPN",
+          "regionCode": "eu-west-3",
+          "servicename": "Amazon Elastic Compute Cloud"
+        }
+      },
+      "terms": {
+        "MV4ZADG27D4XW8FV.JRTCKXETXF": {
+          "offerTermCode": "JRTCKXETXF",
+          "sku": "MV4ZADG27D4XW8FV",
+          "effectiveDate": "2026-11-01T00:00:00Z",
+          "priceDimensions": {
+            "MV4ZADG27D4XW8FV.JRTCKXETXF.6YS6EN2CT7": {
+              "rateCode": "MV4ZADG27D4XW8FV.JRTCKXETXF.6YS6EN2CT7",
+              "description": "$0.05 per GB data processed by Regional NAT Gateways (CloudWANS2SVPN)",
+              "beginRange": "0",
+              "endRange": "Inf",
+              "unit": "GB",
+              "pricePerUnit": {
+                "USD": "0.0500000000"
+              },
+              "appliesTo": []
+            }
+          },
+          "termAttributes": {}
+        }
+      }
+    },
+    {
+      "sku": "C3NHDGRCCEW8YV5K",
+      "product": {
+        "sku": "C3NHDGRCCEW8YV5K",
+        "productFamily": "NAT Gateway",
+        "attributes": {
+          "servicecode": "AmazonEC2",
+          "location": "EU (Paris)",
+          "locationType": "AWS Region",
+          "group": "NGW:NatGateway",
+          "groupDescription": "Hourly charge for Regional NAT Gateways - CloudWANDirectConnect",
+          "usagetype": "EUW3-RegionalNatGateway-Hours",
+          "operation": "CloudWANDirectConnect",
+          "regionCode": "eu-west-3",
+          "servicename": "Amazon Elastic Compute Cloud"
+        }
+      },
+      "terms": {
+        "C3NHDGRCCEW8YV5K.JRTCKXETXF": {
+          "offerTermCode": "JRTCKXETXF",
+          "sku": "C3NHDGRCCEW8YV5K",
+          "effectiveDate": "2026-11-01T00:00:00Z",
+          "priceDimensions": {
+            "C3NHDGRCCEW8YV5K.JRTCKXETXF.6YS6EN2CT7": {
+              "rateCode": "C3NHDGRCCEW8YV5K.JRTCKXETXF.6YS6EN2CT7",
+              "description": "$0.05 per Regional NAT Gateway Hour (CloudWANDirectConnect)",
+              "beginRange": "0",
+              "endRange": "Inf",
+              "unit": "Hrs",
+              "pricePerUnit": {
+                "USD": "0.0500000000"
+              },
+              "appliesTo": []
+            }
+          },
+          "termAttributes": {}
+        }
+      }
+    },
+    {
+      "sku": "8NYEETJJGP3YXYE9",
+      "product": {
+        "sku": "8NYEETJJGP3YXYE9",
+        "productFamily": "NAT Gateway",
+        "attributes": {
+          "servicecode": "AmazonEC2",
+          "location": "EU (Paris)",
+          "locationType": "AWS Region",
+          "group": "NGW:NatGateway",
+          "groupDescription": "Charge for per GB data processed by NAT Gateways - CloudWAN",
+          "usagetype": "EUW3-RegionalNatGateway-Bytes",
+          "operation": "CloudWANVPC",
+          "regionCode": "eu-west-3",
+          "servicename": "Amazon Elastic Compute Cloud"
+        }
+      },
+      "terms": {
+        "8NYEETJJGP3YXYE9.JRTCKXETXF": {
+          "offerTermCode": "JRTCKXETXF",
+          "sku": "8NYEETJJGP3YXYE9",
+          "effectiveDate": "2026-11-01T00:00:00Z",
+          "priceDimensions": {
+            "8NYEETJJGP3YXYE9.JRTCKXETXF.6YS6EN2CT7": {
+              "rateCode": "8NYEETJJGP3YXYE9.JRTCKXETXF.6YS6EN2CT7",
+              "description": "$0.05 per GB data processed by Regional NAT Gateways (CloudWANVPC)",
+              "beginRange": "0",
+              "endRange": "Inf",
+              "unit": "GB",
+              "pricePerUnit": {
+                "USD": "0.0500000000"
+              },
+              "appliesTo": []
+            }
+          },
+          "termAttributes": {}
+        }
+      }
+    },
+    {
+      "sku": "XZT57E2HU6XVM9V7",
+      "product": {
+        "sku": "XZT57E2HU6XVM9V7",
+        "productFamily": "NAT Gateway",
+        "attributes": {
+          "servicecode": "AmazonEC2",
+          "location": "EU (Paris)",
+          "locationType": "AWS Region",
+          "group": "NGW:NatGateway",
+          "groupDescription": "Hourly charge for NAT Gateways",
+          "usagetype": "EUW3-NatGateway-Hours",
+          "operation": "NatGateway",
+          "regionCode": "eu-west-3",
+          "servicename": "Amazon Elastic Compute Cloud"
+        }
+      },
+      "terms": {
+        "XZT57E2HU6XVM9V7.JRTCKXETXF": {
+          "offerTermCode": "JRTCKXETXF",
+          "sku": "XZT57E2HU6XVM9V7",
+          "effectiveDate": "2026-11-01T00:00:00Z",
+          "priceDimensions": {
+            "XZT57E2HU6XVM9V7.JRTCKXETXF.6YS6EN2CT7": {
+              "rateCode": "XZT57E2HU6XVM9V7.JRTCKXETXF.6YS6EN2CT7",
+              "description": "$0.05 per NAT Gateway Hour",
+              "beginRange": "0",
+              "endRange": "Inf",
+              "unit": "Hrs",
+              "pricePerUnit": {
+                "USD": "0.0500000000"
+              },
+              "appliesTo": []
+            }
+          },
+          "termAttributes": {}
+        }
+      }
+    },
+    {
+      "sku": "QAU89V7CVVRZFDHM",
+      "product": {
+        "sku": "QAU89V7CVVRZFDHM",
+        "productFamily": "NAT Gateway",
+        "attributes": {
+          "servicecode": "AmazonEC2",
+          "location": "EU (Paris)",
+          "locationType": "AWS Region",
+          "group": "NGW:NatGateway",
+          "groupDescription": "Charge for per GB data processed by NAT Gateways - TransitGatewayPeering",
+          "usagetype": "EUW3-RegionalNatGateway-Bytes",
+          "operation": "TransitGatewayPeering",
+          "regionCode": "eu-west-3",
+          "servicename": "Amazon Elastic Compute Cloud"
+        }
+      },
+      "terms": {
+        "QAU89V7CVVRZFDHM.JRTCKXETXF": {
+          "offerTermCode": "JRTCKXETXF",
+          "sku": "QAU89V7CVVRZFDHM",
+          "effectiveDate": "2026-11-01T00:00:00Z",
+          "priceDimensions": {
+            "QAU89V7CVVRZFDHM.JRTCKXETXF.6YS6EN2CT7": {
+              "rateCode": "QAU89V7CVVRZFDHM.JRTCKXETXF.6YS6EN2CT7",
+              "description": "$0.05 per GB data processed by Regional NAT Gateways (TransitGatewayPeering)",
+              "beginRange": "0",
+              "endRange": "Inf",
+              "unit": "GB",
+              "pricePerUnit": {
+                "USD": "0.0500000000"
+              },
+              "appliesTo": []
+            }
+          },
+          "termAttributes": {}
+        }
+      }
+    },
+    {
+      "sku": "3YJEGHG967F8YSHH",
+      "product": {
+        "sku": "3YJEGHG967F8YSHH",
+        "productFamily": "NAT Gateway",
+        "attributes": {
+          "servicecode": "AmazonEC2",
+          "location": "EU (Paris)",
+          "locationType": "AWS Region",
+          "group": "NGW:NatGateway",
+          "groupDescription": "Hourly charge for Regional NAT Gateways - Transit Gateway",
+          "usagetype": "EUW3-RegionalNatGateway-Hours",
+          "operation": "TransitGatewayVPN",
+          "regionCode": "eu-west-3",
+          "servicename": "Amazon Elastic Compute Cloud"
+        }
+      },
+      "terms": {
+        "3YJEGHG967F8YSHH.JRTCKXETXF": {
+          "offerTermCode": "JRTCKXETXF",
+          "sku": "3YJEGHG967F8YSHH",
+          "effectiveDate": "2026-11-01T00:00:00Z",
+          "priceDimensions": {
+            "3YJEGHG967F8YSHH.JRTCKXETXF.6YS6EN2CT7": {
+              "rateCode": "3YJEGHG967F8YSHH.JRTCKXETXF.6YS6EN2CT7",
+              "description": "$0.05 per Regional NAT Gateway Hour (TransitGatewayVPN)",
+              "beginRange": "0",
+              "endRange": "Inf",
+              "unit": "Hrs",
+              "pricePerUnit": {
+                "USD": "0.0500000000"
+              },
+              "appliesTo": []
+            }
+          },
+          "termAttributes": {}
+        }
+      }
+    },
+    {
+      "sku": "Q3FXYGZS3P9NQNUV",
+      "product": {
+        "sku": "Q3FXYGZS3P9NQNUV",
+        "productFamily": "NAT Gateway",
+        "attributes": {
+          "servicecode": "AmazonEC2",
+          "location": "EU (Paris)",
+          "locationType": "AWS Region",
+          "group": "NGW:NatGateway",
+          "groupDescription": "Hourly charge for Regional NAT Gateways - TransitGatewayVPC",
+          "usagetype": "EUW3-RegionalNatGateway-Hours",
+          "operation": "TransitGatewayVPC",
+          "regionCode": "eu-west-3",
+          "servicename": "Amazon Elastic Compute Cloud"
+        }
+      },
+      "terms": {
+        "Q3FXYGZS3P9NQNUV.JRTCKXETXF": {
+          "offerTermCode": "JRTCKXETXF",
+          "sku": "Q3FXYGZS3P9NQNUV",
+          "effectiveDate": "2026-11-01T00:00:00Z",
+          "priceDimensions": {
+            "Q3FXYGZS3P9NQNUV.JRTCKXETXF.6YS6EN2CT7": {
+              "rateCode": "Q3FXYGZS3P9NQNUV.JRTCKXETXF.6YS6EN2CT7",
+              "description": "$0.05 per Regional NAT Gateway Hour (TransitGatewayVPC)",
+              "beginRange": "0",
+              "endRange": "Inf",
+              "unit": "Hrs",
+              "pricePerUnit": {
+                "USD": "0.0500000000"
+              },
+              "appliesTo": []
+            }
+          },
+          "termAttributes": {}
+        }
+      }
+    },
+    {
+      "sku": "87F2SP4MM8WUKWNE",
+      "product": {
+        "sku": "87F2SP4MM8WUKWNE",
+        "productFamily": "NAT Gateway",
+        "attributes": {
+          "servicecode": "AmazonEC2",
+          "location": "EU (Paris)",
+          "locationType": "AWS Region",
+          "group": "NGW:NatGateway",
+          "groupDescription": "Hourly charge for Regional NAT Gateways - CloudWAN",
+          "usagetype": "EUW3-RegionalNatGateway-Hours",
+          "operation": "CloudWANVPC",
+          "regionCode": "eu-west-3",
+          "servicename": "Amazon Elastic Compute Cloud"
+        }
+      },
+      "terms": {
+        "87F2SP4MM8WUKWNE.JRTCKXETXF": {
+          "offerTermCode": "JRTCKXETXF",
+          "sku": "87F2SP4MM8WUKWNE",
+          "effectiveDate": "2026-11-01T00:00:00Z",
+          "priceDimensions": {
+            "87F2SP4MM8WUKWNE.JRTCKXETXF.6YS6EN2CT7": {
+              "rateCode": "87F2SP4MM8WUKWNE.JRTCKXETXF.6YS6EN2CT7",
+              "description": "$0.05 per Regional NAT Gateway Hour (CloudWANVPC)",
+              "beginRange": "0",
+              "endRange": "Inf",
+              "unit": "Hrs",
+              "pricePerUnit": {
+                "USD": "0.0500000000"
+              },
+              "appliesTo": []
+            }
+          },
+          "termAttributes": {}
+        }
+      }
+    },
+    {
+      "sku": "89YAB55PARJAUR5B",
+      "product": {
+        "sku": "89YAB55PARJAUR5B",
+        "productFamily": "Compute Instance",
+        "attributes": {
+          "servicecode": "AmazonEC2",
+          "location": "EU (Paris)",
+          "locationType": "AWS Region",
+          "instanceType": "t3.medium",
+          "currentGeneration": "Yes",
+          "instanceFamily": "General purpose",
+          "vcpu": "2",
+          "physicalProcessor": "Intel Skylake E5 2686 v5",
+          "clockSpeed": "3.1 GHz",
+          "memory": "4 GiB",
+          "storage": "EBS only",
+          "networkPerformance": "Up to 5 Gigabit",
+          "processorArchitecture": "64-bit",
+          "tenancy": "Shared",
+          "operatingSystem": "Linux",
+          "licenseModel": "No License required",
+          "usagetype": "EUW3-BoxUsage:t3.medium",
+          "operation": "RunInstances",
+          "availabilityzone": "NA",
+          "capacitystatus": "Used",
+          "classicnetworkingsupport": "false",
+          "dedicatedEbsThroughput": "Up to 2085 Mbps",
+          "dedicatedEbsThroughputDescription": "347 Mbps",
+          "ecu": "NA",
+          "enhancedNetworkingSupported": "No",
+          "gpuMemory": "NA",
+          "instanceFamilyCategory": "General Purpose",
+          "intelAvxAvailable": "Yes",
+          "intelAvx2Available": "Yes",
+          "intelTurboAvailable": "Yes",
+          "marketoption": "OnDemand",
+          "normalizationSizeFactor": "2",
+          "preInstalledSw": "NA",
+          "processorFeatures": "AVX; AVX2; Intel AVX; Intel AVX2; Intel AVX512; Intel Turbo",
+          "regionCode": "eu-west-3",
+          "servicename": "Amazon Elastic Compute Cloud",
+          "vpcnetworkingsupport": "true"
+        }
+      },
+      "terms": {
+        "89YAB55PARJAUR5B.JRTCKXETXF": {
+          "offerTermCode": "JRTCKXETXF",
+          "sku": "89YAB55PARJAUR5B",
+          "effectiveDate": "2026-11-01T00:00:00Z",
+          "priceDimensions": {
+            "89YAB55PARJAUR5B.JRTCKXETXF.6YS6EN2CT7": {
+              "rateCode": "89YAB55PARJAUR5B.JRTCKXETXF.6YS6EN2CT7",
+              "description": "$0.0472 per On Demand Linux t3.medium Instance Hour",
+              "beginRange": "0",
+              "endRange": "Inf",
+              "unit": "Hrs",
+              "pricePerUnit": {
+                "USD": "0.0472000000"
+              },
+              "appliesTo": []
+            }
+          },
+          "termAttributes": {}
+        }
+      }
+    },
+    {
+      "sku": "GP8MX6PC6Y8M4SSR",
+      "product": {
+        "sku": "GP8MX6PC6Y8M4SSR",
+        "productFamily": "NAT Gateway",
+        "attributes": {
+          "servicecode": "AmazonEC2",
+          "location": "EU (Paris)",
+          "locationType": "AWS Region",
+          "group": "NGW:NatGateway",
+          "groupDescription": "Hourly charge for Regional NAT Gateways - TransitGatewayConcentratorVPN",
+          "usagetype": "EUW3-RegionalNatGateway-Hours",
+          "operation": "TransitGatewayConcentratorVPN",
+          "regionCode": "eu-west-3",
+          "servicename": "Amazon Elastic Compute Cloud"
+        }
+      },
+      "terms": {
+        "GP8MX6PC6Y8M4SSR.JRTCKXETXF": {
+          "offerTermCode": "JRTCKXETXF",
+          "sku": "GP8MX6PC6Y8M4SSR",
+          "effectiveDate": "2026-11-01T00:00:00Z",
+          "priceDimensions": {
+            "GP8MX6PC6Y8M4SSR.JRTCKXETXF.6YS6EN2CT7": {
+              "rateCode": "GP8MX6PC6Y8M4SSR.JRTCKXETXF.6YS6EN2CT7",
+              "description": "$0.05 per Regional NAT Gateway Hour (TransitGatewayConcentratorVPN)",
+              "beginRange": "0",
+              "endRange": "Inf",
+              "unit": "Hrs",
+              "pricePerUnit": {
+                "USD": "0.0500000000"
+              },
+              "appliesTo": []
+            }
+          },
+          "termAttributes": {}
+        }
+      }
+    },
+    {
+      "sku": "YZWV2JHE9WSCSTFF",
+      "product": {
+        "sku": "YZWV2JHE9WSCSTFF",
+        "productFamily": "NAT Gateway",
+        "attributes": {
+          "servicecode": "AmazonEC2",
+          "location": "EU (Paris)",
+          "locationType": "AWS Region",
+          "group": "NGW:NatGateway",
+          "groupDescription": "Charge for per GB data processed by NAT Gateways - Transit Gateway",
+          "usagetype": "EUW3-RegionalNatGateway-Bytes",
+          "operation": "TransitGatewayVPC",
+          "regionCode": "eu-west-3",
+          "servicename": "Amazon Elastic Compute Cloud"
+        }
+      },
+      "terms": {
+        "YZWV2JHE9WSCSTFF.JRTCKXETXF": {
+          "offerTermCode": "JRTCKXETXF",
+          "sku": "YZWV2JHE9WSCSTFF",
+          "effectiveDate": "2026-11-01T00:00:00Z",
+          "priceDimensions": {
+            "YZWV2JHE9WSCSTFF.JRTCKXETXF.6YS6EN2CT7": {
+              "rateCode": "YZWV2JHE9WSCSTFF.JRTCKXETXF.6YS6EN2CT7",
+              "description": "$0.05 per GB data processed by Regional NAT Gateways (TransitGatewayVPC)",
+              "beginRange": "0",
+              "endRange": "Inf",
+              "unit": "GB",
+              "pricePerUnit": {
+                "USD": "0.0500000000"
+              },
+              "appliesTo": []
+            }
+          },
+          "termAttributes": {}
+        }
+      }
+    },
+    {
+      "sku": "VQ23NZ5TXTHKMADX",
+      "product": {
+        "sku": "VQ23NZ5TXTHKMADX",
+        "productFamily": "NAT Gateway",
+        "attributes": {
+          "servicecode": "AmazonEC2",
+          "location": "EU (Paris)",
+          "locationType": "AWS Region",
+          "group": "NGW:NatGateway",
+          "groupDescription": "Hourly charge for Regional NAT Gateways",
+          "usagetype": "EUW3-RegionalNatGateway-Hours",
+          "operation": "RegionalNatGateway",
+          "regionCode": "eu-west-3",
+          "servicename": "Amazon Elastic Compute Cloud"
+        }
+      },
+      "terms": {
+        "VQ23NZ5TXTHKMADX.JRTCKXETXF": {
+          "offerTermCode": "JRTCKXETXF",
+          "sku": "VQ23NZ5TXTHKMADX",
+          "effectiveDate": "2026-11-01T00:00:00Z",
+          "priceDimensions": {
+            "VQ23NZ5TXTHKMADX.JRTCKXETXF.6YS6EN2CT7": {
+              "rateCode": "VQ23NZ5TXTHKMADX.JRTCKXETXF.6YS6EN2CT7",
+              "description": "Hourly charge for Regional NAT Gateways",
+              "beginRange": "0",
+              "endRange": "Inf",
+              "unit": "Hrs",
+              "pricePerUnit": {
+                "USD": "0.0500000000"
+              },
+              "appliesTo": []
+            }
+          },
+          "termAttributes": {}
+        }
+      }
+    },
+    {
+      "sku": "2GE6AE7HCCSQPYQF",
+      "product": {
+        "sku": "2GE6AE7HCCSQPYQF",
+        "productFamily": "NAT Gateway",
+        "attributes": {
+          "servicecode": "AmazonEC2",
+          "location": "EU (Paris)",
+          "locationType": "AWS Region",
+          "group": "NGW:NatGateway",
+          "groupDescription": "Hourly charge for Regional NAT Gateways - TransitGatewayPeering",
+          "usagetype": "EUW3-RegionalNatGateway-Hours",
+          "operation": "TransitGatewayPeering",
+          "regionCode": "eu-west-3",
+          "servicename": "Amazon Elastic Compute Cloud"
+        }
+      },
+      "terms": {
+        "2GE6AE7HCCSQPYQF.JRTCKXETXF": {
+          "offerTermCode": "JRTCKXETXF",
+          "sku": "2GE6AE7HCCSQPYQF",
+          "effectiveDate": "2026-11-01T00:00:00Z",
+          "priceDimensions": {
+            "2GE6AE7HCCSQPYQF.JRTCKXETXF.6YS6EN2CT7": {
+              "rateCode": "2GE6AE7HCCSQPYQF.JRTCKXETXF.6YS6EN2CT7",
+              "description": "$0.05 per Regional NAT Gateway Hour (TransitGatewayPeering)",
+              "beginRange": "0",
+              "endRange": "Inf",
+              "unit": "Hrs",
+              "pricePerUnit": {
+                "USD": "0.0500000000"
+              },
+              "appliesTo": []
+            }
+          },
+          "termAttributes": {}
+        }
+      }
+    },
+    {
+      "sku": "UCWC4GZR7AWEDEPT",
+      "product": {
+        "sku": "UCWC4GZR7AWEDEPT",
+        "productFamily": "NAT Gateway",
+        "attributes": {
+          "servicecode": "AmazonEC2",
+          "location": "EU (Paris)",
+          "locationType": "AWS Region",
+          "group": "NGW:NatGateway",
+          "groupDescription": "Hourly charge for Regional NAT Gateways - TransitGatewayConnect",
+          "usagetype": "EUW3-RegionalNatGateway-Hours",
+          "operation": "TransitGatewayConnect",
+          "regionCode": "eu-west-3",
+          "servicename": "Amazon Elastic Compute Cloud"
+        }
+      },
+      "terms": {
+        "UCWC4GZR7AWEDEPT.JRTCKXETXF": {
+          "offerTermCode": "JRTCKXETXF",
+          "sku": "UCWC4GZR7AWEDEPT",
+          "effectiveDate": "2026-11-01T00:00:00Z",
+          "priceDimensions": {
+            "UCWC4GZR7AWEDEPT.JRTCKXETXF.6YS6EN2CT7": {
+              "rateCode": "UCWC4GZR7AWEDEPT.JRTCKXETXF.6YS6EN2CT7",
+              "description": "$0.05 per Regional NAT Gateway Hour (TransitGatewayConnect)",
+              "beginRange": "0",
+              "endRange": "Inf",
+              "unit": "Hrs",
+              "pricePerUnit": {
+                "USD": "0.0500000000"
+              },
+              "appliesTo": []
+            }
+          },
+          "termAttributes": {}
+        }
+      }
+    },
+    {
+      "sku": "UMUB24CEWG2WMNJ3",
+      "product": {
+        "sku": "UMUB24CEWG2WMNJ3",
+        "productFamily": "NAT Gateway",
+        "attributes": {
+          "servicecode": "AmazonEC2",
+          "location": "EU (Paris)",
+          "locationType": "AWS Region",
+          "group": "NGW:NatGateway",
+          "groupDescription": "Charge for per GB data processed by NAT Gateways - CloudWANDirectConnect",
+          "usagetype": "EUW3-RegionalNatGateway-Bytes",
+          "operation": "CloudWANDirectConnect",
+          "regionCode": "eu-west-3",
+          "servicename": "Amazon Elastic Compute Cloud"
+        }
+      },
+      "terms": {
+        "UMUB24CEWG2WMNJ3.JRTCKXETXF": {
+          "offerTermCode": "JRTCKXETXF",
+          "sku": "UMUB24CEWG2WMNJ3",
+          "effectiveDate": "2026-11-01T00:00:00Z",
+          "priceDimensions": {
+            "UMUB24CEWG2WMNJ3.JRTCKXETXF.6YS6EN2CT7": {
+              "rateCode": "UMUB24CEWG2WMNJ3.JRTCKXETXF.6YS6EN2CT7",
+              "description": "$0.05 per GB data processed by Regional NAT Gateways (CloudWANDirectConnect)",
+              "beginRange": "0",
+              "endRange": "Inf",
+              "unit": "GB",
+              "pricePerUnit": {
+                "USD": "0.0500000000"
+              },
+              "appliesTo": []
+            }
+          },
+          "termAttributes": {}
+        }
+      }
+    },
+    {
+      "sku": "XJCJ42Q8KWK8VBVQ",
+      "product": {
+        "sku": "XJCJ42Q8KWK8VBVQ",
+        "productFamily": "NAT Gateway",
+        "attributes": {
+          "servicecode": "AmazonEC2",
+          "location": "EU (Paris)",
+          "locationType": "AWS Region",
+          "group": "NGW:NatGateway",
+          "groupDescription": "Charge for per GB data processed by NAT Gateways - CloudWANConnect",
+          "usagetype": "EUW3-RegionalNatGateway-Bytes",
+          "operation": "CloudWANConnect",
+          "regionCode": "eu-west-3",
+          "servicename": "Amazon Elastic Compute Cloud"
+        }
+      },
+      "terms": {
+        "XJCJ42Q8KWK8VBVQ.JRTCKXETXF": {
+          "offerTermCode": "JRTCKXETXF",
+          "sku": "XJCJ42Q8KWK8VBVQ",
+          "effectiveDate": "2026-11-01T00:00:00Z",
+          "priceDimensions": {
+            "XJCJ42Q8KWK8VBVQ.JRTCKXETXF.6YS6EN2CT7": {
+              "rateCode": "XJCJ42Q8KWK8VBVQ.JRTCKXETXF.6YS6EN2CT7",
+              "description": "$0.05 per GB data processed by Regional NAT Gateways (CloudWANConnect)",
+              "beginRange": "0",
+              "endRange": "Inf",
+              "unit": "GB",
+              "pricePerUnit": {
+                "USD": "0.0500000000"
+              },
+              "appliesTo": []
+            }
+          },
+          "termAttributes": {}
+        }
+      }
+    }
+  ]
+}

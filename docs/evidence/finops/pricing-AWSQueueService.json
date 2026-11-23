@@ -1,0 +1,172 @@
+{
+  "source": "https://pricing.us-east-1.amazonaws.com/offers/v1.0/aws/AWSQueueService/current/eu-west-3/index.json",
+  "publication_date": "2026-11-11T15:35:51Z",
+  "rates": [
+    {
+      "sku": "HSP76GSZN55FQXBC",
+      "attributes": {
+        "servicecode": "AWSQueueService",
+        "location": "EU (Paris)",
+        "locationType": "AWS Region",
+        "group": "SQS-APIRequest-Tier1",
+        "groupDescription": "Amazon SQS Requests",
+        "usagetype": "EUW3-Requests-Tier1",
+        "operation": "",
+        "messageDeliveryFrequency": "At Least Once",
+        "messageDeliveryOrder": "Not Guaranteed",
+        "queueType": "Standard",
+        "regionCode": "eu-west-3",
+        "servicename": "Amazon Simple Queue Service"
+      },
+      "description": "$0.40 per million Amazon SQS standard requests in Tier1 in EU (Paris)",
+      "unit": "Requests",
+      "price": "0.0000004000",
+      "range": [
+        "0",
+        "100000000000"
+      ]
+    },
+    {
+      "sku": "HSP76GSZN55FQXBC",
+      "attributes": {
+        "servicecode": "AWSQueueService",
+        "location": "EU (Paris)",
+        "locationType": "AWS Region",
+        "group": "SQS-APIRequest-Tier1",
+        "groupDescription": "Amazon SQS Requests",
+        "usagetype": "EUW3-Requests-Tier1",
+        "operation": "",
+        "messageDeliveryFrequency": "At Least Once",
+        "messageDeliveryOrder": "Not Guaranteed",
+        "queueType": "Standard",
+        "regionCode": "eu-west-3",
+        "servicename": "Amazon Simple Queue Service"
+      },
+      "description": "$0.36 per million Amazon SQS standard requests in Tier2 in EU (Paris)",
+      "unit": "Requests",
+      "price": "0.0000003600",
+      "range": [
+        "100000000000",
+        "200000000000"
+      ]
+    },
+    {
+      "sku": "HSP76GSZN55FQXBC",
+      "attributes": {
+        "servicecode": "AWSQueueService",
+        "location": "EU (Paris)",
+        "locationType": "AWS Region",
+        "group": "SQS-APIRequest-Tier1",
+        "groupDescription": "Amazon SQS Requests",
+        "usagetype": "EUW3-Requests-Tier1",
+        "operation": "",
+        "messageDeliveryFrequency": "At Least Once",
+        "messageDeliveryOrder": "Not Guaranteed",
+        "queueType": "Standard",
+        "regionCode": "eu-west-3",
+        "servicename": "Amazon Simple Queue Service"
+      },
+      "description": "$0.32 per million Amazon SQS standard requests in Tier3 in EU (Paris)",
+      "unit": "Requests",
+      "price": "0.0000003200",
+      "range": [
+        "200000000000",
+        "Inf"
+      ]
+    },
+    {
+      "sku": "BP4TRN8B3DYN8SQZ",
+      "attributes": {
+        "servicecode": "AWSQueueService",
+        "location": "EU (Paris)",
+        "locationType": "AWS Region",
+        "group": "SQS-APIRequest-Tier1",
+        "groupDescription": "Amazon SQS Requests",
+        "usagetype": "EUW3-Requests-FIFO-Tier1",
+        "operation": "",
+        "messageDeliveryFrequency": "Exactly Once",
+        "messageDeliveryOrder": "Guaranteed",
+        "queueType": "FIFO (first-in, first-out)",
+        "regionCode": "eu-west-3",
+        "servicename": "Amazon Simple Queue Service"
+      },
+      "description": "$0.50 per million Amazon SQS FIFO requests in Tier1 in EU (Paris)",
+      "unit": "Requests",
+      "price": "0.0000005000",
+      "range": [
+        "0",
+        "100000000000"
+      ]
+    },
+    {
+      "sku": "BP4TRN8B3DYN8SQZ",
+      "attributes": {
+        "servicecode": "AWSQueueService",
+        "location": "EU (Paris)",
+        "locationType": "AWS Region",
+        "group": "SQS-APIRequest-Tier1",
+        "groupDescription": "Amazon SQS Requests",
+        "usagetype": "EUW3-Requests-FIFO-Tier1",
+        "operation": "",
+        "messageDeliveryFrequency": "Exactly Once",
+        "messageDeliveryOrder": "Guaranteed",
+        "queueType": "FIFO (first-in, first-out)",
+        "regionCode": "eu-west-3",
+        "servicename": "Amazon Simple Queue Service"
+      },
+      "description": "$0.48 per million Amazon SQS FIFO requests in Tier2 in EU (Paris)",
+      "unit": "Requests",
+      "price": "0.0000004800",
+      "range": [
+        "100000000000",
+        "200000000000"
+      ]
+    },
+    {
+      "sku": "BP4TRN8B3DYN8SQZ",
+      "attributes": {
+        "servicecode": "AWSQueueService",
+        "location": "EU (Paris)",
+        "locationType": "AWS Region",
+        "group": "SQS-APIRequest-Tier1",
+        "groupDescription": "Amazon SQS Requests",
+        "usagetype": "EUW3-Requests-FIFO-Tier1",
+        "operation": "",
+        "messageDeliveryFrequency": "Exactly Once",
+        "messageDeliveryOrder": "Guaranteed",
+        "queueType": "FIFO (first-in, first-out)",
+        "regionCode": "eu-west-3",
+        "servicename": "Amazon Simple Queue Service"
+      },
+      "description": "$0.44 per million Amazon SQS FIFO requests in Tier3 in EU (Paris)",
+      "unit": "Requests",
+      "price": "0.0000004400",
+      "range": [
+        "200000000000",
+        "Inf"
+      ]
+    },
+    {
+      "sku": "CXE6JWP574KRBD8D",
+      "attributes": {
+        "servicecode": "AWSQueueService",
+        "location": "EU (Paris)",
+        "locationType": "AWS Region",
+        "group": "SQS-APIRequest-Tier1",
+        "groupDescription": "Amazon SQS Requests",
+        "usagetype": "EUW3-Requests-Fair-Tier1",
+        "operation": "",
+        "queueType": "Fair",
+        "regionCode": "eu-west-3",
+        "servicename": "Amazon Simple Queue Service"
+      },
+      "description": "$0.10 per million Amazon SQS fair queue requests in EU (Paris)",
+      "unit": "Requests",
+      "price": "0.0000001000",
+      "range": [
+        "0",
+        "Inf"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,7 @@
+{
+  "syntax_parsed": true,
+  "triggers_checked": true,
+  "checkout_sha_pinned": true,
+  "read_only_permissions": true,
+  "scope": "Local YAML/static contract check only; no GitHub Actions remote run"
+}

@@ -1,0 +1,15 @@
+{
+  "baseline": {
+    "Id": "sha256:c40034b9d01183f2a5f85b4acd0d4fec8486a778e1b4399cf9c600b690dbfe06",
+    "Size": 759494790
+  },
+  "optimized": {
+    "Id": "sha256:bc2a73f5db9d78c831a3663e055e371ba70343d3efaf94181f55d616d283defc",
+    "Size": 275993084
+  },
+  "baseline_tag": "rncp-bc3-api:2 used by worker before change",
+  "optimized_tag": "rncp-bc3-worker:2",
+  "reduction_fraction": 0.6366096415223599,
+  "metric": "Docker uncompressed image bytes, not memory or money",
+  "functional_verification": "Final slim worker: 20 real tests passed in Compose and Kubernetes, full CI log and k8s/integration/pytest.json"
+}

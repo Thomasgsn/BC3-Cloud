@@ -1,0 +1,50 @@
+{
+  "source": "https://pricing.us-east-1.amazonaws.com/offers/v1.0/aws/AmazonRDS/current/eu-west-3/index.json",
+  "publication_date": "2026-11-19T18:51:17Z",
+  "products": [
+    {
+      "sku": "CJG2KQWW9D9H7DNZ",
+      "product": {
+        "sku": "CJG2KQWW9D9H7DNZ",
+        "productFamily": "Database Storage",
+        "attributes": {
+          "servicecode": "AmazonRDS",
+          "location": "EU (Paris)",
+          "locationType": "AWS Region",
+          "storageMedia": "SSD",
+          "volumeType": "General Purpose-GP3",
+          "minVolumeSize": "5 GB",
+          "maxVolumeSize": "16 TB",
+          "engineCode": "14",
+          "databaseEngine": "PostgreSQL",
+          "deploymentOption": "Multi-AZ",
+          "usagetype": "EUW3-RDS:Multi-AZ-GP3-Storage",
+          "operation": "CreateDBInstance:0014",
+          "regionCode": "eu-west-3",
+          "servicename": "Amazon Relational Database Service"
+        }
+      },
+      "terms": {
+        "CJG2KQWW9D9H7DNZ.JRTCKXETXF": {
+          "offerTermCode": "JRTCKXETXF",
+          "sku": "CJG2KQWW9D9H7DNZ",
+          "effectiveDate": "2026-11-01T00:00:00Z",
+          "priceDimensions": {
+            "CJG2KQWW9D9H7DNZ.JRTCKXETXF.6YS6EN2CT7": {
+              "rateCode": "CJG2KQWW9D9H7DNZ.JRTCKXETXF.6YS6EN2CT7",
+              "description": "$0.266 per GB-month of provisioned GP3 storage for Multi-AZ deployments running PostgreSQL",
+              "beginRange": "0",
+              "endRange": "Inf",
+              "unit": "GB-Mo",
+              "pricePerUnit": {
+                "USD": "0.2660000000"
+              },
+              "appliesTo": []
+            }
+          },
+          "termAttributes": {}
+        }
+      }
+    }
+  ]
+}

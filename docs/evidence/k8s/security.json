@@ -1,0 +1,11 @@
+{
+  "event": "kubernetes_security",
+  "cluster": "kind-rncp-bc3",
+  "runtime_secret_raw_etcd_encryption_prefix": "k8s:enc:aesgcm:v1:bc3-local-v1:",
+  "raw_secret_content_printed": false,
+  "application_service_account_cannot_read_secrets": true,
+  "application_service_account_tokens_automounted": false,
+  "service_link_environment_injection_disabled": true,
+  "pod_security": "restricted namespace, non-root with dropped capabilities and read-only root filesystems",
+  "limits": "Does not demonstrate full host disk encryption or public cloud KMS activation; Metrics Server local kubelet certificate exception is documented separately"
+}

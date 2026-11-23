@@ -1,0 +1,36 @@
+{
+  "event": "retention_read_only_inventory",
+  "at_utc": "2026-11-21T10:25:00.427157+00:00",
+  "policy_status": "proposal_not_approved",
+  "mode": "inventory_only_no_deletion",
+  "proposed_days": {
+    "exports": 7,
+    "audit": 30,
+    "backups": 180
+  },
+  "sql": {
+    "expired_sessions": 14,
+    "completed_exports_past_proposal": 0,
+    "protected_active_exports": 0,
+    "audit_rows_past_proposal": 0
+  },
+  "objects": {
+    "backups": {
+      "within_proposed_retention": {
+        "objects": 1,
+        "encrypted_bytes": 13902
+      }
+    },
+    "exports": {
+      "within_proposed_retention": {
+        "objects": 13,
+        "encrypted_bytes": 39599
+      }
+    }
+  },
+  "objects_examined": 14,
+  "complete_within_limit": true,
+  "deleted_rows": 0,
+  "deleted_objects": 0,
+  "limits": "Age S3 calculé sur LastModified ; aucune équivalence à une durée légale ni à une purge exécutée. Attachments/tickets exclus ; versions S3 et GLACIER non exercés ici."
+}

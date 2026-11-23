@@ -1,0 +1,6 @@
+{
+  "model_version": "banking77-c1-0",
+  "known_english_fixture_top3_contains_expected_category": true,
+  "cross_user_denied": true,
+  "margins_not_probabilities": true
+}

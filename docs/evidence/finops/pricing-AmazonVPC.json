@@ -1,0 +1,1235 @@
+{
+  "source": "https://pricing.us-east-1.amazonaws.com/offers/v1.0/aws/AmazonVPC/current/eu-west-3/index.json",
+  "publication_date": "2026-11-19T20:55:45Z",
+  "rates": [
+    {
+      "sku": "9MQ223QNMY2P3YWA",
+      "attributes": {
+        "servicecode": "AmazonVPC",
+        "location": "EU (Paris)",
+        "locationType": "AWS Region",
+        "group": "AWSTransitGateway",
+        "groupDescription": "Charge for per GB data processed by AWS Transit Gateways  for Site-to-Site VPN attachments",
+        "usagetype": "EUW3-TransitGateway-Bytes",
+        "operation": "TransitGatewayVPN",
+        "attachmentType": "AWS Site-to-Site VPN",
+        "regionCode": "eu-west-3",
+        "servicename": "Amazon Virtual Private Cloud"
+      },
+      "description": "$0.02 per GB Data Processed by Transit Gateway VPN Attachment",
+      "unit": "GigaBytes",
+      "price": "0.0200000000",
+      "range": [
+        "0",
+        "Inf"
+      ]
+    },
+    {
+      "sku": "4789A2HW2MF52Y9X",
+      "attributes": {
+        "servicecode": "AmazonVPC",
+        "location": "EU (Paris)",
+        "locationType": "AWS Region",
+        "endpointType": "Tunnel",
+        "group": "VpcResources",
+        "groupDescription": "Per GB charge to access CIDR Resources through Tunnel Endpoint",
+        "usagetype": "EUW3-VpcResource-Tunnel-Consumer-Bytes",
+        "operation": "VpcResourceConsumer",
+        "regionCode": "eu-west-3",
+        "servicename": "Amazon Virtual Private Cloud"
+      },
+      "description": "$0.01 from 0 to 1 PB - Per GB charge to access CIDR Resources through Tunnel Endpoint",
+      "unit": "GB",
+      "price": "0.0100000000",
+      "range": [
+        "0",
+        "1048576"
+      ]
+    },
+    {
+      "sku": "4789A2HW2MF52Y9X",
+      "attributes": {
+        "servicecode": "AmazonVPC",
+        "location": "EU (Paris)",
+        "locationType": "AWS Region",
+        "endpointType": "Tunnel",
+        "group": "VpcResources",
+        "groupDescription": "Per GB charge to access CIDR Resources through Tunnel Endpoint",
+        "usagetype": "EUW3-VpcResource-Tunnel-Consumer-Bytes",
+        "operation": "VpcResourceConsumer",
+        "regionCode": "eu-west-3",
+        "servicename": "Amazon Virtual Private Cloud"
+      },
+      "description": "$0.006 from 1 PB to 5 PB - Per GB charge to access CIDR Resources through Tunnel Endpoint",
+      "unit": "GB",
+      "price": "0.0060000000",
+      "range": [
+        "1048576",
+        "5242880"
+      ]
+    },
+    {
+      "sku": "4789A2HW2MF52Y9X",
+      "attributes": {
+        "servicecode": "AmazonVPC",
+        "location": "EU (Paris)",
+        "locationType": "AWS Region",
+        "endpointType": "Tunnel",
+        "group": "VpcResources",
+        "groupDescription": "Per GB charge to access CIDR Resources through Tunnel Endpoint",
+        "usagetype": "EUW3-VpcResource-Tunnel-Consumer-Bytes",
+        "operation": "VpcResourceConsumer",
+        "regionCode": "eu-west-3",
+        "servicename": "Amazon Virtual Private Cloud"
+      },
+      "description": "$0.004 after the first 5 PB - Per GB charge to access CIDR Resources through Tunnel Endpoint",
+      "unit": "GB",
+      "price": "0.0040000000",
+      "range": [
+        "5242880",
+        "Inf"
+      ]
+    },
+    {
+      "sku": "3G963VFF5JF7TGG4",
+      "attributes": {
+        "servicecode": "AmazonVPC",
+        "location": "EU (Paris)",
+        "locationType": "AWS Region",
+        "usagetype": "EUW3-OdbPeering-Out-Bytes",
+        "operation": "",
+        "regionCode": "eu-west-3",
+        "servicename": "Amazon Virtual Private Cloud",
+        "trafficDirection": "Out-Bytes"
+      },
+      "description": "$0.01 per GB for EUW3-OdbPeering-Out-Bytes in EU (Paris)",
+      "unit": "GB",
+      "price": "0.0100000000",
+      "range": [
+        "0",
+        "Inf"
+      ]
+    },
+    {
+      "sku": "3NFDYRRRYPFA3U3X",
+      "attributes": {
+        "servicecode": "AmazonVPC",
+        "location": "EU (Paris)",
+        "locationType": "AWS Region",
+        "group": "AWSClientVPN",
+        "groupDescription": "Hourly charge for Client VPN connections",
+        "usagetype": "EUW3-ClientVPN-ConnectionHours",
+        "operation": "ClientVPNConnections",
+        "regionCode": "eu-west-3",
+        "servicename": "Amazon Virtual Private Cloud"
+      },
+      "description": "USD0.05 per Hourly for ClientVPN-ConnectionHours:ClientVPNConnections in EU (Paris)",
+      "unit": "Hourly",
+      "price": "0.0500000000",
+      "range": [
+        "0",
+        "Inf"
+      ]
+    },
+    {
+      "sku": "KJUEUCUVWA7SU8XY",
+      "attributes": {
+        "servicecode": "AmazonVPC",
+        "location": "EU (Paris)",
+        "locationType": "AWS Region",
+        "endpointType": "IPsec",
+        "usagetype": "EUW3-VPN-concentrator-site-Usage-Hours:ipsec.1",
+        "operation": "CreateVpnConnection",
+        "regionCode": "eu-west-3",
+        "servicename": "Amazon Virtual Private Cloud",
+        "vpnType": "VPN Concentrator Sites"
+      },
+      "description": "$0.01 per hour for CreateVpnConnection in EU (Paris)",
+      "unit": "Hrs",
+      "price": "0.0100000000",
+      "range": [
+        "0",
+        "Inf"
+      ]
+    },
+    {
+      "sku": "SNDWUCU7YGAMHJPR",
+      "attributes": {
+        "servicecode": "AmazonVPC",
+        "location": "EU (Paris)",
+        "locationType": "AWS Region",
+        "endpointType": "PrivateLink",
+        "group": "VPCE:VpcEndpoint",
+        "groupDescription": "Charge for per GB data processed by VPC Endpoints",
+        "usagetype": "EUW3-VpcEndpoint-Bytes",
+        "operation": "VpcEndpoint",
+        "regionCode": "eu-west-3",
+        "servicename": "Amazon Virtual Private Cloud"
+      },
+      "description": "$0.01 per GB for upto 1 PB monthly data processed by VPC Endpoints",
+      "unit": "GB",
+      "price": "0.0100000000",
+      "range": [
+        "0",
+        "1048576"
+      ]
+    },
+    {
+      "sku": "SNDWUCU7YGAMHJPR",
+      "attributes": {
+        "servicecode": "AmazonVPC",
+        "location": "EU (Paris)",
+        "locationType": "AWS Region",
+        "endpointType": "PrivateLink",
+        "group": "VPCE:VpcEndpoint",
+        "groupDescription": "Charge for per GB data processed by VPC Endpoints",
+        "usagetype": "EUW3-VpcEndpoint-Bytes",
+        "operation": "VpcEndpoint",
+        "regionCode": "eu-west-3",
+        "servicename": "Amazon Virtual Private Cloud"
+      },
+      "description": "$0.006 per GB for more than 1 PB and less than 5 PB monthly data processed by VPC Endpoints",
+      "unit": "GB",
+      "price": "0.0060000000",
+      "range": [
+        "1048576",
+        "5242880"
+      ]
+    },
+    {
+      "sku": "SNDWUCU7YGAMHJPR",
+      "attributes": {
+        "servicecode": "AmazonVPC",
+        "location": "EU (Paris)",
+        "locationType": "AWS Region",
+        "endpointType": "PrivateLink",
+        "group": "VPCE:VpcEndpoint",
+        "groupDescription": "Charge for per GB data processed by VPC Endpoints",
+        "usagetype": "EUW3-VpcEndpoint-Bytes",
+        "operation": "VpcEndpoint",
+        "regionCode": "eu-west-3",
+        "servicename": "Amazon Virtual Private Cloud"
+      },
+      "description": "$0.004 per GB for more than 5 PB monthly data processed by VPC Endpoints",
+      "unit": "GB",
+      "price": "0.0040000000",
+      "range": [
+        "5242880",
+        "Inf"
+      ]
+    },
+    {
+      "sku": "GXXFNA2JB87D6PPX",
+      "attributes": {
+        "servicecode": "AmazonVPC",
+        "location": "EU (Paris)",
+        "locationType": "AWS Region",
+        "group": "VpcLattice",
+        "groupDescription": "Charge per Connection per hour processed by VPC Lattice Service",
+        "usagetype": "EUW3-VPCLattice-ConnectionCount-Charged",
+        "operation": "VpcLattice",
+        "regionCode": "eu-west-3",
+        "servicename": "Amazon Virtual Private Cloud"
+      },
+      "description": "$0.00000013 per Connection per hour processed by VPC Lattice Service (Paris)",
+      "unit": "Connections",
+      "price": "0.0000001300",
+      "range": [
+        "0",
+        "Inf"
+      ]
+    },
+    {
+      "sku": "W57ZWMDJ2JP6KUU5",
+      "attributes": {
+        "servicecode": "AmazonVPC",
+        "transferType": "Intra Region Peering Inbound",
+        "fromLocation": "EU (Paris)",
+        "fromLocationType": "AWS Region",
+        "toLocation": "EU (Paris)",
+        "toLocationType": "AWS Region",
+        "usagetype": "EUW3-VpcPeering-In-Bytes",
+        "operation": "",
+        "fromRegionCode": "eu-west-3",
+        "servicename": "Amazon Virtual Private Cloud",
+        "toRegionCode": "eu-west-3"
+      },
+      "description": "$0.01 per GB for EUW3-VpcPeering-In-Bytes",
+      "unit": "GB",
+      "price": "0.0100000000",
+      "range": [
+        "0",
+        "Inf"
+      ]
+    },
+    {
+      "sku": "89HTKUBRAXTA2UNS",
+      "attributes": {
+        "servicecode": "AmazonVPC",
+        "location": "EU (Paris)",
+        "locationType": "AWS Region",
+        "group": "AWSTransitGateway",
+        "groupDescription": "Hourly charge for Transit Gateway VPC Attachments",
+        "usagetype": "EUW3-TransitGateway-Hours",
+        "operation": "TransitGatewayVPC",
+        "attachmentType": "VPC",
+        "regionCode": "eu-west-3",
+        "servicename": "Amazon Virtual Private Cloud"
+      },
+      "description": "$0.06 per Transit Gateway VPC Attachment Hour",
+      "unit": "hour",
+      "price": "0.0600000000",
+      "range": [
+        "0",
+        "Inf"
+      ]
+    },
+    {
+      "sku": "DEWC3VGGEM5SXCP5",
+      "attributes": {
+        "servicecode": "AmazonVPC",
+        "location": "EU (Paris)",
+        "locationType": "AWS Region",
+        "group": "AWSTrafficMirroring",
+        "groupDescription": "Hourly charge for Traffic Mirroring Source",
+        "usagetype": "EUW3-ENI-Mirror",
+        "operation": "ENI-to-ENI",
+        "regionCode": "eu-west-3",
+        "servicename": "Amazon Virtual Private Cloud"
+      },
+      "description": "$0.018 per Traffic Mirroring Source Hour",
+      "unit": "hour",
+      "price": "0.0180000000",
+      "range": [
+        "0",
+        "Inf"
+      ]
+    },
+    {
+      "sku": "9K3XYQXTA69T8QXM",
+      "attributes": {
+        "servicecode": "AmazonVPC",
+        "location": "EU (Paris)",
+        "locationType": "AWS Region",
+        "endpointType": "Gateway Load Balancer Endpoint",
+        "group": "VPCE:VpcEndpoint",
+        "groupDescription": "Charge for per GB data processed by AWS Gateway Load Balancer VPC Endpoint",
+        "usagetype": "EUW3-VpcEndpoint-GWLBE-Bytes",
+        "operation": "VpcEndpoint",
+        "regionCode": "eu-west-3",
+        "servicename": "Amazon Virtual Private Cloud"
+      },
+      "description": "Charge for per GB data processed by AWS Gateway Load Balancer VPC Endpoint",
+      "unit": "GB",
+      "price": "0.0035000000",
+      "range": [
+        "0",
+        "Inf"
+      ]
+    },
+    {
+      "sku": "S6M7YQP2FNYPMCEJ",
+      "attributes": {
+        "servicecode": "AmazonVPC",
+        "location": "EU (Paris)",
+        "locationType": "AWS Region",
+        "group": "AWSVPCIPAddressManager",
+        "groupDescription": "Hourly charge for Active IP Addresses",
+        "usagetype": "EUW3-IPAddressManager-IP-Hours",
+        "operation": "IPAM-Active-IP",
+        "regionCode": "eu-west-3",
+        "servicename": "Amazon Virtual Private Cloud"
+      },
+      "description": "$0.00027 per hours for IPAddressManager-IP-Hours:IPAM-Active-IP in EU (Paris)",
+      "unit": "hours",
+      "price": "0.0002700000",
+      "range": [
+        "0",
+        "Inf"
+      ]
+    },
+    {
+      "sku": "HUJUAWB9T6C2ES4R",
+      "attributes": {
+        "servicecode": "AmazonVPC",
+        "location": "EU (Paris)",
+        "locationType": "AWS Region",
+        "group": "AWSTransitGateway",
+        "groupDescription": "Charge for per GB data processed by AWS Transit Gateways for Site-to-Site VPN Concentrator attachments",
+        "usagetype": "EUW3-TransitGateway-Bytes",
+        "operation": "TransitGatewayConcentratorVPN",
+        "attachmentType": "Site-to-Site VPN Concentrator",
+        "regionCode": "eu-west-3",
+        "servicename": "Amazon Virtual Private Cloud"
+      },
+      "description": "$0.02 per GB - data processed by AWS Transit Gateways for Site-to-Site VPN Concentrator attachments",
+      "unit": "GigaBytes",
+      "price": "0.0200000000",
+      "range": [
+        "0",
+        "Inf"
+      ]
+    },
+    {
+      "sku": "MD8E4837MTHR3VU9",
+      "attributes": {
+        "servicecode": "AmazonVPC",
+        "location": "EU (Paris)",
+        "locationType": "AWS Region",
+        "group": "VpcResources",
+        "groupDescription": "Per GB charge for provider of VPC Resource",
+        "usagetype": "EUW3-VpcResource-Provider-Bytes",
+        "operation": "VpcResourceProvider",
+        "regionCode": "eu-west-3",
+        "servicename": "Amazon Virtual Private Cloud"
+      },
+      "description": "$0.0063 per GB for data processed by VPC resource in EU (Paris)",
+      "unit": "GB",
+      "price": "0.0063000000",
+      "range": [
+        "0",
+        "Inf"
+      ]
+    },
+    {
+      "sku": "HVZ8SQG8XT6MHVJV",
+      "attributes": {
+        "servicecode": "AmazonVPC",
+        "location": "EU (Paris)",
+        "locationType": "AWS Region",
+        "group": "VPCEncryptionControls",
+        "groupDescription": "Hourly charge for VPC Encryption Controls",
+        "usagetype": "EUW3-VPCEncryptionControls-hours",
+        "operation": "VPCEncryptionControls",
+        "regionCode": "eu-west-3",
+        "servicename": "Amazon Virtual Private Cloud"
+      },
+      "description": "$0.17 per hour for VPCEncryptionControls-hours in EU (Paris)",
+      "unit": "hour",
+      "price": "0.1700000000",
+      "range": [
+        "0",
+        "Inf"
+      ]
+    },
+    {
+      "sku": "GHKJF3ABXY829268",
+      "attributes": {
+        "servicecode": "AmazonVPC",
+        "location": "EU (Paris)",
+        "locationType": "AWS Region",
+        "group": "VpcLattice",
+        "groupDescription": "Charge per Request per hour processed by VPC Lattice Service",
+        "usagetype": "EUW3-VPCLattice-RequestCount-Charged",
+        "operation": "VpcLattice",
+        "regionCode": "eu-west-3",
+        "servicename": "Amazon Virtual Private Cloud"
+      },
+      "description": "$0.00000013 per Request per hour processed by VPC Lattice Service (Paris)",
+      "unit": "Requests",
+      "price": "0.0000001300",
+      "range": [
+        "0",
+        "Inf"
+      ]
+    },
+    {
+      "sku": "C9RVBS83PK4B8CPD",
+      "attributes": {
+        "servicecode": "AmazonVPC",
+        "location": "EU (Paris)",
+        "locationType": "AWS Region",
+        "group": "AWSTransitGateway",
+        "groupDescription": "Charge for per GB data processed by AWS Transit Gateway for Multicast receivers",
+        "usagetype": "EUW3-TGW-Multicast-Consumer-Bytes",
+        "operation": "TransitGatewayVPC",
+        "attachmentType": "VPC",
+        "regionCode": "eu-west-3",
+        "servicename": "Amazon Virtual Private Cloud"
+      },
+      "description": "$0.02 per GigaBytes for TGW-Multicast-Consumer-Bytes:TransitGatewayVPC in EU (Paris)",
+      "unit": "GigaBytes",
+      "price": "0.0200000000",
+      "range": [
+        "0",
+        "Inf"
+      ]
+    },
+    {
+      "sku": "MM55DDRS9JEC7MX7",
+      "attributes": {
+        "servicecode": "AmazonVPC",
+        "location": "EU (Paris)",
+        "locationType": "AWS Region",
+        "group": "AWSTransitGateway",
+        "groupDescription": "Hourly charge for Transit Gateway Site-to-Site VPN Concentrator attachments",
+        "usagetype": "EUW3-TransitGateway-Hours",
+        "operation": "TransitGatewayConcentratorVPN",
+        "attachmentType": "Site-to-Site VPN Concentrator",
+        "regionCode": "eu-west-3",
+        "servicename": "Amazon Virtual Private Cloud"
+      },
+      "description": "$0.06 per hour - Hourly charge for Transit Gateway Site-to-Site VPN Concentrator attachments",
+      "unit": "hour",
+      "price": "0.0600000000",
+      "range": [
+        "0",
+        "Inf"
+      ]
+    },
+    {
+      "sku": "BSE8K5XGR5MQUF43",
+      "attributes": {
+        "servicecode": "AmazonVPC",
+        "location": "EU (Paris)",
+        "locationType": "AWS Region",
+        "endpointType": "Resource",
+        "group": "VpcResources",
+        "groupDescription": "Hourly charge to access VPC Resource through Resource-endpoint",
+        "usagetype": "EUW3-VpcEndpoint-Resource-Hours",
+        "operation": "VpcResourceConsumer",
+        "regionCode": "eu-west-3",
+        "servicename": "Amazon Virtual Private Cloud"
+      },
+      "description": "$0.022 per hour per VPC resource for VPC endpoint of type 'resource' in  EU (Paris)",
+      "unit": "Hrs",
+      "price": "0.0220000000",
+      "range": [
+        "0",
+        "Inf"
+      ]
+    },
+    {
+      "sku": "T7GTF6TYY473HUA4",
+      "attributes": {
+        "servicecode": "AmazonVPC",
+        "location": "EU (Paris)",
+        "locationType": "AWS Region",
+        "group": "VPCPublicIPv4Address",
+        "groupDescription": "Hourly charge for In-use Public IPv4 Addresses",
+        "usagetype": "EUW3-PublicIPv4:InUseAddress",
+        "operation": "",
+        "regionCode": "eu-west-3",
+        "servicename": "Amazon Virtual Private Cloud"
+      },
+      "description": "$0.005 per In-use public IPv4 address per hour",
+      "unit": "Hrs",
+      "price": "0.0050000000",
+      "range": [
+        "0",
+        "Inf"
+      ]
+    },
+    {
+      "sku": "MSV396RCKXDZY7MF",
+      "attributes": {
+        "servicecode": "AmazonVPC",
+        "location": "EU (Paris)",
+        "locationType": "AWS Region",
+        "group": "AWSTransitGateway",
+        "groupDescription": "Charge for per GB data processed by AWS Transit Gateways for AWS Direct Connect Gateway attachments",
+        "usagetype": "EUW3-TransitGateway-Bytes",
+        "operation": "TransitGatewayDirectConnect",
+        "attachmentType": "AWS DirectConnect",
+        "regionCode": "eu-west-3",
+        "servicename": "Amazon Virtual Private Cloud"
+      },
+      "description": "$0.02 per GB Data Processed by Transit Gateway DirectConnect Attachment",
+      "unit": "GigaBytes",
+      "price": "0.0200000000",
+      "range": [
+        "0",
+        "Inf"
+      ]
+    },
+    {
+      "sku": "UDVQ4ZAFVCCSFSDT",
+      "attributes": {
+        "servicecode": "AmazonVPC",
+        "location": "EU (Paris)",
+        "locationType": "AWS Region",
+        "endpointType": "IPsec",
+        "usagetype": "EUW3-VPN-concentrator-Usage-Hours:ipsec.1",
+        "operation": "CreateVpnConcentrator",
+        "regionCode": "eu-west-3",
+        "servicename": "Amazon Virtual Private Cloud",
+        "vpnType": "VPN Concentrator"
+      },
+      "description": "$1.95 per hour for CreateVpnConcentrator in EU (Paris)",
+      "unit": "Hrs",
+      "price": "1.9500000000",
+      "range": [
+        "0",
+        "Inf"
+      ]
+    },
+    {
+      "sku": "WYQSXT7AN4UDDT53",
+      "attributes": {
+        "servicecode": "AmazonVPC",
+        "location": "EU (Paris)",
+        "locationType": "AWS Region",
+        "endpointType": "Resource",
+        "group": "VpcResources",
+        "groupDescription": "Per GB charge to access VPC Resources",
+        "usagetype": "EUW3-VpcResource-Consumer-Bytes",
+        "operation": "VpcResourceConsumer",
+        "regionCode": "eu-west-3",
+        "servicename": "Amazon Virtual Private Cloud"
+      },
+      "description": "$0.01 per GB for upto 1 PB monthly data processed for VPC resources ",
+      "unit": "GB",
+      "price": "0.0100000000",
+      "range": [
+        "0",
+        "1048576"
+      ]
+    },
+    {
+      "sku": "WYQSXT7AN4UDDT53",
+      "attributes": {
+        "servicecode": "AmazonVPC",
+        "location": "EU (Paris)",
+        "locationType": "AWS Region",
+        "endpointType": "Resource",
+        "group": "VpcResources",
+        "groupDescription": "Per GB charge to access VPC Resources",
+        "usagetype": "EUW3-VpcResource-Consumer-Bytes",
+        "operation": "VpcResourceConsumer",
+        "regionCode": "eu-west-3",
+        "servicename": "Amazon Virtual Private Cloud"
+      },
+      "description": "$0.006 per GB for more than 1 PB and less than 5 PB monthly data processed for VPC resources",
+      "unit": "GB",
+      "price": "0.0060000000",
+      "range": [
+        "1048576",
+        "5242880"
+      ]
+    },
+    {
+      "sku": "WYQSXT7AN4UDDT53",
+      "attributes": {
+        "servicecode": "AmazonVPC",
+        "location": "EU (Paris)",
+        "locationType": "AWS Region",
+        "endpointType": "Resource",
+        "group": "VpcResources",
+        "groupDescription": "Per GB charge to access VPC Resources",
+        "usagetype": "EUW3-VpcResource-Consumer-Bytes",
+        "operation": "VpcResourceConsumer",
+        "regionCode": "eu-west-3",
+        "servicename": "Amazon Virtual Private Cloud"
+      },
+      "description": "$0.004 per GB for more than 5 PB monthly data processed for VPC resources ",
+      "unit": "GB",
+      "price": "0.0040000000",
+      "range": [
+        "5242880",
+        "Inf"
+      ]
+    },
+    {
+      "sku": "NBT2BF9VY3UYBGWA",
+      "attributes": {
+        "servicecode": "AmazonVPC",
+        "location": "EU (Paris)",
+        "locationType": "AWS Region",
+        "group": "VPCIPv4ContiguousBlocks",
+        "groupDescription": "Hourly charge for IPv4 address in a contiguous block of IPv4 address",
+        "usagetype": "EUW3-PublicIPv4:ContiguousBlock",
+        "operation": "ProvisionIpamPoolCidr",
+        "regionCode": "eu-west-3",
+        "servicename": "Amazon Virtual Private Cloud"
+      },
+      "description": "$0.008 per hour per IPv4 address in contiguous IPv4 block",
+      "unit": "Hrs",
+      "price": "0.0080000000",
+      "range": [
+        "0",
+        "Inf"
+      ]
+    },
+    {
+      "sku": "FCRHGW3SUAGHDREE",
+      "attributes": {
+        "servicecode": "AmazonVPC",
+        "location": "EU (Paris)",
+        "locationType": "AWS Region",
+        "group": "VpcLattice",
+        "groupDescription": "Charge per Hour per VPC Lattice Service",
+        "usagetype": "EUW3-VPCLattice-Service-Hourly",
+        "operation": "VpcLattice",
+        "regionCode": "eu-west-3",
+        "servicename": "Amazon Virtual Private Cloud"
+      },
+      "description": "$0.0325 per Hour per VPC Lattice Service (Paris)",
+      "unit": "Hrs",
+      "price": "0.0325000000",
+      "range": [
+        "0",
+        "Inf"
+      ]
+    },
+    {
+      "sku": "AD3R4YRDTSKA73BU",
+      "attributes": {
+        "servicecode": "AmazonVPC",
+        "location": "EU (Paris)",
+        "locationType": "AWS Region",
+        "group": "AWSClientVPN",
+        "groupDescription": "Hourly charge for Client VPN Endpoints",
+        "usagetype": "EUW3-ClientVPN-EndpointHours",
+        "operation": "ClientVPNEndpoints",
+        "regionCode": "eu-west-3",
+        "servicename": "Amazon Virtual Private Cloud"
+      },
+      "description": "USD0.1 per Hourly for ClientVPN-EndpointHours:ClientVPNEndpoints in EU (Paris)",
+      "unit": "Hourly",
+      "price": "0.1000000000",
+      "range": [
+        "0",
+        "Inf"
+      ]
+    },
+    {
+      "sku": "GWD5N24RQQHEBNBP",
+      "attributes": {
+        "servicecode": "AmazonVPC",
+        "location": "EU (Paris)",
+        "locationType": "AWS Region",
+        "endpointType": "PrivateLink",
+        "group": "VPCE:VpcEndpoint",
+        "groupDescription": "Hourly charge for VPC Endpoints",
+        "usagetype": "EUW3-VpcEndpoint-Hours",
+        "operation": "VpcEndpoint",
+        "regionCode": "eu-west-3",
+        "servicename": "Amazon Virtual Private Cloud"
+      },
+      "description": "$0.011 per VPC Endpoint Hour",
+      "unit": "Hrs",
+      "price": "0.0110000000",
+      "range": [
+        "0",
+        "Inf"
+      ]
+    },
+    {
+      "sku": "HDUGKT4KVEYNXCQD",
+      "attributes": {
+        "servicecode": "AmazonVPC",
+        "location": "EU (Paris)",
+        "locationType": "AWS Region",
+        "endpointType": "IPsec",
+        "usagetype": "EUW3-VPN-Usage-Hours:ipsec.1",
+        "operation": "CreateVpnConnection",
+        "regionCode": "eu-west-3",
+        "servicename": "Amazon Virtual Private Cloud",
+        "vpnType": "VPN Standard (1.25 Gbps)"
+      },
+      "description": "$0.05 per VPN Connection-Hour",
+      "unit": "Hrs",
+      "price": "0.0500000000",
+      "range": [
+        "0",
+        "Inf"
+      ]
+    },
+    {
+      "sku": "2A66BF6CGTZJMRBJ",
+      "attributes": {
+        "servicecode": "AmazonVPC",
+        "location": "EU (Paris)",
+        "locationType": "AWS Region",
+        "group": "VpcResources",
+        "groupDescription": "Per GB charge for provider of ODB Network Resource",
+        "usagetype": "EUW3-VpcResource-ODB-Provider-Bytes",
+        "operation": "VpcResourceProvider",
+        "regionCode": "eu-west-3",
+        "servicename": "Amazon Virtual Private Cloud"
+      },
+      "description": "$0.0063 - Per GB charge for provider of ODB Network Resource in EU (Paris)",
+      "unit": "GB",
+      "price": "0.0063000000",
+      "range": [
+        "0",
+        "Inf"
+      ]
+    },
+    {
+      "sku": "B986R2Y7XFV87ZDA",
+      "attributes": {
+        "servicecode": "AmazonVPC",
+        "location": "EU (Paris)",
+        "locationType": "AWS Region",
+        "endpointType": "Endpoint Service",
+        "group": "VPCE:VPCEnpoint",
+        "groupDescription": "Charge per hour per active remote region for a VPCE service",
+        "usagetype": "EUW3-VpcEndpoint-Service-Hours",
+        "operation": "VpcEndpoint",
+        "regionCode": "eu-west-3",
+        "servicename": "Amazon Virtual Private Cloud"
+      },
+      "description": "$0.05 per hour per active remote region for a VPCE service",
+      "unit": "Hrs",
+      "price": "0.0500000000",
+      "range": [
+        "0",
+        "Inf"
+      ]
+    },
+    {
+      "sku": "HXK7V44M864HZQ8Y",
+      "attributes": {
+        "servicecode": "AmazonVPC",
+        "location": "EU (Paris)",
+        "locationType": "AWS Region",
+        "group": "VpcResources",
+        "groupDescription": "Hourly charge to access VPC Resource through service-network",
+        "usagetype": "EUW3-VpcLattice-Service-Network-Resource-Hours",
+        "operation": "VpcResourceConsumer",
+        "regionCode": "eu-west-3",
+        "servicename": "Amazon Virtual Private Cloud"
+      },
+      "description": "$0.11 per hour per VPC resource in a service-network in EU (Paris)",
+      "unit": "Hrs",
+      "price": "0.1100000000",
+      "range": [
+        "0",
+        "Inf"
+      ]
+    },
+    {
+      "sku": "HXWKAYP959HNP7QE",
+      "attributes": {
+        "servicecode": "AmazonVPC",
+        "location": "EU (Paris)",
+        "locationType": "AWS Region",
+        "group": "AWSTransitGateway",
+        "groupDescription": "Charge for per GB data processed by AWS Transit Gateways for VPC attachments",
+        "usagetype": "EUW3-TransitGateway-Bytes",
+        "operation": "TransitGatewayVPC",
+        "attachmentType": "VPC",
+        "regionCode": "eu-west-3",
+        "servicename": "Amazon Virtual Private Cloud"
+      },
+      "description": "$0.02 per GB Data Processed by Transit Gateway VPC Attachment",
+      "unit": "GigaBytes",
+      "price": "0.0200000000",
+      "range": [
+        "0",
+        "Inf"
+      ]
+    },
+    {
+      "sku": "U7BXADRFJT7T2EY9",
+      "attributes": {
+        "servicecode": "AmazonVPC",
+        "location": "EU (Paris)",
+        "locationType": "AWS Region",
+        "group": "AWSTransitGateway",
+        "groupDescription": "Hourly charge for Transit Gateway AWS Direct Connect Gateway attachments",
+        "usagetype": "EUW3-TransitGateway-Hours",
+        "operation": "TransitGatewayDirectConnect",
+        "attachmentType": "AWS DirectConnect",
+        "regionCode": "eu-west-3",
+        "servicename": "Amazon Virtual Private Cloud"
+      },
+      "description": "$0.06 per Transit Gateway DirectConnect Attachment Hour",
+      "unit": "hour",
+      "price": "0.0600000000",
+      "range": [
+        "0",
+        "Inf"
+      ]
+    },
+    {
+      "sku": "EAMAGSZAFAG5DFZD",
+      "attributes": {
+        "servicecode": "AmazonVPC",
+        "location": "EU (Paris)",
+        "locationType": "AWS Region",
+        "group": "AWSReachabilityAnalyzer",
+        "groupDescription": "Charge per analysis processed by VPC Reachability Analyzer",
+        "usagetype": "EUW3-Analysis-Runs",
+        "operation": "RunAnalysis",
+        "regionCode": "eu-west-3",
+        "servicename": "Amazon Virtual Private Cloud"
+      },
+      "description": "$0.1 per analysis processed by VPC Reachability Analyzer",
+      "unit": "ReachabilityAnalyses",
+      "price": "0.1000000000",
+      "range": [
+        "0",
+        "Inf"
+      ]
+    },
+    {
+      "sku": "Y94UG45BWHDEYWYC",
+      "attributes": {
+        "servicecode": "AmazonVPC",
+        "location": "EU (Paris)",
+        "locationType": "AWS Region",
+        "group": "VpcLattice",
+        "groupDescription": "Hourly charge to access ODB Network Resource through service-network",
+        "usagetype": "EUW3-VpcLattice-Service-Network-ODB-Resource-Hours",
+        "operation": "VpcResourceConsumer",
+        "regionCode": "eu-west-3",
+        "servicename": "Amazon Virtual Private Cloud"
+      },
+      "description": "$0.11 - Hourly charge to access ODB Network Resource through service-network in EU (Paris)",
+      "unit": "Hrs",
+      "price": "0.1100000000",
+      "range": [
+        "0",
+        "Inf"
+      ]
+    },
+    {
+      "sku": "A57U9JMRGH5T6FPD",
+      "attributes": {
+        "servicecode": "AmazonVPC",
+        "location": "EU (Paris)",
+        "locationType": "AWS Region",
+        "group": "AWSTransitGateway",
+        "groupDescription": "Hourly charge for Transit Gateway Peering Attachments",
+        "usagetype": "EUW3-TransitGateway-Hours",
+        "operation": "TransitGatewayPeering",
+        "attachmentType": "Transit Gateway",
+        "regionCode": "eu-west-3",
+        "servicename": "Amazon Virtual Private Cloud"
+      },
+      "description": "$0.06 per hour for TransitGateway-Hours:TransitGatewayPeering in EU (Paris)",
+      "unit": "hour",
+      "price": "0.0600000000",
+      "range": [
+        "0",
+        "Inf"
+      ]
+    },
+    {
+      "sku": "TG7UTRVPSEPQCPWY",
+      "attributes": {
+        "servicecode": "AmazonVPC",
+        "location": "EU (Paris)",
+        "locationType": "AWS Region",
+        "endpointType": "IPsec",
+        "usagetype": "EUW3-VPN-large-Usage-Hours:ipsec.1",
+        "operation": "CreateVpnConnection",
+        "regionCode": "eu-west-3",
+        "servicename": "Amazon Virtual Private Cloud",
+        "vpnType": "VPN Large (5 Gbps)"
+      },
+      "description": "$0.60 per hour for CreateVpnConnection in EU (Paris)",
+      "unit": "Hrs",
+      "price": "0.6000000000",
+      "range": [
+        "0",
+        "Inf"
+      ]
+    },
+    {
+      "sku": "54FEH7VWMMJ8ZQ6M",
+      "attributes": {
+        "servicecode": "AmazonVPC",
+        "location": "EU (Paris)",
+        "locationType": "AWS Region",
+        "endpointType": "Resource",
+        "group": "VpcResources",
+        "groupDescription": "Per GB charge to access ODB Network Resources",
+        "usagetype": "EUW3-VpcResource-ODB-Consumer-Bytes",
+        "operation": "VpcResourceConsumer",
+        "regionCode": "eu-west-3",
+        "servicename": "Amazon Virtual Private Cloud"
+      },
+      "description": "$0.01 from 0 to 1 PB - Per GB charge to access ODB Network Resources",
+      "unit": "GB",
+      "price": "0.0100000000",
+      "range": [
+        "0",
+        "1048576"
+      ]
+    },
+    {
+      "sku": "54FEH7VWMMJ8ZQ6M",
+      "attributes": {
+        "servicecode": "AmazonVPC",
+        "location": "EU (Paris)",
+        "locationType": "AWS Region",
+        "endpointType": "Resource",
+        "group": "VpcResources",
+        "groupDescription": "Per GB charge to access ODB Network Resources",
+        "usagetype": "EUW3-VpcResource-ODB-Consumer-Bytes",
+        "operation": "VpcResourceConsumer",
+        "regionCode": "eu-west-3",
+        "servicename": "Amazon Virtual Private Cloud"
+      },
+      "description": "$0.006 from 1 PB to 5 PB - Per GB charge to access ODB Network Resources",
+      "unit": "GB",
+      "price": "0.0060000000",
+      "range": [
+        "1048576",
+        "5242880"
+      ]
+    },
+    {
+      "sku": "54FEH7VWMMJ8ZQ6M",
+      "attributes": {
+        "servicecode": "AmazonVPC",
+        "location": "EU (Paris)",
+        "locationType": "AWS Region",
+        "endpointType": "Resource",
+        "group": "VpcResources",
+        "groupDescription": "Per GB charge to access ODB Network Resources",
+        "usagetype": "EUW3-VpcResource-ODB-Consumer-Bytes",
+        "operation": "VpcResourceConsumer",
+        "regionCode": "eu-west-3",
+        "servicename": "Amazon Virtual Private Cloud"
+      },
+      "description": "$0.004 after the first 5 PB - Per GB charge to access ODB Network Resources",
+      "unit": "GB",
+      "price": "0.0040000000",
+      "range": [
+        "5242880",
+        "Inf"
+      ]
+    },
+    {
+      "sku": "HMSVKFRJ57E77J68",
+      "attributes": {
+        "servicecode": "AmazonVPC",
+        "location": "EU (Paris)",
+        "locationType": "AWS Region",
+        "endpointType": "Tunnel",
+        "group": "VpcResources",
+        "groupDescription": "Hourly charge to access CIDR resources through Tunnel endpoint",
+        "usagetype": "EUW3-VpcEndpoint-Tunnel-Hours",
+        "operation": "VpcResourceConsumer",
+        "regionCode": "eu-west-3",
+        "servicename": "Amazon Virtual Private Cloud"
+      },
+      "description": "$0.022 - Hourly charge to access CIDR resources through Tunnel endpoint",
+      "unit": "Hrs",
+      "price": "0.0220000000",
+      "range": [
+        "0",
+        "Inf"
+      ]
+    },
+    {
+      "sku": "QCSXQ82WGSZEPCJ3",
+      "attributes": {
+        "servicecode": "AmazonVPC",
+        "location": "EU (Paris)",
+        "locationType": "AWS Region",
+        "endpointType": "Resource",
+        "group": "VpcResources",
+        "groupDescription": "Hourly charge to access ODB Network Resource through Resource-endpoint",
+        "usagetype": "EUW3-VpcEndpoint-ODB-Resource-Hours",
+        "operation": "VpcResourceConsumer",
+        "regionCode": "eu-west-3",
+        "servicename": "Amazon Virtual Private Cloud"
+      },
+      "description": "$0.022 - Hourly charge to access ODB Network Resource through Resource-endpoint",
+      "unit": "Hrs",
+      "price": "0.0220000000",
+      "range": [
+        "0",
+        "Inf"
+      ]
+    },
+    {
+      "sku": "ANZN38BY59P7Q6N2",
+      "attributes": {
+        "servicecode": "AmazonVPC",
+        "location": "EU (Paris)",
+        "locationType": "AWS Region",
+        "usagetype": "EUW3-OdbPeering-In-Bytes",
+        "operation": "",
+        "regionCode": "eu-west-3",
+        "servicename": "Amazon Virtual Private Cloud",
+        "trafficDirection": "In-Bytes"
+      },
+      "description": "$0.01 per GB for EUW3-OdbPeering-In-Bytes in EU (Paris)",
+      "unit": "GB",
+      "price": "0.0100000000",
+      "range": [
+        "0",
+        "Inf"
+      ]
+    },
+    {
+      "sku": "AJHK69RZYJFUKZUR",
+      "attributes": {
+        "servicecode": "AmazonVPC",
+        "transferType": "Intra Region Peering Outbound",
+        "fromLocation": "EU (Paris)",
+        "fromLocationType": "AWS Region",
+        "toLocation": "EU (Paris)",
+        "toLocationType": "AWS Region",
+        "usagetype": "EUW3-VpcPeering-Out-Bytes",
+        "operation": "",
+        "fromRegionCode": "eu-west-3",
+        "servicename": "Amazon Virtual Private Cloud",
+        "toRegionCode": "eu-west-3"
+      },
+      "description": "$0.01 per GB for EUW3-VpcPeering-Out-Bytes",
+      "unit": "GB",
+      "price": "0.0100000000",
+      "range": [
+        "0",
+        "Inf"
+      ]
+    },
+    {
+      "sku": "YC6FJCQTWZEUGJX3",
+      "attributes": {
+        "servicecode": "AmazonVPC",
+        "location": "EU (Paris)",
+        "locationType": "AWS Region",
+        "group": "AWSVPCAccessAnalyzer",
+        "groupDescription": "Charge per ENI processed by VPC Access Analyzer",
+        "usagetype": "EUW3-NetworkInterface-Assessment",
+        "operation": "AnalyzeENI",
+        "regionCode": "eu-west-3",
+        "servicename": "Amazon Virtual Private Cloud"
+      },
+      "description": "$0.002 per ENI processed by VPC Network Access Analyzer eu-west-3",
+      "unit": "NetworkInterface-Assessment",
+      "price": "0.0020000000",
+      "range": [
+        "0",
+        "Inf"
+      ]
+    },
+    {
+      "sku": "7PHF3MAGQS53DMY7",
+      "attributes": {
+        "servicecode": "AmazonVPC",
+        "location": "EU (Paris)",
+        "locationType": "AWS Region",
+        "group": "AWSTransitGateway",
+        "groupDescription": "Hourly charge for Transit Gateway Site-to-Site VPN attachments",
+        "usagetype": "EUW3-TransitGateway-Hours",
+        "operation": "TransitGatewayVPN",
+        "attachmentType": "AWS Site-to-Site VPN",
+        "regionCode": "eu-west-3",
+        "servicename": "Amazon Virtual Private Cloud"
+      },
+      "description": "$0.06 per Transit Gateway VPN Attachment Hour",
+      "unit": "hour",
+      "price": "0.0600000000",
+      "range": [
+        "0",
+        "Inf"
+      ]
+    },
+    {
+      "sku": "5CA7QDYBZCADH5NP",
+      "attributes": {
+        "servicecode": "AmazonVPC",
+        "location": "EU (Paris)",
+        "locationType": "AWS Region",
+        "endpointType": "Gateway Load Balancer Endpoint",
+        "group": "VPCE:VpcEndpoint",
+        "groupDescription": "Hourly charge for AWS Gateway Load Balancer VPC Endpoint",
+        "usagetype": "EUW3-VpcEndpoint-GWLBE-Hours",
+        "operation": "VpcEndpoint",
+        "regionCode": "eu-west-3",
+        "servicename": "Amazon Virtual Private Cloud"
+      },
+      "description": "$0.011 per Hrs for VpcEndpoint-GWLBE-Hours:VpcEndpoint in EU (Paris)",
+      "unit": "Hrs",
+      "price": "0.0110000000",
+      "range": [
+        "0",
+        "Inf"
+      ]
+    },
+    {
+      "sku": "C9J8YBWSFXWTEW2U",
+      "attributes": {
+        "servicecode": "AmazonVPC",
+        "location": "EU (Paris)",
+        "locationType": "AWS Region",
+        "group": "VPCPublicIPv4Address",
+        "groupDescription": "Hourly charge for Idle Public IPv4 Addresses",
+        "usagetype": "EUW3-PublicIPv4:IdleAddress",
+        "operation": "",
+        "regionCode": "eu-west-3",
+        "servicename": "Amazon Virtual Private Cloud"
+      },
+      "description": "$0.005 per Idle public IPv4 address per hour",
+      "unit": "Hrs",
+      "price": "0.0050000000",
+      "range": [
+        "0",
+        "Inf"
+      ]
+    },
+    {
+      "sku": "BFQWPAZH3RJ6Q28F",
+      "attributes": {
+        "servicecode": "AmazonVPC",
+        "location": "EU (Paris)",
+        "locationType": "AWS Region",
+        "group": "AWSTransitGateway",
+        "groupDescription": "Hourly charge for Transit Gateway Connect attachments",
+        "usagetype": "EUW3-TransitGateway-Hours",
+        "operation": "TransitGatewayConnect",
+        "attachmentType": "Transit Gateway Connect",
+        "regionCode": "eu-west-3",
+        "servicename": "Amazon Virtual Private Cloud"
+      },
+      "description": "$0.06 per hour for TransitGateway-Hours:TransitGatewayConnect in EU (Paris)",
+      "unit": "hour",
+      "price": "0.0600000000",
+      "range": [
+        "0",
+        "Inf"
+      ]
+    },
+    {
+      "sku": "62RS9JP2TH3BJG5Y",
+      "attributes": {
+        "servicecode": "AmazonVPC",
+        "location": "EU (Paris)",
+        "locationType": "AWS Region",
+        "group": "Route Server",
+        "groupDescription": "Hourly charge for Route Server Endpoints",
+        "usagetype": "EUW3-RouteServer-EndpointHours",
+        "operation": "RouteServerEndpoint",
+        "regionCode": "eu-west-3",
+        "servicename": "Amazon Virtual Private Cloud"
+      },
+      "description": "$0.83 per Hour for EUW3-RouteServer-EndpointHours in EU (Paris)",
+      "unit": "Hour",
+      "price": "0.8300000000",
+      "range": [
+        "0",
+        "Inf"
+      ]
+    },
+    {
+      "sku": "MBZX28HP24W8JRET",
+      "attributes": {
+        "servicecode": "AmazonVPC",
+        "location": "EU (Paris)",
+        "locationType": "AWS Region",
+        "group": "VpcLattice",
+        "groupDescription": "Charge per GB Data Processed by VPC Lattice Service",
+        "usagetype": "EUW3-VPCLattice-DataProcessing-Bytes",
+        "operation": "VpcLattice",
+        "regionCode": "eu-west-3",
+        "servicename": "Amazon Virtual Private Cloud"
+      },
+      "description": "$0.0325 per GB Data Processed by VPC Lattice Service (Paris)",
+      "unit": "GB",
+      "price": "0.0325000000",
+      "range": [
+        "0",
+        "Inf"
+      ]
+    }
+  ]
+}

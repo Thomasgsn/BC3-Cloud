@@ -1,0 +1,10 @@
+{
+  "actual_s3_failure": true,
+  "result": {
+    "status": "failed",
+    "attempts": 3,
+    "error_code": "AccessDenied"
+  },
+  "fourth_execution_refused": true,
+  "fixture_scope": "Unpublished synthetic SQL job with future updated_at isolates recovery scanner; network service is real"
+}

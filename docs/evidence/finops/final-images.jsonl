@@ -1,0 +1,4 @@
+{"tags": ["rncp-bc3-api:8"], "id": "sha256:e2524253fd89a117ee27bc7331a71578bbb65ba09944a541305acf8980bdb4aa", "uncompressed_bytes": 687945305}
+{"tags": ["rncp-bc3-worker:5"], "id": "sha256:e69be1e6bf400fb474c7243a577aa2903e905a9113116adc8c36e57a0a77e8bf", "uncompressed_bytes": 276767182}
+{"tags": ["rncp-bc3-front:4"], "id": "sha256:3db9b8da3eb45398f24f41e248fc8111b3a5931a52df7a89c446875ad763cb90", "uncompressed_bytes": 110348650}
+{"tags": ["rncp-bc3-backup:3"], "id": "sha256:baaca3e47c3b9a2620385db982414927fa055e8ea7b633915b56a892182c3525", "uncompressed_bytes": 769086319}

@@ -1,0 +1,223 @@
+{
+  "source": "https://pricing.us-east-1.amazonaws.com/offers/v1.0/aws/AmazonS3/current/eu-west-3/index.json",
+  "publication_date": "2026-11-20T02:23:49Z",
+  "rates": [
+    {
+      "sku": "JSTCNSNFYXFKBECA",
+      "attributes": {
+        "servicecode": "AmazonS3",
+        "location": "EU (Paris)",
+        "locationType": "AWS Region",
+        "group": "S3-API-Tier1",
+        "groupDescription": "PUT/COPY/POST or LIST requests",
+        "usagetype": "EUW3-Requests-Tier1",
+        "operation": "",
+        "regionCode": "eu-west-3",
+        "servicename": "Amazon Simple Storage Service"
+      },
+      "description": "$0.0053 per 1,000 PUT, COPY, POST, or LIST requests",
+      "unit": "Requests",
+      "price": "0.0000053000",
+      "range": [
+        "0",
+        "Inf"
+      ]
+    },
+    {
+      "sku": "ATMTPUPP3FXRZBPW",
+      "attributes": {
+        "servicecode": "AmazonS3",
+        "location": "EU (Paris)",
+        "locationType": "AWS Region",
+        "storageClass": "Files",
+        "volumeType": "Files",
+        "usagetype": "EUW3-Files-TimedStorage-ByteHrs",
+        "operation": "Storage",
+        "durability": "99.999999999%",
+        "regionCode": "eu-west-3",
+        "servicename": "Amazon Simple Storage Service"
+      },
+      "description": "$0.33 per GB-Mo of Storage in Files ",
+      "unit": "GB-Mo",
+      "price": "0.3300000000",
+      "range": [
+        "0",
+        "Inf"
+      ]
+    },
+    {
+      "sku": "H37KVBHGV6UYCHMD",
+      "attributes": {
+        "servicecode": "AmazonS3",
+        "location": "EU (Paris)",
+        "locationType": "AWS Region",
+        "storageClass": "Vectors",
+        "volumeType": "Vectors",
+        "usagetype": "EUW3-Vectors-TimedStorage-ByteHrs",
+        "operation": "VectorsStorage",
+        "regionCode": "eu-west-3",
+        "servicename": "Amazon Simple Storage Service"
+      },
+      "description": "$0.063 per GB-Mo of Storage in Vectors ",
+      "unit": "GB-Mo",
+      "price": "0.0630000000",
+      "range": [
+        "0",
+        "Inf"
+      ]
+    },
+    {
+      "sku": "4PMVMK58J94ER67S",
+      "attributes": {
+        "servicecode": "AmazonS3",
+        "location": "EU (Paris)",
+        "locationType": "AWS Region",
+        "availability": "99.99%",
+        "storageClass": "General Purpose",
+        "volumeType": "Standard",
+        "usagetype": "EUW3-TimedStorage-ByteHrs",
+        "operation": "",
+        "durability": "99.999999999%",
+        "regionCode": "eu-west-3",
+        "servicename": "Amazon Simple Storage Service"
+      },
+      "description": "$0.024 per GB - first 50 TB / month of storage used",
+      "unit": "GB-Mo",
+      "price": "0.0240000000",
+      "range": [
+        "0",
+        "51200"
+      ]
+    },
+    {
+      "sku": "4PMVMK58J94ER67S",
+      "attributes": {
+        "servicecode": "AmazonS3",
+        "location": "EU (Paris)",
+        "locationType": "AWS Region",
+        "availability": "99.99%",
+        "storageClass": "General Purpose",
+        "volumeType": "Standard",
+        "usagetype": "EUW3-TimedStorage-ByteHrs",
+        "operation": "",
+        "durability": "99.999999999%",
+        "regionCode": "eu-west-3",
+        "servicename": "Amazon Simple Storage Service"
+      },
+      "description": "$0.023 per GB - next 450 TB / month of storage used",
+      "unit": "GB-Mo",
+      "price": "0.0230000000",
+      "range": [
+        "51200",
+        "512000"
+      ]
+    },
+    {
+      "sku": "4PMVMK58J94ER67S",
+      "attributes": {
+        "servicecode": "AmazonS3",
+        "location": "EU (Paris)",
+        "locationType": "AWS Region",
+        "availability": "99.99%",
+        "storageClass": "General Purpose",
+        "volumeType": "Standard",
+        "usagetype": "EUW3-TimedStorage-ByteHrs",
+        "operation": "",
+        "durability": "99.999999999%",
+        "regionCode": "eu-west-3",
+        "servicename": "Amazon Simple Storage Service"
+      },
+      "description": "$0.022 per GB - storage used / month over 500 TB",
+      "unit": "GB-Mo",
+      "price": "0.0220000000",
+      "range": [
+        "512000",
+        "Inf"
+      ]
+    },
+    {
+      "sku": "UFAMKKH22QG8KB45",
+      "attributes": {
+        "servicecode": "AmazonS3",
+        "location": "EU (Paris)",
+        "locationType": "AWS Region",
+        "storageClass": "General Purpose",
+        "volumeType": "Annotations",
+        "usagetype": "EUW3-Annotation-TimedStorage-ByteHrs",
+        "operation": "",
+        "regionCode": "eu-west-3",
+        "servicename": "Amazon Simple Storage Service"
+      },
+      "description": "$0.024 per GB-Mo of Storage in Annotations ",
+      "unit": "GB-Mo",
+      "price": "0.0240000000",
+      "range": [
+        "0",
+        "Inf"
+      ]
+    },
+    {
+      "sku": "8WJ3UVECX2MVY5A9",
+      "attributes": {
+        "servicecode": "AmazonS3",
+        "location": "EU (Paris)",
+        "locationType": "AWS Region",
+        "storageClass": "Analytics",
+        "volumeType": "Tables",
+        "usagetype": "EUW3-Tables-TimedStorage-ByteHrs",
+        "operation": "",
+        "regionCode": "eu-west-3",
+        "servicename": "Amazon Simple Storage Service"
+      },
+      "description": "$0.0276 per GB-Mo for First 50 TB of Storage in S3 Table Buckets ",
+      "unit": "GB-Mo",
+      "price": "0.0276000000",
+      "range": [
+        "0",
+        "51200"
+      ]
+    },
+    {
+      "sku": "8WJ3UVECX2MVY5A9",
+      "attributes": {
+        "servicecode": "AmazonS3",
+        "location": "EU (Paris)",
+        "locationType": "AWS Region",
+        "storageClass": "Analytics",
+        "volumeType": "Tables",
+        "usagetype": "EUW3-Tables-TimedStorage-ByteHrs",
+        "operation": "",
+        "regionCode": "eu-west-3",
+        "servicename": "Amazon Simple Storage Service"
+      },
+      "description": "$0.0265 per GB-Mo for Next 450 TB of Storage in S3 Table Buckets ",
+      "unit": "GB-Mo",
+      "price": "0.0265000000",
+      "range": [
+        "51200",
+        "512000"
+      ]
+    },
+    {
+      "sku": "8WJ3UVECX2MVY5A9",
+      "attributes": {
+        "servicecode": "AmazonS3",
+        "location": "EU (Paris)",
+        "locationType": "AWS Region",
+        "storageClass": "Analytics",
+        "volumeType": "Tables",
+        "usagetype": "EUW3-Tables-TimedStorage-ByteHrs",
+        "operation": "",
+        "regionCode": "eu-west-3",
+        "servicename": "Amazon Simple Storage Service"
+      },
+      "description": "$0.0253 per GB-Mo for Over 500 TB of Storage in S3 Table Buckets ",
+      "unit": "GB-Mo",
+      "price": "0.0253000000",
+      "range": [
+        "512000",
+        "Inf"
+      ]
+    }
+  ]
+}

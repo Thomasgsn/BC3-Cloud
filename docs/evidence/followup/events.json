@@ -1,0 +1,34 @@
+{
+  "at_utc": "2026-11-21T10:36:18.233550+00:00",
+  "events": [
+    {
+      "event": "backup_comparison_race",
+      "status": "failed_before_fix",
+      "active_exports": 19,
+      "restored_exports": 18,
+      "job": "backup-check-930c81cb",
+      "log": "backup-attempt-concurrent-write.log"
+    },
+    {
+      "event": "regression_driver_attempts",
+      "status": "two_initial_instrumentation_failures",
+      "cause_verified": "/tmp mount rw,nosuid,nodev,noexec; PATH launcher not executed",
+      "fix": "Read instrumentation script through Python then exec original pg_dump; no mount relaxation"
+    },
+    {
+      "event": "snapshot_regression",
+      "status": "passed",
+      "tests": 1,
+      "seconds": 3.08,
+      "proof": "backup-snapshot-regression.json"
+    },
+    {
+      "event": "cloud_schema",
+      "status": "server_dry_run_passed",
+      "resources": 27,
+      "aws_applied": false,
+      "fixture_inputs": true,
+      "log": "cloud/schema-validation-verified.log"
+    }
+  ]
+}

@@ -1,0 +1,28 @@
+{
+  "roots": {
+    "psycopg": [
+      "binary"
+    ],
+    "boto3": [],
+    "cryptography": [],
+    "prometheus-client": []
+  },
+  "distributions": [
+    "boto3",
+    "botocore",
+    "cffi",
+    "cryptography",
+    "jmespath",
+    "prometheus-client",
+    "psycopg",
+    "psycopg-binary",
+    "pycparser",
+    "python-dateutil",
+    "s3transfer",
+    "six",
+    "typing-extensions",
+    "urllib3"
+  ],
+  "count": 14,
+  "full_runtime_count": 45
+}

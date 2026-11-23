@@ -1,0 +1,28 @@
+{
+  "events": [
+    {
+      "issue": "BrowserContext.new_page viewport argument invalid in test",
+      "resolution": "Create page then set viewport, real UI replayed"
+    },
+    {
+      "issue": "Browser downloaded older ready export while new request was pending",
+      "resolution": "Wait for request acknowledgement and refreshed row before download, real CSV contains fixture"
+    },
+    {
+      "issue": "Two insufficient text contrasts detected by axe",
+      "resolution": "Darker secondary text, replay reports zero violations and zero incomplete"
+    },
+    {
+      "issue": "BusyBox sha256sum does not implement ignore-missing",
+      "resolution": "Select exact Terraform checksum entry before verification, checksum passed"
+    },
+    {
+      "issue": "Nested file mount under readonly secret directory could not be created",
+      "resolution": "Dedicated TLS mount path, private CA/admin credentials absent from app runtime"
+    },
+    {
+      "issue": "Parallel restart of broker and network-sharing TLS sidecar can race",
+      "resolution": "Restart broker first, then start TLS sidecar/API/worker; pending SQL job recovered without volume deletion"
+    }
+  ]
+}

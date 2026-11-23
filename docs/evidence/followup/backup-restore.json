@@ -1,0 +1,25 @@
+{
+  "at_utc": "2026-11-21T10:33:21.739182+00:00",
+  "event": "encrypted_backup",
+  "sha256": "bc1bf6a6eb960a404265973df48ee021f2bf1262f3b39c4996e94f0448c56201",
+  "bytes": 265664,
+  "object_key": "backups/b38623b3e7d44ece9015b6fdb55af75a.dump",
+  "download_exact": true,
+  "restoration": {
+    "target": "bc3_restore_b38623b3e7d4",
+    "table_counts": {
+      "users": 41,
+      "sessions": 4,
+      "tickets": 1423,
+      "attachments": 16,
+      "exports": 19,
+      "audit": 97,
+      "schema_migrations": 1
+    },
+    "encrypted_ticket_values_exact": true,
+    "active_database_overwritten": false,
+    "target_preserved_no_drop": true
+  },
+  "source_consistency": "Shared exported PostgreSQL REPEATABLE READ snapshot for dump, table counts and encrypted ticket values",
+  "scope": "Real local PostgreSQL and S3, no cloud execution"
+}

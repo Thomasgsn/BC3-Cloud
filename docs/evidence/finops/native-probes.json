@@ -1,0 +1,83 @@
+{
+  "protocol": "Three Metrics Server samples 15 seconds apart before and after stable rollout/downscale; no ML training or image build during observation",
+  "change": "Python exec health probes replaced by native kubelet HTTPS health probes, same paths/periods and business TLS verification unchanged",
+  "security_boundary": "Kubelet HTTPS probes encrypt transport but do not verify serving certificate; business clients and dedicated TLS rejection tests still verify CA/hostname",
+  "before": [
+    {
+      "at_utc": "2026-11-20T13:24:53.259107+00:00",
+      "pods": 3,
+      "cpu_cores": 0.40121436400000005,
+      "memory_bytes": 227500032.0,
+      "windows": [
+        "18.645s",
+        "19.329s",
+        "19.38s"
+      ]
+    },
+    {
+      "at_utc": "2026-11-20T13:25:08.331446+00:00",
+      "pods": 3,
+      "cpu_cores": 0.367196572,
+      "memory_bytes": 227012608.0,
+      "windows": [
+        "14.086s",
+        "16.063s",
+        "12.577s"
+      ]
+    },
+    {
+      "at_utc": "2026-11-20T13:25:23.403780+00:00",
+      "pods": 3,
+      "cpu_cores": 0.44179495300000005,
+      "memory_bytes": 241643520.0,
+      "windows": [
+        "20.002s",
+        "17.677s",
+        "17.663s"
+      ]
+    }
+  ],
+  "after": [
+    {
+      "at_utc": "2026-11-20T13:26:15.386770+00:00",
+      "pods": 1,
+      "cpu_cores": 0.007372976000000001,
+      "memory_bytes": 75223040.0,
+      "windows": [
+        "11.057s"
+      ]
+    },
+    {
+      "at_utc": "2026-11-20T13:26:30.454862+00:00",
+      "pods": 1,
+      "cpu_cores": 0.006024192,
+      "memory_bytes": 74723328.0,
+      "windows": [
+        "14.219s"
+      ]
+    },
+    {
+      "at_utc": "2026-11-20T13:26:45.517116+00:00",
+      "pods": 1,
+      "cpu_cores": 0.006366358000000001,
+      "memory_bytes": 74739712.0,
+      "windows": [
+        "10.618s"
+      ]
+    }
+  ],
+  "averages": {
+    "before": {
+      "pods": 3.0,
+      "cpu_cores": 0.40340196300000003,
+      "memory_bytes": 232052053.33333334
+    },
+    "after": {
+      "pods": 1.0,
+      "cpu_cores": 0.006587842000000001,
+      "memory_bytes": 74895360.0
+    }
+  },
+  "energy_measured": false,
+  "cloud_bill_saved_measured": false
+}

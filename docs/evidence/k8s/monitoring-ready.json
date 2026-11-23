@@ -1,0 +1,33 @@
+{
+  "at_utc": "2026-11-20T13:23:05.798771+00:00",
+  "prometheus_targets": [
+    {
+      "job": "bc3-api",
+      "health": "up",
+      "last_error": ""
+    },
+    {
+      "job": "bc3-api",
+      "health": "up",
+      "last_error": ""
+    },
+    {
+      "job": "bc3-api",
+      "health": "up",
+      "last_error": ""
+    },
+    {
+      "job": "bc3-worker",
+      "health": "up",
+      "last_error": ""
+    }
+  ],
+  "grafana_dashboard_uid": "bc3-operations",
+  "panels": 6,
+  "api_https_health": {
+    "status": "ready",
+    "version": "1.1.0"
+  },
+  "scope": "Measured local monitoring, no long-term availability claim",
+  "email_sent": false
+}

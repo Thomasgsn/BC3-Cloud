@@ -1,0 +1,148 @@
+{
+  "publication_date": "2026-11-19T18:51:17Z",
+  "source": "https://pricing.us-east-1.amazonaws.com/offers/v1.0/aws/AmazonRDS/current/eu-west-3/index.json",
+  "products": [
+    {
+      "sku": "89KRWUARVTRG7P62",
+      "attributes": {
+        "servicecode": "AmazonRDS",
+        "location": "EU (Paris)",
+        "locationType": "AWS Region",
+        "instanceType": "db.t4g.micro",
+        "currentGeneration": "Yes",
+        "instanceFamily": "General purpose",
+        "vcpu": "2",
+        "physicalProcessor": "AWS Graviton2",
+        "memory": "1 GiB",
+        "storage": "EBS Only",
+        "networkPerformance": "Up to 5 Gigabit",
+        "processorArchitecture": "64-bit",
+        "engineCode": "14",
+        "databaseEngine": "PostgreSQL",
+        "licenseModel": "No license required",
+        "deploymentOption": "Multi-AZ",
+        "usagetype": "EUW3-Multi-AZUsage:db.t4g.micro",
+        "operation": "CreateDBInstance:0014",
+        "instanceTypeFamily": "T4G",
+        "normalizationSizeFactor": "1",
+        "regionCode": "eu-west-3",
+        "servicename": "Amazon Relational Database Service",
+        "unbundledLicensing": "FALSE"
+      },
+      "terms": {
+        "89KRWUARVTRG7P62.JRTCKXETXF": {
+          "offerTermCode": "JRTCKXETXF",
+          "sku": "89KRWUARVTRG7P62",
+          "effectiveDate": "2026-11-01T00:00:00Z",
+          "priceDimensions": {
+            "89KRWUARVTRG7P62.JRTCKXETXF.6YS6EN2CT7": {
+              "rateCode": "89KRWUARVTRG7P62.JRTCKXETXF.6YS6EN2CT7",
+              "description": "$ 0.036 per RDS db.t4g.micro Multi-AZ instance hour (or partial hour) running PostgreSQL",
+              "beginRange": "0",
+              "endRange": "Inf",
+              "unit": "Hrs",
+              "pricePerUnit": {
+                "USD": "0.0360000000"
+              },
+              "appliesTo": []
+            }
+          },
+          "termAttributes": {}
+        }
+      }
+    },
+    {
+      "sku": "NSZQPHUZQ4KZ33J9",
+      "attributes": {
+        "servicecode": "AmazonRDS",
+        "location": "EU (Paris)",
+        "locationType": "AWS Region",
+        "instanceType": "db.t4g.micro",
+        "instanceFamily": "General purpose",
+        "vcpu": "2",
+        "physicalProcessor": "AWS Graviton2",
+        "memory": "1 GiB",
+        "processorArchitecture": "64-bit",
+        "engineCode": "14",
+        "databaseEngine": "PostgreSQL",
+        "licenseModel": "No license required",
+        "deploymentOption": "Single-AZ",
+        "usagetype": "EUW3-UnusedBox:db.t4g.micro",
+        "operation": "CreateDBInstance:0014",
+        "normalizationSizeFactor": "0.5",
+        "regionCode": "eu-west-3",
+        "servicename": "Amazon Relational Database Service"
+      },
+      "terms": {
+        "NSZQPHUZQ4KZ33J9.JRTCKXETXF": {
+          "offerTermCode": "JRTCKXETXF",
+          "sku": "NSZQPHUZQ4KZ33J9",
+          "effectiveDate": "2026-11-01T00:00:00Z",
+          "priceDimensions": {
+            "NSZQPHUZQ4KZ33J9.JRTCKXETXF.6YS6EN2CT7": {
+              "rateCode": "NSZQPHUZQ4KZ33J9.JRTCKXETXF.6YS6EN2CT7",
+              "description": "$ 0.018 per RDS db.t4g.micro Single-AZ unused capacity reservation hour (or partial hour) for PostgreSQL",
+              "beginRange": "0",
+              "endRange": "Inf",
+              "unit": "Hrs",
+              "pricePerUnit": {
+                "USD": "0.0180000000"
+              },
+              "appliesTo": []
+            }
+          },
+          "termAttributes": {}
+        }
+      }
+    },
+    {
+      "sku": "GPD664NAWS94ZBFC",
+      "attributes": {
+        "servicecode": "AmazonRDS",
+        "location": "EU (Paris)",
+        "locationType": "AWS Region",
+        "instanceType": "db.t4g.micro",
+        "currentGeneration": "Yes",
+        "instanceFamily": "General purpose",
+        "vcpu": "2",
+        "physicalProcessor": "AWS Graviton2",
+        "memory": "1 GiB",
+        "storage": "EBS Only",
+        "networkPerformance": "Up to 5 Gigabit",
+        "processorArchitecture": "64-bit",
+        "engineCode": "14",
+        "databaseEngine": "PostgreSQL",
+        "licenseModel": "No license required",
+        "deploymentOption": "Single-AZ",
+        "usagetype": "EUW3-InstanceUsage:db.t4g.micro",
+        "operation": "CreateDBInstance:0014",
+        "instanceTypeFamily": "T4G",
+        "normalizationSizeFactor": "0.5",
+        "regionCode": "eu-west-3",
+        "servicename": "Amazon Relational Database Service",
+        "unbundledLicensing": "FALSE"
+      },
+      "terms": {
+        "GPD664NAWS94ZBFC.JRTCKXETXF": {
+          "offerTermCode": "JRTCKXETXF",
+          "sku": "GPD664NAWS94ZBFC",
+          "effectiveDate": "2026-11-01T00:00:00Z",
+          "priceDimensions": {
+            "GPD664NAWS94ZBFC.JRTCKXETXF.6YS6EN2CT7": {
+              "rateCode": "GPD664NAWS94ZBFC.JRTCKXETXF.6YS6EN2CT7",
+              "description": "$ 0.018 per RDS db.t4g.micro Single-AZ instance hour (or partial hour) running PostgreSQL",
+              "beginRange": "0",
+              "endRange": "Inf",
+              "unit": "Hrs",
+              "pricePerUnit": {
+                "USD": "0.0180000000"
+              },
+              "appliesTo": []
+            }
+          },
+          "termAttributes": {}
+        }
+      }
+    }
+  ]
+}

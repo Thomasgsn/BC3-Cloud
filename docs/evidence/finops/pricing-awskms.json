@@ -1,0 +1,172 @@
+{
+  "source": "https://pricing.us-east-1.amazonaws.com/offers/v1.0/aws/awskms/current/eu-west-3/index.json",
+  "publication_date": "2026-11-08T17:23:42Z",
+  "rates": [
+    {
+      "sku": "6NA25PEU94EBM5U2",
+      "attributes": {
+        "servicecode": "awskms",
+        "location": "EU (Paris)",
+        "locationType": "AWS Region",
+        "group": "awskms-Requests-GenerateDatakeyPair-MLDSA",
+        "groupDescription": "AWS KMS API Requests GenerateDatakeyPair MLDSA",
+        "usagetype": "eu-west-3-KMS-Requests-GenerateDatakeyPair-MLDSA",
+        "operation": "",
+        "regionCode": "eu-west-3",
+        "servicename": "AWS Key Management Service"
+      },
+      "description": "$0.10 per 10000 Requests for AWS KMS API Requests Generate Data Key Pair MLDSA in EU (Paris)",
+      "unit": "Requests",
+      "price": "0.0000100000",
+      "range": [
+        "0",
+        "Inf"
+      ]
+    },
+    {
+      "sku": "G6KAA982ZNRYXTGR",
+      "attributes": {
+        "servicecode": "awskms",
+        "location": "EU (Paris)",
+        "locationType": "AWS Region",
+        "usagetype": "eu-west-3-KMS-Keys",
+        "operation": "",
+        "regionCode": "eu-west-3",
+        "servicename": "AWS Key Management Service"
+      },
+      "description": "$1 per customer managed KMS key version in EU (Paris)",
+      "unit": "Keys",
+      "price": "1.0000000000",
+      "range": [
+        "0",
+        "Inf"
+      ]
+    },
+    {
+      "sku": "M5MTBWHDW42CB4BP",
+      "attributes": {
+        "servicecode": "awskms",
+        "location": "EU (Paris)",
+        "locationType": "AWS Region",
+        "group": "awskms-Requests-GenerateDatakeyPair-RSA",
+        "groupDescription": "AWS KMS API Requests GenerateDatakeyPair RSA",
+        "usagetype": "eu-west-3-KMS-Requests-GenerateDatakeyPair-RSA",
+        "operation": "",
+        "regionCode": "eu-west-3",
+        "servicename": "AWS Key Management Service"
+      },
+      "description": "$12 per 10000 RSA Generate Data Key Pair Requests in EU (Paris)",
+      "unit": "Requests",
+      "price": "0.0012000000",
+      "range": [
+        "0",
+        "Inf"
+      ]
+    },
+    {
+      "sku": "QCRBRVP4WHFE4RN9",
+      "attributes": {
+        "servicecode": "awskms",
+        "location": "EU (Paris)",
+        "locationType": "AWS Region",
+        "group": "awskms-APIRequest-All",
+        "groupDescription": "All AWS KMS API requests",
+        "usagetype": "eu-west-3-KMS-Requests",
+        "operation": "",
+        "regionCode": "eu-west-3",
+        "servicename": "AWS Key Management Service"
+      },
+      "description": "$0.03 per 10000 KMS requests in EU (Paris)",
+      "unit": "Requests",
+      "price": "0.0000030000",
+      "range": [
+        "0",
+        "Inf"
+      ]
+    },
+    {
+      "sku": "VKCFP7GZXBZWB7AT",
+      "attributes": {
+        "servicecode": "awskms",
+        "location": "EU (Paris)",
+        "locationType": "AWS Region",
+        "group": "awskms-Requests-GenerateDatakeyPair-MLKEM",
+        "groupDescription": "AWS KMS API Requests GenerateDatakeyPair MLKEM",
+        "usagetype": "eu-west-3-KMS-Requests-GenerateDatakeyPair-MLKEM",
+        "operation": "",
+        "regionCode": "eu-west-3",
+        "servicename": "AWS Key Management Service"
+      },
+      "description": "$0.10 per 10000 Requests for AWS KMS API Requests Generate Data Key Pair MLKEM in EU (Paris)",
+      "unit": "Requests",
+      "price": "0.0000100000",
+      "range": [
+        "0",
+        "Inf"
+      ]
+    },
+    {
+      "sku": "VFVKGRH6SRRZTA2G",
+      "attributes": {
+        "servicecode": "awskms",
+        "location": "EU (Paris)",
+        "locationType": "AWS Region",
+        "group": "awskms-Requests-Asymmetric",
+        "groupDescription": "AWS KMS Asymmetric Requests except RSA_2048API",
+        "usagetype": "eu-west-3-KMS-Requests-Asymmetric",
+        "operation": "",
+        "regionCode": "eu-west-3",
+        "servicename": "AWS Key Management Service"
+      },
+      "description": "$0.15 per 10000 KMS Asymmetric Requests excluding RSA 2048 in EU (Paris)",
+      "unit": "Requests",
+      "price": "0.0000150000",
+      "range": [
+        "0",
+        "Inf"
+      ]
+    },
+    {
+      "sku": "UCK9ZEJ2K5JRHSNA",
+      "attributes": {
+        "servicecode": "awskms",
+        "location": "EU (Paris)",
+        "locationType": "AWS Region",
+        "group": "aws-kms-Requests-Asymmetric-RSA_2048",
+        "groupDescription": "AWS KMS Asymmetric Requests RSA_2048",
+        "usagetype": "eu-west-3-KMS-Requests-Asymmetric-RSA_2048",
+        "operation": "",
+        "regionCode": "eu-west-3",
+        "servicename": "AWS Key Management Service"
+      },
+      "description": "$0.03 per 10000 KMS RSA 2048 requests in EU (Paris)",
+      "unit": "Requests",
+      "price": "0.0000030000",
+      "range": [
+        "0",
+        "Inf"
+      ]
+    },
+    {
+      "sku": "NAJ2VV2SM9W8KDJ7",
+      "attributes": {
+        "servicecode": "awskms",
+        "location": "EU (Paris)",
+        "locationType": "AWS Region",
+        "group": "awskms-Requests-GenerateDatakeyPair-ECC",
+        "groupDescription": "AWS KMS API Requests GenerateDatakeyPair ECC",
+        "usagetype": "eu-west-3-KMS-Requests-GenerateDatakeyPair-ECC",
+        "operation": "",
+        "regionCode": "eu-west-3",
+        "servicename": "AWS Key Management Service"
+      },
+      "description": "$0.1 per 10000 ECC Generate Data Key Pair Requests in EU (Paris)",
+      "unit": "Requests",
+      "price": "0.0000100000",
+      "range": [
+        "0",
+        "Inf"
+      ]
+    }
+  ]
+}

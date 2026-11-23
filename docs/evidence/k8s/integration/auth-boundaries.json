@@ -1,0 +1,6 @@
+{
+  "logout_invalidates_session": true,
+  "expired_server_session_rejected": true,
+  "ten_failed_attempts_then_429": true,
+  "fixture_scope": "Unique synthetic account, no existing user locked"
+}

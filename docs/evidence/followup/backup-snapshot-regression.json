@@ -1,0 +1,11 @@
+{
+  "event": "real_backup_snapshot_regression",
+  "live_write_after_snapshot": true,
+  "write_present_in_active_database": true,
+  "write_absent_from_restored_snapshot": true,
+  "all_seven_table_counts_match_snapshot": true,
+  "encrypted_ticket_values_exact": true,
+  "restored_database_preserved": "bc3_snapshot_7d977f744a73",
+  "simulation": false,
+  "instrumentation": "Launcher inserts one explicitly identified fixture in real SQL, then execs original pg_dump with exported snapshot"
+}

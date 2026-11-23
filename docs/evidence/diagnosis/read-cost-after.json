@@ -1,0 +1,6 @@
+{
+  "exit_code": 0,
+  "stdout": ".                                                                        [100%]\n1 passed in 2.26s\n",
+  "stderr": "",
+  "scope": "Real SQL and encryption, instrumentation counts reads without replacing configuration or exposing values"
+}

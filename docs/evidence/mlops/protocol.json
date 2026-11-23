@@ -1,0 +1,20 @@
+{
+  "split": "first fold StratifiedGroupKFold(5,shuffle=True,seed=42), groups=NFKC/casefold/whitespace",
+  "candidate_C": [
+    0.25,
+    1.0
+  ],
+  "selection": "validation macro F1 only; official test used once after selection",
+  "promotion_floor_macro_f1": 0.75,
+  "max_validation_regression": 0.02,
+  "language": "English only; not a language detector; margin not calibrated probability",
+  "train_rows_original": 10003,
+  "train_rows_after_cross_split_removal": 9996,
+  "test_rows": 3080,
+  "removed_train_rows_matching_official_test": 7,
+  "duplicate_train_normalized_rows": 4,
+  "validation_rows": 2001,
+  "fit_rows": 7995,
+  "dummy_validation_macro_f1": 0.0004715598434931114,
+  "dataset_revision": "57ec275d8078af65b7731c2a98be812d844a6d6b"
+}

@@ -1,0 +1,125 @@
+[
+  [
+    "Support bancaire cloud-native",
+    [
+      "Thomas Gassmann",
+      "RNCP40875 BC3",
+      "Rédaction et sourçage assistés par IA (Codex, Claude)"
+    ],
+    "Sujet cloud fourni p.1-5 ; docs/rapport.md ; déclaration d’usage de l’IA en page 1 du rapport"
+  ],
+  [
+    "Objectif et couverture de la grille",
+    [
+      "Chaîne d’exploitation prioritaire, fonctionnel limité à 4 entités",
+      "Démontré : Compose, Kubernetes test/prod, logs, alerte, scans, FinOps",
+      "Écarts : CI jamais exécutée sur GitHub, apply AWS non fait"
+    ],
+    "Rapport p.2 ; docs/rapport.md. Domaine à faire valider par l’enseignant."
+  ],
+  [
+    "Architecture et arbitrages",
+    [
+      "Vue/Nginx séparé, FastAPI sans état, sessions en PostgreSQL",
+      "S3 et SQS locaux : mêmes protocoles qu’AWS, client inchangé",
+      "Prix : SeaweedFS et ElasticMQ n’ont pas la durabilité d’AWS"
+    ],
+    "Rapport p.3 ; docs/rapport.md, diagrammes Mermaid ; compose.yml"
+  ],
+  [
+    "Accès et chiffrement",
+    [
+      "Propriétaire ou agent, conflits de version refusés (409)",
+      "Argon2id, sessions hachées, cookie sécurisé, CSRF et origine",
+      "Contenu chiffré AES-GCM, métadonnées en clair pour les requêtes"
+    ],
+    "Rapport p.4 ; docs/rapport.md ; evidence/k8s/security.json ; integration/least-privilege.json"
+  ],
+  [
+    "Parcours réel de l’application",
+    [
+      "Ticket et pièce jointe privée",
+      "Suggestion anglaise versionnée",
+      "CSV produit par le worker"
+    ],
+    "docs/evidence/browser/checks.json et tickets-desktop.png ; capture de fixtures synthétiques"
+  ],
+  [
+    "Scaling et perturbations",
+    [
+      "4660 requêtes, 100,00 % réussies, p95 74 ms (v1.2.1)",
+      "Rolling maxUnavailable=0 ; correctif de clé : p95 680 → 74 ms"
+    ],
+    "Rapport p.6 ; docs/evidence/k8s/load-result.json ; resilience-load.json ; diagnosis/. Fenêtre locale avec pannes, pas SLA mensuelle."
+  ],
+  [
+    "Supervision et restauration",
+    [
+      "APIUnavailable déclenchée à 31 s, résolue après rétablissement",
+      "Dump chiffré et témoins sur le même snapshot, 7 tables restaurées",
+      "Logs des pods centralisés dans Loki, lisibles dans Grafana"
+    ],
+    "Rapport p.7 ; docs/evidence/k8s/alert-cycle.json ; backup-restore.json ; logging.json ; evidence/followup/ ; README.md"
+  ],
+  [
+    "CI et infrastructure déclarative",
+    [
+      "Jobs : lint et tests, build et scan, publication GHCR, intégration",
+      "Déploiement bc3-test puis promotion des mêmes images en prod",
+      "Terraform AWS validé et simulé ; actionlint sans erreur"
+    ],
+    "Rapport p.8 ; README.md ; .github/workflows/ci.yml ; scripts/ci/. 32 tests Compose, 32 Kubernetes, 34 hors ligne. Aucun run GitHub Actions distant ni apply AWS."
+  ],
+  [
+    "Validation du modèle d’intention",
+    [
+      "BANKING77 anglais, 77 intentions, test officiel réservé",
+      "Test sélectionné : F1 macro 0.8828, top3 96,10 %"
+    ],
+    "PolyAI-LDN/task-specific-datasets révision 57ec275d8078af65b7731c2a98be812d844a6d6b, CC BY 4.0 ; evidence/mlops/. Graphique de validation arrondi à six décimales."
+  ],
+  [
+    "Promotion et retour arrière",
+    [
+      "Deux versions, seuil de qualité et contrôle SHA avant chargement",
+      "Candidat dégradé ou altéré refusé, rollback réellement exercé",
+      "Marges non probabilistes, confirmation humaine et compteur de version"
+    ],
+    "docs/evidence/mlops/registry.json ; docs/rapport.md. SHA ne remplace pas une signature de build."
+  ],
+  [
+    "Réduction de l’image worker",
+    [
+      "14 distributions utiles contre 45 dans l’image API partagée",
+      "Baisse initiale de 63,66 % de taille Docker non compressée"
+    ],
+    "docs/evidence/finops/worker-image.json. Comparaison initiale réelle, pas une baisse de RAM ou une économie financière."
+  ],
+  [
+    "Ressources et budget",
+    [
+      "Sondes natives : CPU moyen au repos de 0,40340 à 0,00659 cœur",
+      "Scénario Paris : 251,18 USD/mois avant exclusions",
+      "Arbitrage : un seul NAT, moins cher mais moins disponible"
+    ],
+    "Rapport p.10 ; docs/evidence/finops/native-probes.json ; cost-scenario.json ; prix AWS publics datés par SKU. Avec marge 30 % : 326,54 USD/mois, aucun budget approuvé. Énergie et CO2 non mesurés."
+  ],
+  [
+    "Sécurité et contrôles ISO 27001",
+    [
+      "v1.3.0 : aucun avis HIGH ou CRITICAL corrigeable restant",
+      "Avis HIGH sans correctif : 47 API/worker, 106 backup, à trier",
+      "Prod isolée : trafic depuis bc3-test bloqué, secrets distincts"
+    ],
+    "Rapport p.11 ; docs/evidence/security/followup-*.json ; evidence/environments/ ; docs/rapport.md ; correspondance Annexe A pédagogique, pas certification ISO"
+  ],
+  [
+    "Difficultés, réserves et suites",
+    [
+      "8 difficultés corrigées et retestées : socket, latence, backup…",
+      "Réserves : accord enseignant, registre, CI distante, apply AWS",
+      "Suites : run GitHub et publication, approbation prod, apply AWS"
+    ],
+    "Rapport p.12-13 ; docs/rapport.md ; docs/checklist.md"
+  ]
+]

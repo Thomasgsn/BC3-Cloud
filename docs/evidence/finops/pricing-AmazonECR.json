@@ -1,0 +1,83 @@
+{
+  "source": "https://pricing.us-east-1.amazonaws.com/offers/v1.0/aws/AmazonECR/current/eu-west-3/index.json",
+  "publication_date": "2026-11-13T16:39:47Z",
+  "rates": [
+    {
+      "sku": "V9J3SVZKXV3QE5BB",
+      "attributes": {
+        "servicecode": "AmazonECR",
+        "location": "EU (Paris)",
+        "locationType": "AWS Region",
+        "usagetype": "EUW3-AsyncActions-ImageSigning",
+        "operation": "",
+        "regionCode": "eu-west-3",
+        "servicename": "Amazon EC2 Container Registry (ECR)"
+      },
+      "description": "$0.02 per Count for AsyncActions-ImageSigning in EU (Paris)",
+      "unit": "Count",
+      "price": "0.0200000000",
+      "range": [
+        "0",
+        "Inf"
+      ]
+    },
+    {
+      "sku": "729SZ4PCH8XQCSMU",
+      "attributes": {
+        "servicecode": "AmazonECR",
+        "location": "EU (Paris)",
+        "locationType": "AWS Region",
+        "usagetype": "EUW3-TimedStorage-Archive-ByteHrs",
+        "operation": "",
+        "regionCode": "eu-west-3",
+        "servicename": "Amazon EC2 Container Registry (ECR)"
+      },
+      "description": "$0.04 per GB-Mo for TimedStorage-Archive-ByteHrs in EU (Paris)",
+      "unit": "GB-Mo",
+      "price": "0.0400000000",
+      "range": [
+        "0",
+        "Inf"
+      ]
+    },
+    {
+      "sku": "K2YGBRWR76769ZQP",
+      "attributes": {
+        "servicecode": "AmazonECR",
+        "location": "EU (Paris)",
+        "locationType": "AWS Region",
+        "usagetype": "EUW3-Retrieval-Archive",
+        "operation": "",
+        "regionCode": "eu-west-3",
+        "servicename": "Amazon EC2 Container Registry (ECR)"
+      },
+      "description": "$0.03 per GB for Retrieval-Archive in EU (Paris)",
+      "unit": "GB",
+      "price": "0.0300000000",
+      "range": [
+        "0",
+        "Inf"
+      ]
+    },
+    {
+      "sku": "TUZFZPEXJNDK38FJ",
+      "attributes": {
+        "servicecode": "AmazonECR",
+        "location": "EU (Paris)",
+        "locationType": "AWS Region",
+        "usagetype": "EUW3-TimedStorage-ByteHrs",
+        "operation": "",
+        "regionCode": "eu-west-3",
+        "servicename": "Amazon EC2 Container Registry (ECR)",
+        "storageType": "S3"
+      },
+      "description": "$0.10 per GB-month of data storage",
+      "unit": "GB-Mo",
+      "price": "0.1000000000",
+      "range": [
+        "0",
+        "Inf"
+      ]
+    }
+  ]
+}

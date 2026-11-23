@@ -1,0 +1,6 @@
+{
+  "command": "Real pytest inside a non-root Kubernetes API pod, actual SQL/S3/queue/worker",
+  "exit_code": 0,
+  "stdout": "................................                                         [100%]\n32 passed in 19.35s\n",
+  "stderr": ""
+}

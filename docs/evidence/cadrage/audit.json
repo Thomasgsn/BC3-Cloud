@@ -1,0 +1,16 @@
+{
+  "date": "2026-11-20",
+  "bc3_initial_directory": "absent",
+  "bc2_local_technical_delivery": "finished with human reservations before BC3 started",
+  "docker_client": "29.9.3",
+  "kubectl_client": "1.36.1",
+  "kind": "0.32.0",
+  "terraform_on_host": false,
+  "helm_on_host": false,
+  "aws_cli_on_host": false,
+  "disk_free_observed": "362 GiB shared host filesystem",
+  "docker_daemon_resource_probe": "permission denied via docker info; no CPU/RAM count inferred",
+  "compose_execution": "Actually works for BC2; BC3 runtime not created",
+  "git_policy": "No new commit, push, email or registry/cloud publication",
+  "source_subject_sha256": "6e2b3d52c61adb0952b0586e74be144968fde5bebbcb583cb330a297f2946615"
+}

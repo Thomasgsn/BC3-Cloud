@@ -1,0 +1,19 @@
+{
+  "exit_code": 0,
+  "stdout": "10 passed in 0.49s",
+  "command": "Python 3.12 training container, PYTHONPATH=/extracted/src, pytest /extracted/tests/unit",
+  "source": "CRC/SHA-verified extracted archive",
+  "tested_source_sha256": {
+    "src/rncp_bc3/intent.py": "eda9e984168ebe10f238fe93b8456315b606a07a6cf9ea37167d588f3fa5ca1b",
+    "src/rncp_bc3/worker.py": "54922ce0874c46370c907691f708ed260386989607d46fe0e8736f90d91577d4",
+    "src/rncp_bc3/db.py": "9a346c5c73a004c62de535b59d11a713925a6f363231bedfcdb02e408c874f3a",
+    "src/rncp_bc3/config.py": "dd58bf9a9ce491e45cc5871c3c08644e4c58f377089c56094fedc8c691a8473c",
+    "src/rncp_bc3/security.py": "f4f93e7f64c9e8505aa0dba8efb6e3676d93c0824347ab4b3ca948bf05f05769",
+    "src/rncp_bc3/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "src/rncp_bc3/api.py": "66ec54af5ade12e63c68e9a05f1dcd80bd0c82a53394b331afb8a20c53008877",
+    "src/rncp_bc3/storage.py": "14e337d6297e18c9d1463c3d515bba51c95ae046ecff05ec92a56b8f983a6dc8",
+    "tests/unit/test_security.py": "22092a63f6e03c0d8f8629e9e68731fd0ecda193e82f64aa0830be4171338908"
+  },
+  "current_source_matches": true,
+  "scope": "Unit tests from archive; complete Compose/Kubernetes tests separately recorded in ci/full-run.log"
+}

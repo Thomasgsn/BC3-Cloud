@@ -1,0 +1,18 @@
+{
+  "event": "real_api_load",
+  "seconds": 250.01903375899929,
+  "concurrency": 4,
+  "pause_per_thread_seconds": 0.15,
+  "fixture_rows_per_response": 200,
+  "requests": 3561,
+  "status_counts": {
+    "200": 3560,
+    "transport_error": 1
+  },
+  "invalid_or_failed_responses": 1,
+  "availability_fraction": 0.9997191800056164,
+  "latency_p95_seconds": 0.35633645500274724,
+  "latency_max_seconds": 0.9031022170020151,
+  "tls_verified": true,
+  "fixture_scope": "Synthetic test accounts/tickets only, actual API/SQL and encryption; no mock service"
+}

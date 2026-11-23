@@ -1,0 +1,8 @@
+# Instructions BC3
+
+- État : livraison technique locale vérifiée le 21 novembre 2026, réserves externes et de sécurité conservées. Développement local autorisé par « fait » après présentation du plan BC3. Lire `docs/checklist.md`, puis `docs/rapport.md` avant toute suite ; l’historique détaillé (progression, plan, tests, audit) est archivé dans `../preparation-oral/bc3/docs/`. Conserver les réserves externes.
+- L’autorisation générale du 20 novembre permet BC2 puis BC3 successivement. Livraison technique BC2 achevée avec réserves humaines ; conserver les projets indépendants, sans imports ni services d’un autre bloc.
+- Pour les exigences et écarts, lire `docs/rapport.md` (exigences, correspondance RNCP et ISO) : distinguer sujet, référentiel C6.1–C8.2 et recommandations. Ne pas substituer des essais locaux à une certification externe, une publication de registre, un workflow distant ou un déploiement cloud.
+- Livraison locale : aucun commit, push, email, publication ni consommation payante. Préparer des résultats reviewables avant demande d’autorisation de ces actions. Secrets et états sensibles hors dépôt.
+- Sources, configuration, dépendances, tests et preuves dans `bc3/` ; PDF fournis dans `../.data/`. Le domaine applicatif exige l’accord enseignant du sujet ; aucun accord fourni.
+- Documenter les tests réellement exécutés, leurs échecs et leurs limites dans `docs/evidence/`, puis mettre à jour `docs/checklist.md` et, si un résultat change, `docs/rapport.md`. Les statuts sont Terminé et vérifié, Implémenté mais non vérifié, En cours, Bloqué, À réaliser. La validation officielle appartient au jury.

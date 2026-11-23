@@ -1,0 +1,16 @@
+{
+  "event": "real_stack_flow",
+  "tls_db": {
+    "ssl": true,
+    "version": "TLSv1.3"
+  },
+  "ticket_access_separated": true,
+  "csrf_and_origin_rejected": true,
+  "optimistic_lock_rejected": true,
+  "sql_fields_encrypted": true,
+  "object_encrypted_and_download_sha_exact": true,
+  "invalid_and_oversize_file_rejected": true,
+  "export_worker_completed": true,
+  "duplicate_message_no_second_effect": true,
+  "fixture_scope": "All accounts/tickets/files created by this test; not real customer records"
+}

@@ -1,0 +1,58 @@
+{
+  "images": [
+    {
+      "report": "docs/evidence/security/followup-api9.json",
+      "image": "rncp-bc3-api:9",
+      "created_at": "2026-11-21T10:28:13.073664867Z",
+      "scanner": {
+        "Version": "0.76.2"
+      },
+      "counts_by_package_finding": {
+        "LOW": 67,
+        "HIGH": 47,
+        "MEDIUM": 109,
+        "UNKNOWN": 9
+      },
+      "unique_cve_count": 102,
+      "fixable_high_critical": [],
+      "production_release_approved": false
+    },
+    {
+      "report": "docs/evidence/security/followup-worker6.json",
+      "image": "rncp-bc3-worker:6",
+      "created_at": "2026-11-21T10:29:11.094700005Z",
+      "scanner": {
+        "Version": "0.76.2"
+      },
+      "counts_by_package_finding": {
+        "LOW": 67,
+        "HIGH": 47,
+        "MEDIUM": 109,
+        "UNKNOWN": 9
+      },
+      "unique_cve_count": 102,
+      "fixable_high_critical": [],
+      "production_release_approved": false
+    },
+    {
+      "report": "docs/evidence/security/followup-backup5.json",
+      "image": "rncp-bc3-backup:5",
+      "created_at": "2026-11-21T10:31:41.123247682Z",
+      "scanner": {
+        "Version": "0.76.2"
+      },
+      "counts_by_package_finding": {
+        "LOW": 93,
+        "HIGH": 106,
+        "MEDIUM": 139,
+        "UNKNOWN": 9
+      },
+      "unique_cve_count": 133,
+      "fixable_high_critical": [],
+      "production_release_approved": false
+    }
+  ],
+  "scope": "Automated package scan, not source exploitation validation; no severity ignored",
+  "known_unfixed_findings_require_human_triage": "No blanket acceptance or production approval supplied",
+  "fixable_high_critical_count": 0
+}

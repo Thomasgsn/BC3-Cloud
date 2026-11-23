@@ -1,0 +1,55 @@
+{
+  "loki_lines_last_hour": {
+    "api": {
+      "streams": 3,
+      "lines": 12,
+      "labels": [
+        "app",
+        "container",
+        "detected_level",
+        "instance",
+        "job",
+        "namespace",
+        "pod",
+        "service_name"
+      ]
+    },
+    "worker": {
+      "streams": 1,
+      "lines": 1,
+      "labels": [
+        "app",
+        "container",
+        "detected_level",
+        "instance",
+        "job",
+        "namespace",
+        "pod",
+        "service_name"
+      ]
+    },
+    "front": {
+      "streams": 2,
+      "lines": 30,
+      "labels": [
+        "app",
+        "container",
+        "detected_level",
+        "instance",
+        "job",
+        "namespace",
+        "pod",
+        "service_name"
+      ]
+    }
+  },
+  "grafana_loki_datasource": {
+    "status": "OK",
+    "message": "Data source successfully connected."
+  },
+  "checks": {
+    "api_logs_collected": true,
+    "worker_logs_collected": true,
+    "grafana_reads_loki": true
+  }
+}

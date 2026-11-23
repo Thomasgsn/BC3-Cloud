@@ -1,0 +1,19 @@
+{
+  "date": "2026-11-20",
+  "status": "passed",
+  "scope": "BC3 cadrage only, not an application test",
+  "required_files": 10,
+  "local_links": 21,
+  "json_parsed": 2,
+  "source_pdf_sha256_verified": 5,
+  "subject_pages_read_and_rendered": 5,
+  "reference_bc3_pages_read_and_rendered": [
+    12,
+    13,
+    14,
+    15,
+    16
+  ],
+  "application_tests_executed": false,
+  "development_started": false
+}

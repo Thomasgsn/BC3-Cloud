@@ -1,0 +1,258 @@
+{
+  "source": "https://pricing.us-east-1.amazonaws.com/offers/v1.0/aws/AWSELB/current/eu-west-3/index.json",
+  "publication_date": "2026-11-19T22:27:09Z",
+  "rates": [
+    {
+      "sku": "HXBDHB3QTZ96VB28",
+      "attributes": {
+        "servicecode": "AWSELB",
+        "location": "EU (Paris)",
+        "locationType": "AWS Region",
+        "group": "ELB:Balancing",
+        "groupDescription": "LoadBalancer hourly usage by Gateway Load Balancer",
+        "usagetype": "EUW3-LoadBalancerUsage",
+        "operation": "LoadBalancing:Gateway",
+        "regionCode": "eu-west-3",
+        "servicename": "Elastic Load Balancing"
+      },
+      "description": "$0.0147 per Gateway LoadBalancer-hour (or partial hour) in EU (Paris)",
+      "unit": "Hrs",
+      "price": "0.0147000000",
+      "range": [
+        "0",
+        "Inf"
+      ]
+    },
+    {
+      "sku": "QMZXT6E5MCH634JS",
+      "attributes": {
+        "servicecode": "AWSELB",
+        "location": "EU (Paris)",
+        "locationType": "AWS Region",
+        "group": "ELB:Balancing",
+        "groupDescription": "Used Network Load Balancer capacity units-hr",
+        "usagetype": "EUW3-LCUUsage",
+        "operation": "LoadBalancing:Network",
+        "regionCode": "eu-west-3",
+        "servicename": "Elastic Load Balancing"
+      },
+      "description": "$0.0063 per used Network load balancer capacity unit-hour (or partial hour)",
+      "unit": "LCU-Hrs",
+      "price": "0.0063000000",
+      "range": [
+        "0",
+        "Inf"
+      ]
+    },
+    {
+      "sku": "5CPK5URFJTH39WB7",
+      "attributes": {
+        "servicecode": "AWSELB",
+        "location": "EU (Paris)",
+        "locationType": "AWS Region",
+        "group": "ELB:Balancing",
+        "groupDescription": "LoadBalancer hourly usage by Classic Load Balancer",
+        "usagetype": "EUW3-LoadBalancerUsage",
+        "operation": "LoadBalancing",
+        "regionCode": "eu-west-3",
+        "servicename": "Elastic Load Balancing"
+      },
+      "description": "$0.0294 per LoadBalancer-hour (or partial hour)",
+      "unit": "Hrs",
+      "price": "0.0294000000",
+      "range": [
+        "0",
+        "Inf"
+      ]
+    },
+    {
+      "sku": "GQGNMSF43UT7MUVA",
+      "attributes": {
+        "servicecode": "AWSELB",
+        "location": "EU (Paris)",
+        "locationType": "AWS Region",
+        "group": "ELB:Balancing",
+        "groupDescription": "Used Gateway Load Balancer capacity units-hr",
+        "usagetype": "EUW3-LCUUsage",
+        "operation": "LoadBalancing:Gateway",
+        "regionCode": "eu-west-3",
+        "servicename": "Elastic Load Balancing"
+      },
+      "description": "$0.0042 per used Gateway load balancer capacity unit-hour (or partial hour) in EU (Paris)",
+      "unit": "LCU-Hrs",
+      "price": "0.0042000000",
+      "range": [
+        "0",
+        "Inf"
+      ]
+    },
+    {
+      "sku": "SGV2F8HKWRN7DT58",
+      "attributes": {
+        "servicecode": "AWSELB",
+        "location": "EU (Paris)",
+        "locationType": "AWS Region",
+        "group": "ELB:Balancing",
+        "groupDescription": "TSM hourly usage by Network Load Balancer",
+        "usagetype": "EUW3-TS-LoadBalancerUsage",
+        "operation": "LoadBalancing:Network",
+        "regionCode": "eu-west-3",
+        "servicename": "Elastic Load Balancing"
+      },
+      "description": "$0.0059 per associated Network load balancer Trust Store unit-hour",
+      "unit": "Hrs",
+      "price": "0.0059000000",
+      "range": [
+        "0",
+        "Inf"
+      ]
+    },
+    {
+      "sku": "GKUCTR9P6NN9DZ92",
+      "attributes": {
+        "servicecode": "AWSELB",
+        "location": "EU (Paris)",
+        "locationType": "AWS Outposts",
+        "group": "ELB:Balancing",
+        "groupDescription": "LoadBalancer hourly usage by Application Load Balancer on Outposts",
+        "usagetype": "EUW3-Outposts-LoadBalancerUsage",
+        "operation": "LoadBalancing:Application",
+        "regionCode": "eu-west-3",
+        "servicename": "Elastic Load Balancing"
+      },
+      "description": "$0.02646 per Hrs for Outposts-LoadBalancerUsage:LoadBalancing:Application in EU (Paris)",
+      "unit": "Hrs",
+      "price": "0.0264600000",
+      "range": [
+        "0",
+        "Inf"
+      ]
+    },
+    {
+      "sku": "U3AKJEGZSU67JG56",
+      "attributes": {
+        "servicecode": "AWSELB",
+        "location": "EU (Paris)",
+        "locationType": "AWS Region",
+        "group": "ELB:Balancing",
+        "groupDescription": "Reserved Application Load Balancer capacity units-hr",
+        "usagetype": "EUW3-ReservedLCUUsage",
+        "operation": "LoadBalancing:Application",
+        "regionCode": "eu-west-3",
+        "servicename": "Elastic Load Balancing"
+      },
+      "description": "$0.0084 per reserved Application load balancer capacity unit-hour",
+      "unit": "ReservedLCU-Hr",
+      "price": "0.0084000000",
+      "range": [
+        "0",
+        "Inf"
+      ]
+    },
+    {
+      "sku": "N6NTFGZN2VWD4QEY",
+      "attributes": {
+        "servicecode": "AWSELB",
+        "location": "EU (Paris)",
+        "locationType": "AWS Region",
+        "group": "ELB:Balancing",
+        "groupDescription": "LoadBalancer hourly usage by Network Load Balancer",
+        "usagetype": "EUW3-LoadBalancerUsage",
+        "operation": "LoadBalancing:Network",
+        "regionCode": "eu-west-3",
+        "servicename": "Elastic Load Balancing"
+      },
+      "description": "$0.02646 per Network LoadBalancer-hour (or partial hour)",
+      "unit": "Hrs",
+      "price": "0.0264600000",
+      "range": [
+        "0",
+        "Inf"
+      ]
+    },
+    {
+      "sku": "2PT9JZDFM8N5VDQH",
+      "attributes": {
+        "servicecode": "AWSELB",
+        "location": "EU (Paris)",
+        "locationType": "AWS Region",
+        "group": "ELB:Balancing",
+        "groupDescription": "LoadBalancer hourly usage by Application Load Balancer",
+        "usagetype": "EUW3-LoadBalancerUsage",
+        "operation": "LoadBalancing:Application",
+        "regionCode": "eu-west-3",
+        "servicename": "Elastic Load Balancing"
+      },
+      "description": "$0.02646 per Application LoadBalancer-hour (or partial hour)",
+      "unit": "Hrs",
+      "price": "0.0264600000",
+      "range": [
+        "0",
+        "Inf"
+      ]
+    },
+    {
+      "sku": "JH5FTJEK7ZMXT8YG",
+      "attributes": {
+        "servicecode": "AWSELB",
+        "location": "EU (Paris)",
+        "locationType": "AWS Region",
+        "group": "ELB:Balancing",
+        "groupDescription": "Used Application Load Balancer capacity units-hr",
+        "usagetype": "EUW3-LCUUsage",
+        "operation": "LoadBalancing:Application",
+        "regionCode": "eu-west-3",
+        "servicename": "Elastic Load Balancing"
+      },
+      "description": "$0.0084 per used Application load balancer capacity unit-hour (or partial hour)",
+      "unit": "LCU-Hrs",
+      "price": "0.0084000000",
+      "range": [
+        "0",
+        "Inf"
+      ]
+    },
+    {
+      "sku": "6QJAQEEEZ6543D88",
+      "attributes": {
+        "servicecode": "AWSELB",
+        "location": "EU (Paris)",
+        "locationType": "AWS Region",
+        "group": "ELB:Balancing",
+        "groupDescription": "TS hourly usage by Application Load Balancer",
+        "usagetype": "EUW3-TS-LoadBalancerUsage",
+        "operation": "LoadBalancing:Application",
+        "regionCode": "eu-west-3",
+        "servicename": "Elastic Load Balancing"
+      },
+      "description": "$0.0059 per associated Application load balancer Trust Store unit-hour ",
+      "unit": "Hrs",
+      "price": "0.0059000000",
+      "range": [
+        "0",
+        "Inf"
+      ]
+    },
+    {
+      "sku": "TYHSWG84JZU2HBJM",
+      "attributes": {
+        "servicecode": "AWSELB",
+        "location": "EU (Paris)",
+        "locationType": "AWS Region",
+        "group": "ELB:Balancing",
+        "groupDescription": "Data processed by Classic Load Balancer",
+        "usagetype": "EUW3-DataProcessing-Bytes",
+        "operation": "LoadBalancing",
+        "regionCode": "eu-west-3",
+        "servicename": "Elastic Load Balancing"
+      },
+      "description": "$0.0084 per GB Data Processed by the LoadBalancer",
+      "unit": "GB",
+      "price": "0.0084000000",
+      "range": [
+        "0",
+        "Inf"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,26 @@
+{
+  "date": "2026-11-20",
+  "documents": {
+    "Référentiel Expert Ingénierie de données.pdf": {
+      "bytes": 284963,
+      "sha256": "2105a489e863cc23ae065f2af56109c1b0309a37aa56e53cb0a8b6baf0b5109a"
+    },
+    "Document d’information RNCP40875 - Expert en ingénierie des données.pdf": {
+      "bytes": 185354,
+      "sha256": "05e630c89911f5e7143deeb7435088000e6d4003428685a056772fedc3d95df7"
+    },
+    "Projet_cloud_Validation_Bloc3.pdf": {
+      "bytes": 339615,
+      "sha256": "6e2b3d52c61adb0952b0586e74be144968fde5bebbcb583cb330a297f2946615"
+    },
+    "Projet_Hadoop_Spark_Validation_Bloc1.pdf": {
+      "bytes": 349454,
+      "sha256": "d77532483d91b6b4fcc78e84257c40cde6b092ccacb091df682bb980822c8e12"
+    },
+    "Projet Analyse des données - Validation Bloc2.pdf": {
+      "bytes": 406085,
+      "sha256": "4bbd497e16e72e0bcc8fba698df7217111ecc36cac6807872e89b4150293e696"
+    }
+  },
+  "read_scope": "All five PDFs previously examined; BC3 subject pages 1–5 and official BC3 pages 12–16 reread in text and rendered images, INFO page 4"
+}

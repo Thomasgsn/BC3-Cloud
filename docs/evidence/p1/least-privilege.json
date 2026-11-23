@@ -1,0 +1,13 @@
+{
+  "postgres_role": {
+    "username": "bc3_app",
+    "rolsuper": false,
+    "rolcreatedb": false,
+    "rolcreaterole": false
+  },
+  "schema_create_allowed": false,
+  "s3_bucket_administration_denied": true,
+  "queue_plaintext_port_not_reachable_from_app": true,
+  "queue_client_transport": "TLS to sidecar, final loopback in broker network namespace",
+  "secret_scope": "CA private key and DB administrative password not in runtime mounts"
+}

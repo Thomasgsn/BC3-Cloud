@@ -1,0 +1,188 @@
+{
+  "region": "eu-west-3",
+  "scenario_hours": 730,
+  "currency": "USD",
+  "rate_sources": "AWS public offer files, publication timestamps retained in adjacent evidence",
+  "rows": [
+    {
+      "item": "EKS standard control plane",
+      "quantity": 730,
+      "unit": "cluster-hour",
+      "usd_unit_price": "0.10",
+      "estimated_usd": "73.00",
+      "source": "https://aws.amazon.com/eks/pricing/",
+      "sku": null
+    },
+    {
+      "item": "EC2 Linux t3.medium, two nodes",
+      "quantity": 1460,
+      "unit": "instance-hour",
+      "usd_unit_price": "0.0472000000",
+      "estimated_usd": "68.9120000000",
+      "source": "https://pricing.us-east-1.amazonaws.com/offers/v1.0/aws/AmazonEC2/current/eu-west-3/index.json",
+      "sku": "89YAB55PARJAUR5B"
+    },
+    {
+      "item": "EBS gp3, two 20 GB nodes",
+      "quantity": 40,
+      "unit": "GB-month",
+      "usd_unit_price": "0.0928000000",
+      "estimated_usd": "3.7120000000",
+      "source": "https://pricing.us-east-1.amazonaws.com/offers/v1.0/aws/AmazonEC2/current/eu-west-3/index.json",
+      "sku": "XCKADFE99D2BK5V6"
+    },
+    {
+      "item": "NAT gateway, one AZ",
+      "quantity": 730,
+      "unit": "gateway-hour",
+      "usd_unit_price": "0.0500000000",
+      "estimated_usd": "36.5000000000",
+      "source": "https://pricing.us-east-1.amazonaws.com/offers/v1.0/aws/AmazonEC2/current/eu-west-3/index.json",
+      "sku": "XZT57E2HU6XVM9V7"
+    },
+    {
+      "item": "NAT processed traffic assumption",
+      "quantity": 5,
+      "unit": "GB",
+      "usd_unit_price": "0.0500000000",
+      "estimated_usd": "0.2500000000",
+      "source": "https://pricing.us-east-1.amazonaws.com/offers/v1.0/aws/AmazonEC2/current/eu-west-3/index.json",
+      "sku": "QBM2FSFWP6GWWHMU"
+    },
+    {
+      "item": "RDS PostgreSQL db.t4g.micro Multi-AZ",
+      "quantity": 730,
+      "unit": "instance-hour",
+      "usd_unit_price": "0.0360000000",
+      "estimated_usd": "26.2800000000",
+      "source": "https://pricing.us-east-1.amazonaws.com/offers/v1.0/aws/AmazonRDS/current/eu-west-3/index.json",
+      "sku": "89KRWUARVTRG7P62"
+    },
+    {
+      "item": "RDS Multi-AZ gp3 storage",
+      "quantity": 20,
+      "unit": "GB-month",
+      "usd_unit_price": "0.2660000000",
+      "estimated_usd": "5.3200000000",
+      "source": "https://pricing.us-east-1.amazonaws.com/offers/v1.0/aws/AmazonRDS/current/eu-west-3/index.json",
+      "sku": "CJG2KQWW9D9H7DNZ"
+    },
+    {
+      "item": "S3 Standard stored assumption",
+      "quantity": 5,
+      "unit": "GB-month",
+      "usd_unit_price": "0.0240000000",
+      "estimated_usd": "0.1200000000",
+      "source": "https://pricing.us-east-1.amazonaws.com/offers/v1.0/aws/AmazonS3/current/eu-west-3/index.json",
+      "sku": "4PMVMK58J94ER67S"
+    },
+    {
+      "item": "S3 PUT/LIST assumption",
+      "quantity": 10000,
+      "unit": "request",
+      "usd_unit_price": "0.0000053000",
+      "estimated_usd": "0.0530000000",
+      "source": "https://pricing.us-east-1.amazonaws.com/offers/v1.0/aws/AmazonS3/current/eu-west-3/index.json",
+      "sku": "JSTCNSNFYXFKBECA"
+    },
+    {
+      "item": "SQS Standard request assumption",
+      "quantity": 100000,
+      "unit": "request",
+      "usd_unit_price": "4.000E-7",
+      "estimated_usd": "0.0400000000",
+      "source": "https://pricing.us-east-1.amazonaws.com/offers/v1.0/aws/AWSQueueService/current/eu-west-3/index.json",
+      "sku": "HSP76GSZN55FQXBC"
+    },
+    {
+      "item": "One KMS key version",
+      "quantity": 1,
+      "unit": "key-month",
+      "usd_unit_price": "1.0000000000",
+      "estimated_usd": "1.0000000000",
+      "source": "https://pricing.us-east-1.amazonaws.com/offers/v1.0/aws/awskms/current/eu-west-3/index.json",
+      "sku": "G6KAA982ZNRYXTGR"
+    },
+    {
+      "item": "KMS calls assumption",
+      "quantity": 100000,
+      "unit": "request",
+      "usd_unit_price": "0.0000030000",
+      "estimated_usd": "0.3000000000",
+      "source": "https://pricing.us-east-1.amazonaws.com/offers/v1.0/aws/awskms/current/eu-west-3/index.json",
+      "sku": "QCRBRVP4WHFE4RN9"
+    },
+    {
+      "item": "ECR stored images assumption",
+      "quantity": 2,
+      "unit": "GB-month",
+      "usd_unit_price": "0.1000000000",
+      "estimated_usd": "0.2000000000",
+      "source": "https://pricing.us-east-1.amazonaws.com/offers/v1.0/aws/AmazonECR/current/eu-west-3/index.json",
+      "sku": "TUZFZPEXJNDK38FJ"
+    },
+    {
+      "item": "CloudWatch ingest assumption",
+      "quantity": 1,
+      "unit": "GB",
+      "usd_unit_price": "0.5985000000",
+      "estimated_usd": "0.5985000000",
+      "source": "https://pricing.us-east-1.amazonaws.com/offers/v1.0/aws/AmazonCloudWatch/current/eu-west-3/index.json",
+      "sku": "BN4XSGJA9MMZKCP7"
+    },
+    {
+      "item": "CloudWatch stored logs assumption",
+      "quantity": 1,
+      "unit": "GB-month",
+      "usd_unit_price": "0.0315000000",
+      "estimated_usd": "0.0315000000",
+      "source": "https://pricing.us-east-1.amazonaws.com/offers/v1.0/aws/AmazonCloudWatch/current/eu-west-3/index.json",
+      "sku": "ZCM3MJRQPU2BK43T"
+    },
+    {
+      "item": "Three public IPv4, NAT and optional NLB",
+      "quantity": 2190,
+      "unit": "address-hour",
+      "usd_unit_price": "0.0050000000",
+      "estimated_usd": "10.9500000000",
+      "source": "https://pricing.us-east-1.amazonaws.com/offers/v1.0/aws/AmazonVPC/current/eu-west-3/index.json",
+      "sku": "T7GTF6TYY473HUA4"
+    },
+    {
+      "item": "Optional public Network Load Balancer",
+      "quantity": 730,
+      "unit": "LB-hour",
+      "usd_unit_price": "0.0264600000",
+      "estimated_usd": "19.3158000000",
+      "source": "https://pricing.us-east-1.amazonaws.com/offers/v1.0/aws/AWSELB/current/eu-west-3/index.json",
+      "sku": "N6NTFGZN2VWD4QEY"
+    },
+    {
+      "item": "Optional NLB capacity assumption",
+      "quantity": 730,
+      "unit": "NLCU-hour",
+      "usd_unit_price": "0.0063000000",
+      "estimated_usd": "4.5990000000",
+      "source": "https://pricing.us-east-1.amazonaws.com/offers/v1.0/aws/AWSELB/current/eu-west-3/index.json",
+      "sku": "QMZXT6E5MCH634JS"
+    }
+  ],
+  "scenario_subtotal_usd": "251.1818000000",
+  "planning_margin_fraction": ".30",
+  "scenario_with_margin_usd": "326.536340000000",
+  "actual_spend": null,
+  "budget_approved": false,
+  "exclusions": [
+    "Taxes, currency conversion, credit agreements",
+    "CPU surplus credits, extended EKS support, inter-AZ and internet egress",
+    "Excess metrics/logs/requests, backup versions and retrieval beyond stated small assumptions",
+    "RDS Secrets Manager service/rotation charges and optional domains/ACM services",
+    "Node autoscaling beyond two nodes, controller/observability extra volume use"
+  ],
+  "limits": [
+    "No cloud apply executed",
+    "One NAT is an availability limit and cross-AZ traffic cost source",
+    "Optional NLB is a scenario extension, not a Terraform resource already applied",
+    "Margin is a proposal, not a guaranteed upper bound"
+  ]
+}

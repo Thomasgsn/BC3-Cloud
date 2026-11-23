@@ -1,0 +1,30 @@
+{
+  "events": [
+    {
+      "event": "APIUnavailable_firing",
+      "seconds_since_scale": 31.207270868002524,
+      "alerts": [
+        {
+          "labels": {
+            "alertname": "APIUnavailable",
+            "job": "bc3-api",
+            "severity": "critical"
+          },
+          "annotations": {
+            "summary": "Aucune instance API ne r\u00e9pond au monitoring"
+          },
+          "state": "firing",
+          "activeAt": "2026-11-20T13:43:39.699438474Z",
+          "value": "1e+00"
+        }
+      ]
+    },
+    {
+      "event": "APIUnavailable_resolved",
+      "seconds_since_scale": 47.16395568699954
+    }
+  ],
+  "tls_verified": true,
+  "notification_email": false,
+  "fault": "Own local API deployment scaled to zero, then restored"
+}

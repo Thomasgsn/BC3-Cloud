@@ -1,0 +1,96 @@
+terraform_data.reproduction: Refreshing state... [id=0f6f0c5d-cab9-5c69-a0aa-80645f863c12]
+
+Terraform used the selected providers to generate the following execution
+plan. Resource actions are indicated with the following symbols:
+-/+ destroy and then create replacement
+
+Terraform will perform the following actions:
+
+  # terraform_data.reproduction is tainted, so must be replaced
+-/+ resource "terraform_data" "reproduction" {
+      ~ id               = "0f6f0c5d-cab9-5c69-a0aa-80645f863c12" -> (known after apply)
+        # (1 unchanged attribute hidden)
+    }
+
+Plan: 1 to add, 0 to change, 1 to destroy.
+terraform_data.reproduction: Destroying... [id=0f6f0c5d-cab9-5c69-a0aa-80645f863c12]
+terraform_data.reproduction: Destruction complete after 0s
+terraform_data.reproduction: Creating...
+terraform_data.reproduction: Provisioning with 'local-exec'...
+terraform_data.reproduction (local-exec): Executing: ["/bin/sh" "-c" "bash scripts/reproduce_local.sh"]
+terraform_data.reproduction (local-exec): Set kubectl context to "kind-rncp-bc3-repro"
+terraform_data.reproduction (local-exec): node/rncp-bc3-repro-control-plane condition met
+terraform_data.reproduction (local-exec): Image: "rncp-bc3-api:5" with ID "sha256:081457876609372a5b26d45edd5067e18d0a81e48bb4b0b810b23af8268bffe5" not yet present on node "rncp-bc3-repro-control-plane", loading...
+terraform_data.reproduction (local-exec): Image: "rncp-bc3-worker:3" with ID "sha256:0aa14e0de1c0614c5a5848c8d1ed9830ed4e35bf2d4b283374401b41cba09491" not yet present on node "rncp-bc3-repro-control-plane", loading...
+terraform_data.reproduction (local-exec): Image: "rncp-bc3-db:1" with ID "sha256:8b5823ccfa483c741c484fef0d230d963a89afd4cda933763a76ac8551b99e8d" not yet present on node "rncp-bc3-repro-control-plane", loading...
+terraform_data.reproduction (local-exec): Image: "rncp-bc3-front:2" with ID "sha256:7ee60bebd80e1510f28a94957acce01053f9b81b74ab3b7d0ab84e444ee67cf1" not yet present on node "rncp-bc3-repro-control-plane", loading...
+terraform_data.reproduction (local-exec): Image: "rncp-bc3-queue-tls:1" with ID "sha256:acc3e5431d60bd5d9bb2e8409fd3c15035985954eb7109e1dcc3c4b55b4acb0e" not yet present on node "rncp-bc3-repro-control-plane", loading...
+terraform_data.reproduction: Still creating... [00m10s elapsed]
+terraform_data.reproduction: Still creating... [00m20s elapsed]
+terraform_data.reproduction: Still creating... [00m30s elapsed]
+terraform_data.reproduction: Still creating... [00m40s elapsed]
+terraform_data.reproduction: Still creating... [00m50s elapsed]
+terraform_data.reproduction: Still creating... [01m00s elapsed]
+terraform_data.reproduction: Still creating... [01m10s elapsed]
+terraform_data.reproduction: Still creating... [01m20s elapsed]
+terraform_data.reproduction: Still creating... [01m30s elapsed]
+terraform_data.reproduction: Still creating... [01m40s elapsed]
+terraform_data.reproduction: Still creating... [01m50s elapsed]
+terraform_data.reproduction (local-exec): {"event": "etcd_encryption_configured", "cluster": "kind-rncp-bc3-repro", "provider": "AES-GCM", "key_printed": false, "other_clusters_modified": false, "raw_etcd_proof": "To verify after runtime Secret creation"}
+terraform_data.reproduction (local-exec): namespace/bc3-prod created
+terraform_data.reproduction (local-exec): namespace/bc3-test created
+terraform_data.reproduction (local-exec): namespace/bc3-dev created
+terraform_data.reproduction (local-exec): serviceaccount/application created
+terraform_data.reproduction (local-exec): persistentvolumeclaim/pg created
+terraform_data.reproduction (local-exec): persistentvolumeclaim/object created
+terraform_data.reproduction (local-exec): configmap/queue-config created
+terraform_data.reproduction (local-exec): configmap/queue-tls-config created
+terraform_data.reproduction (local-exec): secret/runtime created
+terraform_data.reproduction (local-exec): secret/api-tls created
+terraform_data.reproduction (local-exec): secret/db-secret created
+terraform_data.reproduction (local-exec): secret/s3-secret created
+terraform_data.reproduction (local-exec): secret/queue-secret created
+terraform_data.reproduction (local-exec): secret/worker-tls created
+terraform_data.reproduction (local-exec): secret/front-runtime created
+terraform_data.reproduction (local-exec): secret/bootstrap created
+terraform_data.reproduction (local-exec): secret/front-tls created
+terraform_data.reproduction (local-exec): configmap/trust created
+terraform_data.reproduction (local-exec): statefulset.apps/db created
+terraform_data.reproduction (local-exec): service/db created
+terraform_data.reproduction (local-exec): statefulset.apps/s3 created
+terraform_data.reproduction (local-exec): service/s3 created
+terraform_data.reproduction (local-exec): deployment.apps/queue created
+terraform_data.reproduction (local-exec): service/queue created
+terraform_data.reproduction (local-exec): Waiting for 1 pods to be ready...
+terraform_data.reproduction: Still creating... [02m00s elapsed]
+terraform_data.reproduction: Still creating... [02m10s elapsed]
+terraform_data.reproduction: Still creating... [02m20s elapsed]
+terraform_data.reproduction: Still creating... [02m30s elapsed]
+terraform_data.reproduction (local-exec): partitioned roll out complete: 1 new pods have been updated...
+terraform_data.reproduction (local-exec): Waiting for 1 pods to be ready...
+terraform_data.reproduction: Still creating... [02m40s elapsed]
+terraform_data.reproduction: Still creating... [02m50s elapsed]
+terraform_data.reproduction: Still creating... [03m00s elapsed]
+terraform_data.reproduction (local-exec): partitioned roll out complete: 1 new pods have been updated...
+terraform_data.reproduction (local-exec): deployment "queue" successfully rolled out
+terraform_data.reproduction (local-exec): job.batch/database-bootstrap-v3 created
+terraform_data.reproduction: Still creating... [03m10s elapsed]
+terraform_data.reproduction: Still creating... [03m20s elapsed]
+terraform_data.reproduction: Still creating... [03m30s elapsed]
+terraform_data.reproduction: Still creating... [03m40s elapsed]
+terraform_data.reproduction: Still creating... [03m50s elapsed]
+terraform_data.reproduction: Still creating... [04m00s elapsed]
+terraform_data.reproduction: Still creating... [04m10s elapsed]
+terraform_data.reproduction: Still creating... [04m20s elapsed]
+terraform_data.reproduction: Still creating... [04m30s elapsed]
+terraform_data.reproduction: Still creating... [04m40s elapsed]
+terraform_data.reproduction: Still creating... [04m50s elapsed]
+terraform_data.reproduction: Still creating... [05m00s elapsed]
+terraform_data.reproduction: Still creating... [05m10s elapsed]
+terraform_data.reproduction: Still creating... [05m20s elapsed]
+terraform_data.reproduction: Still creating... [05m30s elapsed]
+terraform_data.reproduction: Still creating... [05m40s elapsed]
+terraform_data.reproduction: Still creating... [05m50s elapsed]
+terraform_data.reproduction: Still creating... [06m00s elapsed]
+terraform_data.reproduction: Still creating... [128m41s elapsed]
+terraform_data.reproduction (local-exec): error: timed out waiting for the condition on jobs/database-bootstrap-v3

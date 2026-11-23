@@ -1,0 +1,11 @@
+{
+  "archive": "bc3-rendu-20261123.zip",
+  "files": 307,
+  "entries": 308,
+  "sha256": "389b9f1709d3d68471e68524a636ebf34b37f116b4b257a03e8f69f4e762b97f",
+  "crc_verified": true,
+  "all_entry_sha_verified": true,
+  "known_private_values_checked_not_printed": 10,
+  "excluded": "Secrets, raw data, model weights, volumes, runtime state, Git and caches",
+  "restoration_of_old_encrypted_database": "Requires separately preserved private keys; archive deliberately cannot decrypt it"
+}

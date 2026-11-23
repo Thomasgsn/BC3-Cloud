@@ -1,0 +1,9 @@
+{
+  "project_slos": {
+    "availability": 0.99,
+    "p95_read_seconds": 0.5
+  },
+  "window": "Measured test window and rolling 2m dashboard, not a monthly SLA",
+  "energy_measured": false,
+  "email_enabled": false
+}

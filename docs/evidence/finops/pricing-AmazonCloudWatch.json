@@ -1,0 +1,52 @@
+{
+  "source": "https://pricing.us-east-1.amazonaws.com/offers/v1.0/aws/AmazonCloudWatch/current/eu-west-3/index.json",
+  "publication_date": "2026-11-19T17:10:40Z",
+  "rates": [
+    {
+      "sku": "BN4XSGJA9MMZKCP7",
+      "attributes": {
+        "servicecode": "AmazonCloudWatch",
+        "location": "EU (Paris)",
+        "locationType": "AWS Region",
+        "group": "Ingested Logs",
+        "groupDescription": "Existing system, application, and custom log files",
+        "usagetype": "EUW3-DataProcessing-Bytes",
+        "operation": "PutLogEvents",
+        "logsDestination": "Amazon CloudWatch Logs",
+        "regionCode": "eu-west-3",
+        "servicename": "AmazonCloudWatch",
+        "version": "Current"
+      },
+      "description": "$0.5985 per GB custom log data ingested in Standard log class - EU (Paris)",
+      "unit": "GB",
+      "price": "0.5985000000",
+      "range": [
+        "0",
+        "Inf"
+      ]
+    },
+    {
+      "sku": "ZCM3MJRQPU2BK43T",
+      "attributes": {
+        "servicecode": "AmazonCloudWatch",
+        "location": "EU (Paris)",
+        "locationType": "AWS Region",
+        "storageMedia": "Amazon S3",
+        "group": "Amazon CloudWatch Standard Storage pricing current",
+        "groupDescription": "Amazon CloudWatch Logs Storage Current version",
+        "usagetype": "EUW3-TimedStorage-ByteHrs",
+        "operation": "",
+        "regionCode": "eu-west-3",
+        "servicename": "AmazonCloudWatch",
+        "version": "Current"
+      },
+      "description": "$0.0315 per GB-mo of log storage - EU (Paris)",
+      "unit": "GB-Mo",
+      "price": "0.0315000000",
+      "range": [
+        "0",
+        "Inf"
+      ]
+    }
+  ]
+}

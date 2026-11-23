@@ -1,0 +1,8 @@
+{
+  "started_at_utc": "2026-11-20T16:21:42.245154+00:00",
+  "exit_code": 1,
+  "elapsed_wall_seconds": 353.810802005999,
+  "command": "bash scripts/ci_local.sh",
+  "scope": "Actual full pipeline on local Docker/kind; no GitHub Actions remote execution, publication, email or AWS apply",
+  "log": "full-run.log"
+}

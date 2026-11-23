@@ -1,0 +1,5 @@
+{
+  "invalid_fixture_message_sent_to_actual_queue": true,
+  "worker_transferred_to_dlq": true,
+  "matched_fixture_removed_only": true
+}

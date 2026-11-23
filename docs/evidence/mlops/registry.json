@@ -1,0 +1,61 @@
+{
+  "events": [
+    {
+      "version": "banking77-c0-25",
+      "rollback": false,
+      "accepted": true,
+      "served_model_version": "banking77-c0-25",
+      "message": "{\"event\": \"promotion\", \"version\": \"banking77-c0-25\", \"model_sha256\": \"c1c24ab1a95864662f4230509305ca3f61ff4175997baa351715c6ecde40b3a0\", \"validation_macro_f1\": 0.8800274940179905, \"language\": \"en\", \"previous\": \"banking77-c1-0\"}"
+    },
+    {
+      "version": "banking77-c1-0",
+      "rollback": false,
+      "accepted": true,
+      "served_model_version": "banking77-c1-0",
+      "message": "{\"event\": \"promotion\", \"version\": \"banking77-c1-0\", \"model_sha256\": \"32ca3ac09cd0cdacb4ad0fea9ab84730cb18952e0347b9a0c2f9d4411ca89305\", \"validation_macro_f1\": 0.8908869505819255, \"language\": \"en\", \"previous\": \"banking77-c0-25\"}"
+    },
+    {
+      "version": null,
+      "rollback": true,
+      "accepted": true,
+      "served_model_version": "banking77-c0-25",
+      "message": "{\"event\": \"rollback\", \"version\": \"banking77-c0-25\", \"model_sha256\": \"c1c24ab1a95864662f4230509305ca3f61ff4175997baa351715c6ecde40b3a0\", \"validation_macro_f1\": 0.8800274940179905, \"language\": \"en\", \"previous\": \"banking77-c1-0\"}"
+    },
+    {
+      "version": "banking77-c1-0",
+      "rollback": false,
+      "accepted": true,
+      "served_model_version": "banking77-c1-0",
+      "message": "{\"event\": \"promotion\", \"version\": \"banking77-c1-0\", \"model_sha256\": \"32ca3ac09cd0cdacb4ad0fea9ab84730cb18952e0347b9a0c2f9d4411ca89305\", \"validation_macro_f1\": 0.8908869505819255, \"language\": \"en\", \"previous\": \"banking77-c0-25\"}"
+    },
+    {
+      "version": "negative-regression",
+      "rollback": false,
+      "accepted": false,
+      "served_model_version": null,
+      "message": "REFUS : r\u00e9gression validation"
+    },
+    {
+      "version": "negative-quality-floor",
+      "rollback": false,
+      "accepted": false,
+      "served_model_version": null,
+      "message": "REFUS : seuil de validation"
+    },
+    {
+      "version": "negative-integrity",
+      "rollback": false,
+      "accepted": false,
+      "served_model_version": null,
+      "message": "REFUS : int\u00e9grit\u00e9 mod\u00e8le"
+    }
+  ],
+  "active": {
+    "version": "banking77-c1-0",
+    "model_sha256": "32ca3ac09cd0cdacb4ad0fea9ab84730cb18952e0347b9a0c2f9d4411ca89305",
+    "validation_macro_f1": 0.8908869505819255,
+    "language": "en",
+    "previous": "banking77-c0-25"
+  },
+  "scope": "Local trusted build artifacts only; no uploaded untrusted pickle"
+}

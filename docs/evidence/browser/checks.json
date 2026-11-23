@@ -1,0 +1,19 @@
+{
+  "event": "real_browser",
+  "ticket_creation": true,
+  "actual_intent_suggestion_visible": true,
+  "inference_observed_seconds": 0.09402181100085727,
+  "private_upload_download_exact": true,
+  "async_export_download_contains_fixture": true,
+  "keyboard_skip": true,
+  "mobile_global_overflow": false,
+  "javascript_errors": [],
+  "axe_violations": [],
+  "axe_incomplete": 0,
+  "tls_scope": "Self-signed browser demo context ignores trust only; separate HTTPX tests verify CA and reject untrusted TLS",
+  "screenshots": {
+    "exports-desktop.png": "fb7a8946424d9bedb24879c4144dceb1c4a82a90580f5bf9e23f387683ace97b",
+    "tickets-desktop.png": "43dd90797ada461cbd87a39a18e24e3588610c7ae3a699a201c60926dbbd21d9",
+    "tickets-mobile.png": "b79994470781e41bddbf2c062569fbcc1cb8d5c55281659ca22c9efa11d67465"
+  }
+}

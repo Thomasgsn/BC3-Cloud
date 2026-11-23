@@ -1,0 +1,7 @@
+tests/security.tftest.hcl... in progress
+  run "private_encrypted_resources"... pass
+  run "approved_retention_plan"... pass
+tests/security.tftest.hcl... tearing down
+tests/security.tftest.hcl... pass
+
+Success! 2 passed, 0 failed.

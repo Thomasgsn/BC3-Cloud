@@ -1,0 +1,9 @@
+{
+  "pdf_pages": 13,
+  "pptx_slides": 14,
+  "review": "13-page PDF rendered, all pages reviewed on contact sheet; changed pages 2/13 inspected individually. Previously verified 14-slide PPTX unchanged.",
+  "pptx_scope": "Artifact Tool reimport/render, not opened in native PowerPoint",
+  "screenshots": "Actual browser fixtures, no invented capture",
+  "chart_rounding": "Validation F1 literals rounded to six decimals for portable Excel storage; full metrics in original evidence",
+  "pdf_followup": "tmp/pdfs/followup/"
+}
