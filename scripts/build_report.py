@@ -283,7 +283,7 @@ page(
         "Suites prioritaires : pousser le dépôt et faire tourner le workflow à distance, ce qui publiera les images sur GHCR ; poser une règle d’approbation sur l’environnement production ; appliquer Terraform sur un compte AWS avec plafond de dépense.",
         "Sources : sujet et référentiel fournis ; dépôt BANKING77 à révision figée et sa licence ; documentation officielle des outils et catalogues de prix AWS cités dans docs/evidence/finops/. Rédaction et sourçage assistés par IA (Codex, Claude), comme indiqué en page 1.",
     ],
-    evidence="README.md ; docs/rapport.md ; docs/checklist.md",
+    evidence="README.md ; docs/rapport.md",
 )
 # Courbes de données natives ReportLab, pas d’illustration de résultat inventée.
 from reportlab.graphics import renderSVG  # noqa: E402 - construction après lecture des preuves.

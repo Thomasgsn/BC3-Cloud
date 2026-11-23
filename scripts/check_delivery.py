@@ -13,7 +13,6 @@ required = [
     ".env.example",
     ".gitignore",
     "docs/rapport.md",
-    "docs/checklist.md",
     "docs/dictionnaire.md",
 ]
 errors = []
