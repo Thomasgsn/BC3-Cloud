@@ -1,8 +1,8 @@
 {
   "loki_lines_last_hour": {
     "api": {
-      "streams": 3,
-      "lines": 12,
+      "streams": 6,
+      "lines": 36,
       "labels": [
         "app",
         "container",
@@ -15,8 +15,8 @@
       ]
     },
     "worker": {
-      "streams": 1,
-      "lines": 1,
+      "streams": 2,
+      "lines": 4,
       "labels": [
         "app",
         "container",
@@ -30,7 +30,7 @@
     },
     "front": {
       "streams": 2,
-      "lines": 30,
+      "lines": 40,
       "labels": [
         "app",
         "container",

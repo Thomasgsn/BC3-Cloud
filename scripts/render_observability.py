@@ -7,6 +7,9 @@ from pathlib import Path
 
 r = Path(__file__).resolve().parents[1]
 ns = runpy.run_path(str(r / "scripts/render_manifests.py"))
+# La CA est lue au démarrage de Grafana depuis le Secret grafana-password : le manifeste versionné
+# ne dépend pas de la CA locale, régénérée sur chaque runner neuf.
+CA_FROM_SECRET = "$__file{/run/grafana-secrets/ca.crt}"
 obj, save, container, workload, mount, resources = (
     ns[k] for k in ["obj", "save", "container", "workload", "mount", "resources"]
 )
@@ -198,7 +201,7 @@ items.append(
                                 "url": "https://prometheus:9090",
                                 "isDefault": True,
                                 "jsonData": {"tlsAuthWithCACert": True},
-                                "secureJsonData": {"tlsCACert": (r / "secrets/ca.crt").read_text()},
+                                "secureJsonData": {"tlsCACert": CA_FROM_SECRET},
                             },
                             {
                                 "name": "BC3 Loki",
@@ -207,7 +210,7 @@ items.append(
                                 "access": "proxy",
                                 "url": "https://loki:3100",
                                 "jsonData": {"tlsAuthWithCACert": True, "serverName": "loki"},
-                                "secureJsonData": {"tlsCACert": (r / "secrets/ca.crt").read_text()},
+                                "secureJsonData": {"tlsCACert": CA_FROM_SECRET},
                             },
                         ],
                     }
