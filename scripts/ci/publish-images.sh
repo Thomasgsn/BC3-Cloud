@@ -9,6 +9,11 @@ grep -v '^#' scripts/ci/images.txt | while read -r spec; do
   name=${spec%%:*}
   for tag in "$IMAGE_TAG" "${spec#*:}"; do
     docker tag "rncp-bc3-${spec}" "${REGISTRY_PREFIX}/rncp-bc3-${name}:${tag}"
-    docker push "${REGISTRY_PREFIX}/rncp-bc3-${name}:${tag}"
+    # GHCR renvoie parfois « unknown blob » de façon passagère : trois essais avant d'échouer.
+    for attempt in 1 2 3; do
+      docker push "${REGISTRY_PREFIX}/rncp-bc3-${name}:${tag}" && break
+      [ "$attempt" = 3 ] && exit 1
+      sleep $((attempt * 10))
+    done
   done
 done
