@@ -6,6 +6,7 @@ import socket
 import ssl
 import subprocess
 import time
+import urllib.error
 import urllib.parse
 import urllib.request
 from pathlib import Path
@@ -72,10 +73,19 @@ def main():
         token = base64.b64encode(
             b"thomas:" + (ROOT / "secrets/grafana_password").read_text().strip().encode()
         ).decode()
-        health = get(
-            "https://localhost:13000/api/datasources/uid/bc3-loki/health",
-            {"Authorization": "Basic " + token},
-        )
+        # Grafana peut refuser le contrôle (HTTP 400) tant que sa source Loki finit de démarrer.
+        for _ in range(12):
+            try:
+                health = get(
+                    "https://localhost:13000/api/datasources/uid/bc3-loki/health",
+                    {"Authorization": "Basic " + token},
+                )
+            except urllib.error.HTTPError as error:
+                detail = error.read().decode(errors="replace")[:300]
+                health = {"status": f"HTTP {error.code}", "message": detail}
+            if health.get("status") == "OK":
+                break
+            time.sleep(5)
         report["grafana_loki_datasource"] = {
             "status": health.get("status"),
             "message": health.get("message"),
@@ -91,6 +101,7 @@ def main():
     out.write_text(json.dumps(report, ensure_ascii=False, indent=2) + "\n")
     print(json.dumps({"event": "logging_checked", **report["checks"]}))
     if not all(report["checks"].values()):
+        print(json.dumps({"grafana_loki_datasource": report["grafana_loki_datasource"]}))
         raise SystemExit(1)
 
 
