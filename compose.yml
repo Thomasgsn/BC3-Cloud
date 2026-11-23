@@ -1,0 +1,173 @@
+name: rncp-bc3
+x-app: &app
+  image: rncp-bc3-api:9
+  build: {context: ., dockerfile: infra/Dockerfile}
+  user: "${LOCAL_UID:-10001}:${LOCAL_GID:-10001}"
+  working_dir: /app
+  environment:
+    DB_HOST: db
+    DB_USER: bc3_app
+    S3_ENDPOINT: https://s3:8343
+    QUEUE_ENDPOINT: https://queue:9325
+    PYTHONPATH: /app/src
+    BC3_SECURE_COOKIE: "true"
+  volumes: ["./secrets/runtime:/run/secrets:ro","./src:/app/src:ro","./scripts:/app/scripts:ro","./tests:/app/tests:ro","./models:/app/models","./data:/app/data","./exports:/app/exports","./docs:/app/docs"]
+  read_only: true
+  tmpfs: ["/tmp:size=256m,mode=1777"]
+  cap_drop: [ALL]
+  security_opt: ["no-new-privileges:true"]
+  networks: [app]
+  mem_limit: 1g
+services:
+  db:
+    image: rncp-bc3-db:1
+    build: {context: infra/postgres}
+    environment: {POSTGRES_DB: bc3, POSTGRES_USER: bc3, POSTGRES_PASSWORD_FILE: /run/secrets/db_password, POSTGRES_INITDB_ARGS: --auth-host=scram-sha-256}
+    volumes: ["./secrets/db_password:/run/secrets/db_password:ro","./secrets/db.crt:/run/secrets/server.crt:ro","./secrets/db.key:/run/secrets/server.key:ro","pg:/var/lib/postgresql/data"]
+    networks: [app]
+    healthcheck: {test: [CMD-SHELL,"pg_isready -U bc3 -d bc3"], interval: 5s, timeout: 3s, retries: 20}
+    mem_limit: 768m
+  s3:
+    image: chrislusf/seaweedfs:latest@sha256:4b42c212543a0acd4c0e675215ecdcaf62a186ef98def76c7e12701871222d15
+    command: server -dir=/data -s3 -s3.config=/run/secrets/s3.json -ip=127.0.0.1 -ip.bind=127.0.0.1 -s3.ip.bind=0.0.0.0 -s3.port.https=8343 -s3.cert.file=/run/secrets/s3.crt -s3.key.file=/run/secrets/s3.key -master.telemetry=false -s3.iam.selfServiceRequiresGrant=true -master.volumeSizeLimitMB=128
+    volumes: ["object:/data","./secrets/s3.json:/run/secrets/s3.json:ro","./secrets/s3.crt:/run/secrets/s3.crt:ro","./secrets/s3.key:/run/secrets/s3.key:ro"]
+    networks: [app]
+    mem_limit: 768m
+  queue:
+    image: softwaremill/elasticmq-native:latest@sha256:e4580ab9ad1bd5cd37b4ba04911bc5ccc8cd2d9ab4de56ece65acee71c24e05c
+    volumes: ["./infra/elasticmq.conf:/opt/elasticmq.conf:ro"]
+    networks: [app]
+    mem_limit: 256m
+  queue-tls:
+    image: rncp-bc3-queue-tls:1
+    build: {context: infra/queue-tls}
+    user: "${LOCAL_UID:-10001}:${LOCAL_GID:-10001}"
+    network_mode: service:queue
+    depends_on: [queue]
+    volumes: ["./secrets/queue.crt:/run/secrets/server.crt:ro","./secrets/queue.key:/run/secrets/server.key:ro"]
+    read_only: true
+    tmpfs: ["/tmp:size=8m,mode=1777"]
+    cap_drop: [ALL]
+    security_opt: ["no-new-privileges:true"]
+    mem_limit: 64m
+  api:
+    <<: *app
+    volumes: ["./secrets/runtime:/run/secrets:ro","./secrets/api.key:/run/tls/server.key:ro","./secrets/api.crt:/run/tls/server.crt:ro","./src:/app/src:ro","./scripts:/app/scripts:ro","./models:/app/models:ro"]
+    depends_on: {db: {condition: service_healthy},s3: {condition: service_started},queue-tls: {condition: service_started},bootstrap: {condition: service_completed_successfully}}
+    ports: ["127.0.0.1:8453:8443"]
+    healthcheck:
+      test: [CMD,python,-c,"import ssl,urllib.request; urllib.request.urlopen('https://localhost:8443/health/ready',context=ssl.create_default_context(cafile='/run/secrets/ca.crt'),timeout=3)"]
+      interval: 5s
+      timeout: 4s
+      retries: 30
+  # Initialisation idempotente lancée par « docker compose up » : schéma et rôle applicatif, puis compte de démonstration.
+  bootstrap:
+    <<: *app
+    image: rncp-bc3-backup:5
+    build: {context: ., dockerfile: infra/backup.Dockerfile}
+    entrypoint: [python]
+    command: [scripts/bootstrap_database.py]
+    environment: {DB_HOST: db, DB_USER: bc3, PYTHONPATH: /app/src}
+    volumes: ["./secrets:/run/secrets:ro","./src:/app/src:ro","./scripts:/app/scripts:ro"]
+    depends_on: {db: {condition: service_healthy},s3: {condition: service_started}}
+    restart: "no"
+  demo-user:
+    <<: *app
+    entrypoint: [python]
+    command: [scripts/create_user.py,--username,thomas,--role,agent,--password-file,/run/test-secrets/demo_password]
+    volumes: ["./secrets/runtime:/run/secrets:ro","./secrets/demo_password:/run/test-secrets/demo_password:ro","./src:/app/src:ro","./scripts:/app/scripts:ro"]
+    depends_on: {api: {condition: service_healthy}}
+    restart: "no"
+  worker:
+    <<: *app
+    image: rncp-bc3-worker:6
+    build: {context: ., dockerfile: infra/worker.Dockerfile}
+    volumes: ["./secrets/runtime:/run/secrets:ro","./secrets/worker.key:/run/tls/server.key:ro","./secrets/worker.crt:/run/tls/server.crt:ro","./src:/app/src:ro"]
+    command: [python,-m,rncp_bc3.worker]
+    depends_on: {api: {condition: service_healthy}}
+  front:
+    image: rncp-bc3-front:4
+    build: {context: frontend}
+    user: "${LOCAL_UID:-10001}:${LOCAL_GID:-10001}"
+    volumes: ["./secrets/front.key:/run/secrets/server.key:ro","./secrets/front.crt:/run/secrets/server.crt:ro","./secrets/ca.crt:/run/secrets/ca.crt:ro"]
+    ports: ["127.0.0.1:8454:8443"]
+    networks: [app]
+    depends_on: {api: {condition: service_healthy}}
+    read_only: true
+    tmpfs: ["/tmp:size=32m,mode=1777"]
+    cap_drop: [ALL]
+    security_opt: ["no-new-privileges:true"]
+    mem_limit: 128m
+  browser:
+    image: rncp-bc3-browser:1
+    build: {context: infra/browser}
+    profiles: [tests]
+    entrypoint: [python,tests/integration/browser.py]
+    volumes: ["./tests:/app/tests:ro","./docs/evidence/browser:/evidence","./secrets/demo_password:/run/secrets/demo_password:ro"]
+    networks: [app]
+    mem_limit: 1g
+  frontend-tools:
+    image: node:24-alpine@sha256:116b800c3754b440ee0aa3ed2f20f5bf3d99a554bfd9adeea09ea8017f6e85f5
+    profiles: [tools]
+    user: "${LOCAL_UID:-10001}:${LOCAL_GID:-10001}"
+    working_dir: /frontend
+    entrypoint: [sh, -lc]
+    environment: {npm_config_cache: /tmp/npm-cache}
+    volumes: ["./frontend:/frontend:ro", "./docs/evidence/security:/evidence"]
+    read_only: true
+    tmpfs: ["/tmp:size=256m,mode=1777"]
+    cap_drop: [ALL]
+    security_opt: ["no-new-privileges:true"]
+    mem_limit: 512m
+  quality:
+    image: rncp-bc3-quality:1
+    build: {context: ., dockerfile: infra/quality.Dockerfile}
+    profiles: [tools]
+    user: "${LOCAL_UID:-10001}:${LOCAL_GID:-10001}"
+    volumes: [".:/workspace"]
+    read_only: true
+    tmpfs: ["/tmp:size=256m,mode=1777"]
+    cap_drop: [ALL]
+    security_opt: ["no-new-privileges:true"]
+    mem_limit: 768m
+  training:
+    image: rncp-bc3-training:1
+    build: {context: ., dockerfile: infra/training.Dockerfile}
+    profiles: [tools]
+    user: "${LOCAL_UID:-10001}:${LOCAL_GID:-10001}"
+    volumes: [".:/workspace"]
+    read_only: true
+    tmpfs: ["/tmp:size=256m,mode=1777"]
+    cap_drop: [ALL]
+    security_opt: ["no-new-privileges:true"]
+    mem_limit: 1g
+  kube-tools:
+    image: rncp-bc3-kube-tools:1
+    build: {context: infra/tools}
+    profiles: [k8s]
+    environment: {KUBECONFIG: /workspace/secrets/kubeconfig, DOCKER_HOST: unix:///var/run/docker.sock}
+    volumes: ["/var/run/docker.sock:/var/run/docker.sock",".:/workspace"]
+    networks: [app]
+    mem_limit: 1g
+  tools:
+    <<: *app
+    profiles: [tools]
+    entrypoint: [python]
+    volumes: ["./secrets/runtime:/run/secrets:ro","./secrets/demo_password:/run/test-secrets/demo_password:ro","./src:/app/src:ro","./scripts:/app/scripts:ro","./tests:/app/tests:ro","./models:/app/models","./data:/app/data","./exports:/app/exports","./docs:/app/docs"]
+  admin-tools:
+    <<: *app
+    image: rncp-bc3-backup:5
+    build: {context: ., dockerfile: infra/backup.Dockerfile}
+    profiles: [tools]
+    entrypoint: [python]
+    environment: {DB_HOST: db, DB_USER: bc3, PYTHONPATH: /app/src}
+    volumes: ["./secrets:/run/secrets:ro","./src:/app/src:ro","./scripts:/app/scripts:ro","./tests:/app/tests:ro","./docs:/app/docs","./exports:/app/exports"]
+  tests:
+    <<: *app
+    profiles: [tests]
+    entrypoint: [python,-m,pytest,-q,-o,cache_dir=/tmp/pytest-cache,tests/unit]
+networks:
+  app: {}
+volumes:
+  pg: {}
+  object: {}

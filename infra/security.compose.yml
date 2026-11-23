@@ -1,0 +1,14 @@
+name: rncp-bc3-security
+services:
+  scanner:
+    image: rncp-bc3-security:1
+    build: {context: security}
+    environment: {TRIVY_CACHE_DIR: /cache, TRIVY_NO_PROGRESS: "true"}
+    volumes: ["/var/run/docker.sock:/var/run/docker.sock:ro", "../docs/evidence/security:/evidence", "scanner-cache:/cache"]
+    read_only: true
+    tmpfs: ["/tmp:size=512m,mode=1777"]
+    cap_drop: [ALL]
+    security_opt: ["no-new-privileges:true"]
+    mem_limit: 1g
+volumes:
+  scanner-cache: {}
