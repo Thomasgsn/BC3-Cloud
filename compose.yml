@@ -29,7 +29,10 @@ services:
     mem_limit: 768m
   s3:
     image: chrislusf/seaweedfs:latest@sha256:4b42c212543a0acd4c0e675215ecdcaf62a186ef98def76c7e12701871222d15
-    command: server -dir=/data -s3 -s3.config=/run/secrets/s3.json -ip=127.0.0.1 -ip.bind=127.0.0.1 -s3.ip.bind=0.0.0.0 -s3.port.https=8343 -s3.cert.file=/run/secrets/s3.crt -s3.key.file=/run/secrets/s3.key -master.telemetry=false -s3.iam.selfServiceRequiresGrant=true -master.volumeSizeLimitMB=128
+    # L'image passe à l'utilisateur seaweed, qui ne peut pas lire des secrets 0600 d'un autre UID sur Linux :
+    # copie en root dans un dossier qui lui appartient, comme le fait infra/postgres/start.sh.
+    entrypoint: ["/bin/sh", "-c", "install -d -o seaweed -g seaweed -m 700 /run/s3 && install -o seaweed -g seaweed -m 400 /run/secrets/s3.json /run/secrets/s3.crt /run/secrets/s3.key /run/s3/ && exec /entrypoint.sh \"$$@\"", "s3"]
+    command: server -dir=/data -s3 -s3.config=/run/s3/s3.json -ip=127.0.0.1 -ip.bind=127.0.0.1 -s3.ip.bind=0.0.0.0 -s3.port.https=8343 -s3.cert.file=/run/s3/s3.crt -s3.key.file=/run/s3/s3.key -master.telemetry=false -s3.iam.selfServiceRequiresGrant=true -master.volumeSizeLimitMB=128
     volumes: ["object:/data","./secrets/s3.json:/run/secrets/s3.json:ro","./secrets/s3.crt:/run/secrets/s3.crt:ro","./secrets/s3.key:/run/secrets/s3.key:ro"]
     networks: [app]
     mem_limit: 768m
