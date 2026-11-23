@@ -1,0 +1,30 @@
+name: rncp-bc3-observe
+x-forward: &forward
+  image: rncp-bc3-kube-tools:1
+  environment: {KUBECONFIG: /run/kubeconfig}
+  volumes: ["../../secrets/kubeconfig:/run/kubeconfig:ro"]
+  networks: [kind]
+  restart: unless-stopped
+  read_only: true
+  cap_drop: [ALL]
+  security_opt: ["no-new-privileges:true"]
+  mem_limit: 128m
+services:
+  grafana:
+    <<: *forward
+    entrypoint: [kubectl,--context,kind-rncp-bc3,-n,bc3-test,port-forward,--address,0.0.0.0,service/grafana,8456:3000]
+    ports: ["127.0.0.1:8456:8456"]
+  prometheus:
+    <<: *forward
+    entrypoint: [kubectl,--context,kind-rncp-bc3,-n,bc3-test,port-forward,--address,0.0.0.0,service/prometheus,8457:9090]
+    ports: ["127.0.0.1:8457:8457"]
+  browser:
+    image: rncp-bc3-browser:1
+    profiles: [tests]
+    entrypoint: [python,tests/integration/browser.py]
+    environment: {BC3_BROWSER_URL: 'https://bc3.local:30443/', BC3_NODE_IP: '${BC3_NODE_IP:?exécuter scripts/connect_ui.py}'}
+    volumes: ["../../tests:/app/tests:ro","../../docs/evidence/k8s/browser:/evidence","../../secrets/demo_password:/run/secrets/demo_password:ro"]
+    networks: [kind]
+    mem_limit: 1g
+networks:
+  kind: {external: true,name: kind}

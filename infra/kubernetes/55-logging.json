@@ -1,0 +1,394 @@
+{
+  "apiVersion": "v1",
+  "kind": "List",
+  "items": [
+    {
+      "apiVersion": "v1",
+      "kind": "PersistentVolumeClaim",
+      "metadata": {
+        "name": "loki",
+        "namespace": "bc3-test",
+        "labels": {
+          "project": "rncp-bc3"
+        }
+      },
+      "spec": {
+        "accessModes": [
+          "ReadWriteOnce"
+        ],
+        "resources": {
+          "requests": {
+            "storage": "1Gi"
+          }
+        }
+      }
+    },
+    {
+      "apiVersion": "v1",
+      "kind": "ServiceAccount",
+      "metadata": {
+        "name": "logs",
+        "namespace": "bc3-test",
+        "labels": {
+          "project": "rncp-bc3"
+        }
+      }
+    },
+    {
+      "apiVersion": "rbac.authorization.k8s.io/v1",
+      "kind": "Role",
+      "metadata": {
+        "name": "logs-read-pods",
+        "namespace": "bc3-test",
+        "labels": {
+          "project": "rncp-bc3"
+        }
+      },
+      "rules": [
+        {
+          "apiGroups": [
+            ""
+          ],
+          "resources": [
+            "pods",
+            "pods/log"
+          ],
+          "verbs": [
+            "get",
+            "list",
+            "watch"
+          ]
+        }
+      ]
+    },
+    {
+      "apiVersion": "rbac.authorization.k8s.io/v1",
+      "kind": "RoleBinding",
+      "metadata": {
+        "name": "logs-read-pods",
+        "namespace": "bc3-test",
+        "labels": {
+          "project": "rncp-bc3"
+        }
+      },
+      "roleRef": {
+        "apiGroup": "rbac.authorization.k8s.io",
+        "kind": "Role",
+        "name": "logs-read-pods"
+      },
+      "subjects": [
+        {
+          "kind": "ServiceAccount",
+          "name": "logs",
+          "namespace": "bc3-test"
+        }
+      ]
+    },
+    {
+      "apiVersion": "v1",
+      "kind": "ConfigMap",
+      "metadata": {
+        "name": "loki",
+        "namespace": "bc3-test",
+        "labels": {
+          "project": "rncp-bc3"
+        }
+      },
+      "data": {
+        "loki.yml": "{\"auth_enabled\": false, \"server\": {\"http_listen_port\": 3100, \"grpc_listen_port\": 9095, \"http_tls_config\": {\"cert_file\": \"/run/server/server.crt\", \"key_file\": \"/run/server/server.key\"}, \"log_level\": \"warn\"}, \"common\": {\"instance_addr\": \"127.0.0.1\", \"path_prefix\": \"/loki\", \"storage\": {\"filesystem\": {\"chunks_directory\": \"/loki/chunks\", \"rules_directory\": \"/loki/rules\"}}, \"replication_factor\": 1, \"ring\": {\"kvstore\": {\"store\": \"inmemory\"}}}, \"schema_config\": {\"configs\": [{\"from\": \"2024-01-01\", \"store\": \"tsdb\", \"object_store\": \"filesystem\", \"schema\": \"v13\", \"index\": {\"prefix\": \"index_\", \"period\": \"24h\"}}]}, \"limits_config\": {\"retention_period\": \"72h\"}, \"compactor\": {\"working_directory\": \"/loki/compactor\", \"retention_enabled\": true, \"delete_request_store\": \"filesystem\"}, \"analytics\": {\"reporting_enabled\": false}}"
+      }
+    },
+    {
+      "apiVersion": "v1",
+      "kind": "ConfigMap",
+      "metadata": {
+        "name": "alloy",
+        "namespace": "bc3-test",
+        "labels": {
+          "project": "rncp-bc3"
+        }
+      },
+      "data": {
+        "config.alloy": "discovery.kubernetes \"pods\" {\n  role = \"pod\"\n  namespaces {\n    names = [\"bc3-test\"]\n  }\n}\ndiscovery.relabel \"bc3\" {\n  targets = discovery.kubernetes.pods.targets\n  rule {\n    source_labels = [\"__meta_kubernetes_namespace\"]\n    target_label  = \"namespace\"\n  }\n  rule {\n    source_labels = [\"__meta_kubernetes_pod_label_app\"]\n    target_label  = \"app\"\n  }\n  rule {\n    source_labels = [\"__meta_kubernetes_pod_name\"]\n    target_label  = \"pod\"\n  }\n  rule {\n    source_labels = [\"__meta_kubernetes_pod_container_name\"]\n    target_label  = \"container\"\n  }\n}\nloki.source.kubernetes \"pods\" {\n  targets    = discovery.relabel.bc3.output\n  forward_to = [loki.write.local.receiver]\n}\nloki.write \"local\" {\n  endpoint {\n    url = \"https://loki:3100/loki/api/v1/push\"\n    tls_config {\n      ca_file     = \"/run/trust/ca.crt\"\n      server_name = \"loki\"\n    }\n  }\n}\n"
+      }
+    },
+    {
+      "apiVersion": "v1",
+      "kind": "Service",
+      "metadata": {
+        "name": "loki",
+        "namespace": "bc3-test",
+        "labels": {
+          "project": "rncp-bc3"
+        }
+      },
+      "spec": {
+        "selector": {
+          "app": "loki"
+        },
+        "ports": [
+          {
+            "name": "https",
+            "port": 3100,
+            "targetPort": 3100
+          }
+        ]
+      }
+    },
+    {
+      "apiVersion": "apps/v1",
+      "kind": "Deployment",
+      "metadata": {
+        "name": "loki",
+        "namespace": "bc3-test",
+        "labels": {
+          "project": "rncp-bc3"
+        }
+      },
+      "spec": {
+        "replicas": 1,
+        "selector": {
+          "matchLabels": {
+            "app": "loki"
+          }
+        },
+        "template": {
+          "metadata": {
+            "labels": {
+              "app": "loki",
+              "project": "rncp-bc3"
+            },
+            "annotations": {
+              "checksum/config": "3ddb44d3ec2dd00e2c629e60082080ea402247b2cf0a1023a309868e6d85a21d"
+            }
+          },
+          "spec": {
+            "enableServiceLinks": false,
+            "serviceAccountName": "application",
+            "automountServiceAccountToken": false,
+            "securityContext": {
+              "runAsNonRoot": true,
+              "runAsUser": 10001,
+              "runAsGroup": 10001,
+              "fsGroup": 10001,
+              "seccompProfile": {
+                "type": "RuntimeDefault"
+              }
+            },
+            "containers": [
+              {
+                "name": "loki",
+                "image": "grafana/loki:3.5.5@sha256:31628519045e7f28692a7ae73b4a3fd293dccb425585ed5d16ceea3b5c9592e6",
+                "imagePullPolicy": "IfNotPresent",
+                "resources": {
+                  "requests": {
+                    "cpu": "50m",
+                    "memory": "128Mi"
+                  },
+                  "limits": {
+                    "cpu": "2",
+                    "memory": "512Mi"
+                  }
+                },
+                "securityContext": {
+                  "allowPrivilegeEscalation": false,
+                  "readOnlyRootFilesystem": true,
+                  "capabilities": {
+                    "drop": [
+                      "ALL"
+                    ]
+                  }
+                },
+                "volumeMounts": [
+                  {
+                    "name": "tmp",
+                    "mountPath": "/tmp"
+                  },
+                  {
+                    "name": "config",
+                    "mountPath": "/etc/loki",
+                    "readOnly": true
+                  },
+                  {
+                    "name": "tls",
+                    "mountPath": "/run/server",
+                    "readOnly": true
+                  },
+                  {
+                    "name": "data",
+                    "mountPath": "/loki"
+                  }
+                ],
+                "ports": [
+                  {
+                    "containerPort": 3100
+                  }
+                ],
+                "args": [
+                  "-config.file=/etc/loki/loki.yml"
+                ],
+                "readinessProbe": {
+                  "httpGet": {
+                    "path": "/ready",
+                    "port": 3100,
+                    "scheme": "HTTPS"
+                  },
+                  "periodSeconds": 5,
+                  "initialDelaySeconds": 10
+                }
+              }
+            ],
+            "volumes": [
+              {
+                "name": "tmp",
+                "emptyDir": {
+                  "sizeLimit": "256Mi"
+                }
+              },
+              {
+                "name": "config",
+                "configMap": {
+                  "name": "loki"
+                }
+              },
+              {
+                "name": "data",
+                "persistentVolumeClaim": {
+                  "claimName": "loki"
+                }
+              },
+              {
+                "name": "tls",
+                "secret": {
+                  "secretName": "loki-tls",
+                  "defaultMode": 288
+                }
+              }
+            ],
+            "terminationGracePeriodSeconds": 30
+          }
+        },
+        "strategy": {
+          "type": "Recreate"
+        }
+      }
+    },
+    {
+      "apiVersion": "apps/v1",
+      "kind": "Deployment",
+      "metadata": {
+        "name": "alloy",
+        "namespace": "bc3-test",
+        "labels": {
+          "project": "rncp-bc3"
+        }
+      },
+      "spec": {
+        "replicas": 1,
+        "selector": {
+          "matchLabels": {
+            "app": "alloy"
+          }
+        },
+        "template": {
+          "metadata": {
+            "labels": {
+              "app": "alloy",
+              "project": "rncp-bc3"
+            },
+            "annotations": {
+              "checksum/config": "3ddb44d3ec2dd00e2c629e60082080ea402247b2cf0a1023a309868e6d85a21d"
+            }
+          },
+          "spec": {
+            "enableServiceLinks": false,
+            "serviceAccountName": "logs",
+            "automountServiceAccountToken": true,
+            "securityContext": {
+              "runAsNonRoot": true,
+              "runAsUser": 10001,
+              "runAsGroup": 10001,
+              "fsGroup": 10001,
+              "seccompProfile": {
+                "type": "RuntimeDefault"
+              }
+            },
+            "containers": [
+              {
+                "name": "alloy",
+                "image": "grafana/alloy:v1.10.2@sha256:bcf27f18c4402869af112fb39e35e1db3804a404686f4caa20bdf77814219223",
+                "imagePullPolicy": "IfNotPresent",
+                "resources": {
+                  "requests": {
+                    "cpu": "25m",
+                    "memory": "64Mi"
+                  },
+                  "limits": {
+                    "cpu": "2",
+                    "memory": "256Mi"
+                  }
+                },
+                "securityContext": {
+                  "allowPrivilegeEscalation": false,
+                  "readOnlyRootFilesystem": true,
+                  "capabilities": {
+                    "drop": [
+                      "ALL"
+                    ]
+                  }
+                },
+                "volumeMounts": [
+                  {
+                    "name": "tmp",
+                    "mountPath": "/tmp"
+                  },
+                  {
+                    "name": "config",
+                    "mountPath": "/etc/alloy",
+                    "readOnly": true
+                  },
+                  {
+                    "name": "trust",
+                    "mountPath": "/run/trust",
+                    "readOnly": true
+                  }
+                ],
+                "args": [
+                  "run",
+                  "/etc/alloy/config.alloy",
+                  "--storage.path=/tmp/alloy",
+                  "--server.http.listen-addr=127.0.0.1:12345",
+                  "--disable-reporting"
+                ]
+              }
+            ],
+            "volumes": [
+              {
+                "name": "tmp",
+                "emptyDir": {
+                  "sizeLimit": "256Mi"
+                }
+              },
+              {
+                "name": "config",
+                "configMap": {
+                  "name": "alloy"
+                }
+              },
+              {
+                "name": "trust",
+                "configMap": {
+                  "name": "trust"
+                }
+              }
+            ],
+            "terminationGracePeriodSeconds": 30
+          }
+        },
+        "strategy": {
+          "type": "Recreate"
+        }
+      }
+    }
+  ]
+}

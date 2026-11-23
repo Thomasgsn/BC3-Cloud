@@ -1,0 +1,545 @@
+{
+  "apiVersion": "v1",
+  "kind": "List",
+  "items": [
+    {
+      "apiVersion": "apps/v1",
+      "kind": "StatefulSet",
+      "metadata": {
+        "name": "db",
+        "namespace": "bc3-test",
+        "labels": {
+          "project": "rncp-bc3"
+        }
+      },
+      "spec": {
+        "replicas": 1,
+        "selector": {
+          "matchLabels": {
+            "app": "db"
+          }
+        },
+        "template": {
+          "metadata": {
+            "labels": {
+              "app": "db",
+              "project": "rncp-bc3"
+            }
+          },
+          "spec": {
+            "enableServiceLinks": false,
+            "serviceAccountName": "application",
+            "automountServiceAccountToken": false,
+            "securityContext": {
+              "runAsNonRoot": true,
+              "runAsUser": 70,
+              "runAsGroup": 70,
+              "fsGroup": 70,
+              "seccompProfile": {
+                "type": "RuntimeDefault"
+              }
+            },
+            "containers": [
+              {
+                "name": "db",
+                "image": "rncp-bc3-db:1",
+                "imagePullPolicy": "IfNotPresent",
+                "resources": {
+                  "requests": {
+                    "cpu": "100m",
+                    "memory": "256Mi"
+                  },
+                  "limits": {
+                    "cpu": "2",
+                    "memory": "768Mi"
+                  }
+                },
+                "securityContext": {
+                  "allowPrivilegeEscalation": false,
+                  "readOnlyRootFilesystem": true,
+                  "capabilities": {
+                    "drop": [
+                      "ALL"
+                    ]
+                  }
+                },
+                "volumeMounts": [
+                  {
+                    "name": "tmp",
+                    "mountPath": "/tmp"
+                  },
+                  {
+                    "name": "data",
+                    "mountPath": "/var/lib/postgresql/data"
+                  },
+                  {
+                    "name": "pg-socket",
+                    "mountPath": "/var/run/postgresql"
+                  },
+                  {
+                    "name": "db-secret",
+                    "mountPath": "/run/secrets",
+                    "readOnly": true
+                  }
+                ],
+                "ports": [
+                  {
+                    "containerPort": 5432
+                  }
+                ],
+                "command": [
+                  "docker-entrypoint.sh"
+                ],
+                "args": [
+                  "postgres",
+                  "-c",
+                  "ssl=on",
+                  "-c",
+                  "ssl_cert_file=/run/secrets/server.crt",
+                  "-c",
+                  "ssl_key_file=/run/secrets/server.key",
+                  "-c",
+                  "unix_socket_directories=/var/run/postgresql"
+                ],
+                "env": [
+                  {
+                    "name": "POSTGRES_DB",
+                    "value": "bc3"
+                  },
+                  {
+                    "name": "POSTGRES_USER",
+                    "value": "bc3"
+                  },
+                  {
+                    "name": "POSTGRES_PASSWORD_FILE",
+                    "value": "/run/secrets/db_password"
+                  },
+                  {
+                    "name": "PGDATA",
+                    "value": "/var/lib/postgresql/data/pgdata"
+                  },
+                  {
+                    "name": "PGHOST",
+                    "value": "/var/run/postgresql"
+                  },
+                  {
+                    "name": "POSTGRES_INITDB_ARGS",
+                    "value": "--auth-host=scram-sha-256"
+                  }
+                ],
+                "readinessProbe": {
+                  "exec": {
+                    "command": [
+                      "pg_isready",
+                      "-h",
+                      "127.0.0.1",
+                      "-U",
+                      "bc3",
+                      "-d",
+                      "bc3"
+                    ]
+                  },
+                  "periodSeconds": 5
+                }
+              }
+            ],
+            "volumes": [
+              {
+                "name": "tmp",
+                "emptyDir": {
+                  "sizeLimit": "256Mi"
+                }
+              },
+              {
+                "name": "data",
+                "persistentVolumeClaim": {
+                  "claimName": "pg"
+                }
+              },
+              {
+                "name": "pg-socket",
+                "emptyDir": {}
+              },
+              {
+                "name": "db-secret",
+                "secret": {
+                  "secretName": "db-secret",
+                  "defaultMode": 288
+                }
+              }
+            ],
+            "terminationGracePeriodSeconds": 30
+          }
+        },
+        "serviceName": "db"
+      }
+    },
+    {
+      "apiVersion": "v1",
+      "kind": "Service",
+      "metadata": {
+        "name": "db",
+        "namespace": "bc3-test",
+        "labels": {
+          "project": "rncp-bc3"
+        }
+      },
+      "spec": {
+        "selector": {
+          "app": "db"
+        },
+        "ports": [
+          {
+            "name": "postgres",
+            "port": 5432,
+            "targetPort": 5432
+          }
+        ]
+      }
+    },
+    {
+      "apiVersion": "apps/v1",
+      "kind": "StatefulSet",
+      "metadata": {
+        "name": "s3",
+        "namespace": "bc3-test",
+        "labels": {
+          "project": "rncp-bc3"
+        }
+      },
+      "spec": {
+        "replicas": 1,
+        "selector": {
+          "matchLabels": {
+            "app": "s3"
+          }
+        },
+        "template": {
+          "metadata": {
+            "labels": {
+              "app": "s3",
+              "project": "rncp-bc3"
+            }
+          },
+          "spec": {
+            "enableServiceLinks": false,
+            "serviceAccountName": "application",
+            "automountServiceAccountToken": false,
+            "securityContext": {
+              "runAsNonRoot": true,
+              "runAsUser": 10001,
+              "runAsGroup": 10001,
+              "fsGroup": 10001,
+              "seccompProfile": {
+                "type": "RuntimeDefault"
+              }
+            },
+            "containers": [
+              {
+                "name": "s3",
+                "image": "chrislusf/seaweedfs:latest@sha256:4b42c212543a0acd4c0e675215ecdcaf62a186ef98def76c7e12701871222d15",
+                "imagePullPolicy": "IfNotPresent",
+                "resources": {
+                  "requests": {
+                    "cpu": "100m",
+                    "memory": "256Mi"
+                  },
+                  "limits": {
+                    "cpu": "2",
+                    "memory": "768Mi"
+                  }
+                },
+                "securityContext": {
+                  "allowPrivilegeEscalation": false,
+                  "readOnlyRootFilesystem": true,
+                  "capabilities": {
+                    "drop": [
+                      "ALL"
+                    ]
+                  }
+                },
+                "volumeMounts": [
+                  {
+                    "name": "tmp",
+                    "mountPath": "/tmp"
+                  },
+                  {
+                    "name": "data",
+                    "mountPath": "/data"
+                  },
+                  {
+                    "name": "s3-secret",
+                    "mountPath": "/run/secrets",
+                    "readOnly": true
+                  }
+                ],
+                "ports": [
+                  {
+                    "containerPort": 8343
+                  }
+                ],
+                "args": [
+                  "server",
+                  "-dir=/data",
+                  "-s3",
+                  "-s3.config=/run/secrets/s3.json",
+                  "-ip=127.0.0.1",
+                  "-ip.bind=127.0.0.1",
+                  "-s3.ip.bind=0.0.0.0",
+                  "-s3.port.https=8343",
+                  "-s3.cert.file=/run/secrets/s3.crt",
+                  "-s3.key.file=/run/secrets/s3.key",
+                  "-master.telemetry=false",
+                  "-s3.iam.selfServiceRequiresGrant=true",
+                  "-master.volumeSizeLimitMB=128"
+                ],
+                "readinessProbe": {
+                  "tcpSocket": {
+                    "port": 8343
+                  },
+                  "periodSeconds": 5,
+                  "initialDelaySeconds": 5
+                }
+              }
+            ],
+            "volumes": [
+              {
+                "name": "tmp",
+                "emptyDir": {
+                  "sizeLimit": "256Mi"
+                }
+              },
+              {
+                "name": "data",
+                "persistentVolumeClaim": {
+                  "claimName": "object"
+                }
+              },
+              {
+                "name": "s3-secret",
+                "secret": {
+                  "secretName": "s3-secret",
+                  "defaultMode": 288
+                }
+              }
+            ],
+            "terminationGracePeriodSeconds": 30
+          }
+        },
+        "serviceName": "s3"
+      }
+    },
+    {
+      "apiVersion": "v1",
+      "kind": "Service",
+      "metadata": {
+        "name": "s3",
+        "namespace": "bc3-test",
+        "labels": {
+          "project": "rncp-bc3"
+        }
+      },
+      "spec": {
+        "selector": {
+          "app": "s3"
+        },
+        "ports": [
+          {
+            "name": "https",
+            "port": 8343,
+            "targetPort": 8343
+          }
+        ]
+      }
+    },
+    {
+      "apiVersion": "apps/v1",
+      "kind": "Deployment",
+      "metadata": {
+        "name": "queue",
+        "namespace": "bc3-test",
+        "labels": {
+          "project": "rncp-bc3"
+        }
+      },
+      "spec": {
+        "replicas": 1,
+        "selector": {
+          "matchLabels": {
+            "app": "queue"
+          }
+        },
+        "template": {
+          "metadata": {
+            "labels": {
+              "app": "queue",
+              "project": "rncp-bc3"
+            }
+          },
+          "spec": {
+            "enableServiceLinks": false,
+            "serviceAccountName": "application",
+            "automountServiceAccountToken": false,
+            "securityContext": {
+              "runAsNonRoot": true,
+              "runAsUser": 10001,
+              "runAsGroup": 10001,
+              "fsGroup": 10001,
+              "seccompProfile": {
+                "type": "RuntimeDefault"
+              }
+            },
+            "containers": [
+              {
+                "name": "broker",
+                "image": "softwaremill/elasticmq-native:latest@sha256:e4580ab9ad1bd5cd37b4ba04911bc5ccc8cd2d9ab4de56ece65acee71c24e05c",
+                "imagePullPolicy": "IfNotPresent",
+                "resources": {
+                  "requests": {
+                    "cpu": "25m",
+                    "memory": "64Mi"
+                  },
+                  "limits": {
+                    "cpu": "2",
+                    "memory": "256Mi"
+                  }
+                },
+                "securityContext": {
+                  "allowPrivilegeEscalation": false,
+                  "readOnlyRootFilesystem": true,
+                  "capabilities": {
+                    "drop": [
+                      "ALL"
+                    ]
+                  }
+                },
+                "volumeMounts": [
+                  {
+                    "name": "tmp",
+                    "mountPath": "/tmp"
+                  },
+                  {
+                    "name": "queue-config",
+                    "mountPath": "/opt/elasticmq.conf",
+                    "subPath": "elasticmq.conf",
+                    "readOnly": true
+                  }
+                ]
+              },
+              {
+                "name": "tls",
+                "image": "rncp-bc3-queue-tls:1",
+                "imagePullPolicy": "IfNotPresent",
+                "resources": {
+                  "requests": {
+                    "cpu": "10m",
+                    "memory": "16Mi"
+                  },
+                  "limits": {
+                    "cpu": "2",
+                    "memory": "64Mi"
+                  }
+                },
+                "securityContext": {
+                  "allowPrivilegeEscalation": false,
+                  "readOnlyRootFilesystem": true,
+                  "capabilities": {
+                    "drop": [
+                      "ALL"
+                    ]
+                  }
+                },
+                "volumeMounts": [
+                  {
+                    "name": "tmp",
+                    "mountPath": "/tmp"
+                  },
+                  {
+                    "name": "queue-secret",
+                    "mountPath": "/run/secrets",
+                    "readOnly": true
+                  },
+                  {
+                    "name": "tls-config",
+                    "mountPath": "/etc/stunnel/stunnel.conf",
+                    "subPath": "stunnel.conf",
+                    "readOnly": true
+                  }
+                ],
+                "ports": [
+                  {
+                    "containerPort": 9325
+                  }
+                ],
+                "readinessProbe": {
+                  "tcpSocket": {
+                    "port": 9325
+                  },
+                  "periodSeconds": 5
+                }
+              }
+            ],
+            "volumes": [
+              {
+                "name": "tmp",
+                "emptyDir": {
+                  "sizeLimit": "256Mi"
+                }
+              },
+              {
+                "name": "queue-secret",
+                "secret": {
+                  "secretName": "queue-secret",
+                  "defaultMode": 288
+                }
+              },
+              {
+                "name": "queue-config",
+                "configMap": {
+                  "name": "queue-config"
+                }
+              },
+              {
+                "name": "tls-config",
+                "configMap": {
+                  "name": "queue-tls-config"
+                }
+              }
+            ],
+            "terminationGracePeriodSeconds": 30
+          }
+        },
+        "strategy": {
+          "type": "RollingUpdate",
+          "rollingUpdate": {
+            "maxSurge": 1,
+            "maxUnavailable": 0
+          }
+        }
+      }
+    },
+    {
+      "apiVersion": "v1",
+      "kind": "Service",
+      "metadata": {
+        "name": "queue",
+        "namespace": "bc3-test",
+        "labels": {
+          "project": "rncp-bc3"
+        }
+      },
+      "spec": {
+        "selector": {
+          "app": "queue"
+        },
+        "ports": [
+          {
+            "name": "https",
+            "port": 9325,
+            "targetPort": 9325
+          }
+        ]
+      }
+    }
+  ]
+}

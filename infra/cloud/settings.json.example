@@ -1,0 +1,8 @@
+{
+  "hostname": "support.example.org",
+  "images": {
+    "api": "123456789012.dkr.ecr.eu-west-3.amazonaws.com/rncp-bc3/api@sha256:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+    "worker": "123456789012.dkr.ecr.eu-west-3.amazonaws.com/rncp-bc3/worker@sha256:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+    "front": "123456789012.dkr.ecr.eu-west-3.amazonaws.com/rncp-bc3/front@sha256:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+  }
+}

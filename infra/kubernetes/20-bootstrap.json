@@ -1,0 +1,121 @@
+{
+  "apiVersion": "v1",
+  "kind": "List",
+  "items": [
+    {
+      "apiVersion": "batch/v1",
+      "kind": "Job",
+      "metadata": {
+        "name": "database-bootstrap-v6",
+        "namespace": "bc3-test",
+        "labels": {
+          "project": "rncp-bc3"
+        }
+      },
+      "spec": {
+        "backoffLimit": 3,
+        "template": {
+          "metadata": {
+            "labels": {
+              "app": "bootstrap"
+            }
+          },
+          "spec": {
+            "restartPolicy": "Never",
+            "enableServiceLinks": false,
+            "serviceAccountName": "application",
+            "automountServiceAccountToken": false,
+            "securityContext": {
+              "runAsNonRoot": true,
+              "runAsUser": 10001,
+              "runAsGroup": 10001,
+              "fsGroup": 10001,
+              "seccompProfile": {
+                "type": "RuntimeDefault"
+              }
+            },
+            "containers": [
+              {
+                "name": "bootstrap",
+                "image": "rncp-bc3-api:9",
+                "imagePullPolicy": "IfNotPresent",
+                "resources": {
+                  "requests": {
+                    "cpu": "50m",
+                    "memory": "128Mi"
+                  },
+                  "limits": {
+                    "cpu": "2",
+                    "memory": "512Mi"
+                  }
+                },
+                "securityContext": {
+                  "allowPrivilegeEscalation": false,
+                  "readOnlyRootFilesystem": true,
+                  "capabilities": {
+                    "drop": [
+                      "ALL"
+                    ]
+                  }
+                },
+                "volumeMounts": [
+                  {
+                    "name": "tmp",
+                    "mountPath": "/tmp"
+                  },
+                  {
+                    "name": "bootstrap",
+                    "mountPath": "/run/secrets",
+                    "readOnly": true
+                  }
+                ],
+                "command": [
+                  "sh",
+                  "-ec",
+                  "python scripts/bootstrap_database.py && python scripts/create_user.py --username thomas --role agent --password-file /run/secrets/demo_password"
+                ],
+                "env": [
+                  {
+                    "name": "DB_USER",
+                    "value": "bc3"
+                  }
+                ]
+              }
+            ],
+            "volumes": [
+              {
+                "name": "tmp",
+                "emptyDir": {}
+              },
+              {
+                "name": "bootstrap",
+                "secret": {
+                  "secretName": "bootstrap",
+                  "defaultMode": 288,
+                  "items": [
+                    {
+                      "key": "config.json",
+                      "path": "config.json"
+                    },
+                    {
+                      "key": "runtime-config.json",
+                      "path": "runtime/config.json"
+                    },
+                    {
+                      "key": "ca.crt",
+                      "path": "ca.crt"
+                    },
+                    {
+                      "key": "demo_password",
+                      "path": "demo_password"
+                    }
+                  ]
+                }
+              }
+            ]
+          }
+        }
+      }
+    }
+  ]
+}

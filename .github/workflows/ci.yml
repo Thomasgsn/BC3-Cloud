@@ -1,0 +1,113 @@
+name: BC3 CI/CD
+# Chaque étape appelle le même script que la chaîne locale (scripts/ci/). Les images sont
+# publiées sur GHCR au push sur main, puis récupérées par les étapes d'intégration et de déploiement.
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+permissions:
+  contents: read
+concurrency:
+  group: bc3-${{ github.ref }}
+  cancel-in-progress: false
+env:
+  IMAGE_TAG: ${{ github.sha }}
+jobs:
+  lint-test:
+    name: Lint, audits, modèle et tests hors ligne
+    runs-on: ubuntu-24.04
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@fbc6f3992d24b796d5a048ff273f7fcc4a7b6c09 # v5
+        with:
+          persist-credentials: false
+      - run: bash scripts/ci/10-quality.sh
+      - run: bash scripts/ci/20-model.sh
+
+  terraform:
+    name: Terraform AWS (fmt, validate, tests simulés)
+    runs-on: ubuntu-24.04
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@fbc6f3992d24b796d5a048ff273f7fcc4a7b6c09 # v5
+        with:
+          persist-credentials: false
+      - run: bash scripts/ci/70-terraform.sh
+
+  build-scan-push:
+    name: Build, scan Trivy et publication GHCR
+    needs: lint-test
+    runs-on: ubuntu-24.04
+    timeout-minutes: 45
+    permissions:
+      contents: read
+      packages: write
+    steps:
+      - uses: actions/checkout@fbc6f3992d24b796d5a048ff273f7fcc4a7b6c09 # v5
+        with:
+          persist-credentials: false
+      - run: bash scripts/ci/prepare-runtime.sh
+      - run: bash scripts/ci/30-build-scan.sh
+      - name: Publier les images (push sur main uniquement)
+        if: github.event_name == 'push' && github.ref == 'refs/heads/main'
+        env:
+          GHCR_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          echo "REGISTRY_PREFIX=ghcr.io/${GITHUB_REPOSITORY_OWNER,,}" >> "$GITHUB_ENV"
+          export REGISTRY_PREFIX="ghcr.io/${GITHUB_REPOSITORY_OWNER,,}"
+          echo "$GHCR_TOKEN" | docker login ghcr.io -u "$GITHUB_ACTOR" --password-stdin
+          bash scripts/ci/publish-images.sh
+
+  integration:
+    name: Intégration Compose avec les images publiées
+    needs: build-scan-push
+    if: github.event_name == 'push' && github.ref == 'refs/heads/main'
+    runs-on: ubuntu-24.04
+    timeout-minutes: 45
+    permissions:
+      contents: read
+      packages: read
+    steps:
+      - uses: actions/checkout@fbc6f3992d24b796d5a048ff273f7fcc4a7b6c09 # v5
+        with:
+          persist-credentials: false
+      - run: bash scripts/ci/prepare-runtime.sh
+      - name: Récupérer les images du commit
+        env:
+          GHCR_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          export REGISTRY_PREFIX="ghcr.io/${GITHUB_REPOSITORY_OWNER,,}"
+          echo "$GHCR_TOKEN" | docker login ghcr.io -u "$GITHUB_ACTOR" --password-stdin
+          bash scripts/ci/pull-images.sh
+      - run: bash scripts/ci/40-compose.sh
+
+  deploy:
+    name: Déploiement Kubernetes (test puis promotion prod)
+    needs: integration
+    if: github.event_name == 'push' && github.ref == 'refs/heads/main'
+    runs-on: ubuntu-24.04
+    timeout-minutes: 60
+    # Environnement GitHub : une règle d'approbation peut y être configurée avant la promotion.
+    environment: production
+    permissions:
+      contents: read
+      packages: read
+    steps:
+      - uses: actions/checkout@fbc6f3992d24b796d5a048ff273f7fcc4a7b6c09 # v5
+        with:
+          persist-credentials: false
+      - run: bash scripts/ci/prepare-runtime.sh
+      - name: Récupérer les images du commit
+        env:
+          GHCR_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          export REGISTRY_PREFIX="ghcr.io/${GITHUB_REPOSITORY_OWNER,,}"
+          echo "$GHCR_TOKEN" | docker login ghcr.io -u "$GITHUB_ACTOR" --password-stdin
+          bash scripts/ci/pull-images.sh
+      - name: Déployer dans bc3-test et exécuter les tests du cluster
+        run: bash scripts/ci/50-kubernetes.sh
+      - name: Promouvoir les mêmes images dans bc3-prod
+        run: bash scripts/ci/60-promote-prod.sh
+# Cible de déploiement : cluster kind éphémère du runner (démonstration). La cible persistante
+# EKS est décrite dans infra/terraform/aws mais n'est pas appliquée sans budget autorisé.

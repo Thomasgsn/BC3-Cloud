@@ -1,0 +1,34 @@
+{
+  "region": {
+    "value": "eu-west-3",
+    "sensitive": false
+  },
+  "cluster_name": {
+    "value": "rncp-bc3",
+    "sensitive": false
+  },
+  "database_host": {
+    "value": "bc3.fixture.eu-west-3.rds.amazonaws.com",
+    "sensitive": false
+  },
+  "bucket": {
+    "value": "rncp-bc3-offline-fixture",
+    "sensitive": false
+  },
+  "queue_url": {
+    "value": "https://sqs.eu-west-3.amazonaws.com/123456789012/jobs",
+    "sensitive": false
+  },
+  "dlq_url": {
+    "value": "https://sqs.eu-west-3.amazonaws.com/123456789012/jobs-dead",
+    "sensitive": false
+  },
+  "repositories": {
+    "value": {
+      "api": "123456789012.dkr.ecr.eu-west-3.amazonaws.com/rncp-bc3/api",
+      "worker": "123456789012.dkr.ecr.eu-west-3.amazonaws.com/rncp-bc3/worker",
+      "front": "123456789012.dkr.ecr.eu-west-3.amazonaws.com/rncp-bc3/front"
+    },
+    "sensitive": false
+  }
+}

@@ -1,0 +1,7 @@
+# Images livrables publiées par la CI (nom:tag local).
+api:9
+worker:6
+front:4
+db:1
+queue-tls:1
+backup:5

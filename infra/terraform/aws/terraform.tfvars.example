@@ -1,0 +1,7 @@
+# Ne pas appliquer avant autorisation budget/identité. Pas de secret ici.
+allow_cloud_creation = false
+enable_retention_policy = false # Approbation humaine de la conservation requise avant activation.
+bucket_name = "REMPLACER-nom-global-unique"
+operator_role_arn = "arn:aws:iam::123456789012:role/REMPLACER-operateur"
+ci_role_arn = "arn:aws:iam::123456789012:role/REMPLACER-ci"
+admin_cidrs = ["192.0.2.1/32"] # Exemple de documentation non routable

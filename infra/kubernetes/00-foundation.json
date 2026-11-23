@@ -1,0 +1,124 @@
+{
+  "apiVersion": "v1",
+  "kind": "List",
+  "items": [
+    {
+      "apiVersion": "v1",
+      "kind": "Namespace",
+      "metadata": {
+        "name": "bc3-prod",
+        "labels": {
+          "project": "rncp-bc3",
+          "pod-security.kubernetes.io/enforce": "restricted",
+          "pod-security.kubernetes.io/enforce-version": "v1.36"
+        }
+      }
+    },
+    {
+      "apiVersion": "v1",
+      "kind": "Namespace",
+      "metadata": {
+        "name": "bc3-test",
+        "labels": {
+          "project": "rncp-bc3",
+          "pod-security.kubernetes.io/enforce": "restricted",
+          "pod-security.kubernetes.io/enforce-version": "v1.36"
+        }
+      }
+    },
+    {
+      "apiVersion": "v1",
+      "kind": "Namespace",
+      "metadata": {
+        "name": "bc3-dev",
+        "labels": {
+          "project": "rncp-bc3",
+          "pod-security.kubernetes.io/enforce": "restricted",
+          "pod-security.kubernetes.io/enforce-version": "v1.36"
+        }
+      }
+    },
+    {
+      "apiVersion": "v1",
+      "kind": "ServiceAccount",
+      "metadata": {
+        "name": "application",
+        "namespace": "bc3-test",
+        "labels": {
+          "project": "rncp-bc3"
+        }
+      },
+      "automountServiceAccountToken": false
+    },
+    {
+      "apiVersion": "v1",
+      "kind": "PersistentVolumeClaim",
+      "metadata": {
+        "name": "pg",
+        "namespace": "bc3-test",
+        "labels": {
+          "project": "rncp-bc3"
+        }
+      },
+      "spec": {
+        "accessModes": [
+          "ReadWriteOnce"
+        ],
+        "resources": {
+          "requests": {
+            "storage": "1Gi"
+          }
+        }
+      }
+    },
+    {
+      "apiVersion": "v1",
+      "kind": "PersistentVolumeClaim",
+      "metadata": {
+        "name": "object",
+        "namespace": "bc3-test",
+        "labels": {
+          "project": "rncp-bc3"
+        }
+      },
+      "spec": {
+        "accessModes": [
+          "ReadWriteOnce"
+        ],
+        "resources": {
+          "requests": {
+            "storage": "1Gi"
+          }
+        }
+      }
+    },
+    {
+      "apiVersion": "v1",
+      "kind": "ConfigMap",
+      "metadata": {
+        "name": "queue-config",
+        "namespace": "bc3-test",
+        "labels": {
+          "project": "rncp-bc3"
+        }
+      },
+      "data": {
+        "elasticmq.conf": "include classpath(\"application.conf\")\nnode-address { protocol = https, host = queue, port = 9325, context-path = \"\" }\nrest-sqs { enabled = true, bind-port = 9324, bind-hostname = \"127.0.0.1\" }\nqueues {\n  jobs-deadletter {}\n  jobs {\n    defaultVisibilityTimeout = 60 seconds\n    delay = 0 seconds\n    receiveMessageWait = 1 seconds\n    deadLettersQueue { name = \"jobs-deadletter\", maxReceiveCount = 3 }\n  }\n}\n"
+      }
+    },
+    {
+      "apiVersion": "v1",
+      "kind": "ConfigMap",
+      "metadata": {
+        "name": "queue-tls-config",
+        "namespace": "bc3-test",
+        "labels": {
+          "project": "rncp-bc3"
+        }
+      },
+      "data": {
+        "stunnel.conf": "foreground = yes\npid =\noutput = /dev/stdout\n[queue]\naccept = 0.0.0.0:9325\nconnect = 127.0.0.1:9324\ncert = /run/secrets/server.crt\nkey = /run/secrets/server.key\nsslVersionMin = TLSv1.2\n"
+      }
+    }
+  ]
+}
