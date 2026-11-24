@@ -205,4 +205,4 @@ Modèle TF-IDF + LinearSVC entraîné sur BANKING77 (77 intentions en anglais, l
 
 ## Usage de l’IA dans la réalisation
 
-J’ai utilisé des assistants d’IA générative (Codex, puis Claude pour la relecture finale) pour la réécriture des textes, la recherche et le sourçage des références et la génération des documents. Les chiffres cités proviennent des exécutions du projet et renvoient à des fichiers de preuve ; j’assume le contenu et sa présentation.
+J’ai utilisé des assistants d’IA générative (Codex, puis Claude pour la relecture finale) pour la réécriture des textes, la recherche et le sourçage des références et la génération des documents. Les chiffres cités proviennent des exécutions du projet et renvoient à des fichiers de preuve.

@@ -37,7 +37,7 @@ bash scripts/up.sh
 
 Cette commande crée les secrets locaux (jamais versionnés), entraîne le modèle d’intention s’il manque, construit les images et lance toute la pile. La base et le compte de démonstration sont initialisés par les services Compose `bootstrap` et `demo-user`.
 
-- Interface : https://localhost:8454 (compte `thomas`, mot de passe dans `secrets/demo_password`).
+- Interface : https://localhost:8454, en HTTPS uniquement (`http://` renvoie une erreur 400). Compte `thomas` ; son mot de passe est tiré au hasard à la première exécution et écrit dans `secrets/demo_password` (`cat secrets/demo_password`). Le navigateur signale un certificat inconnu : il est signé par la CA locale `secrets/ca.crt`, à accepter ou à importer.
 - La CA du projet est `secrets/ca.crt` ; elle n’est pas ajoutée à la confiance du système.
 
 ## Déployer sur Kubernetes

@@ -2,11 +2,11 @@
   {
     "title": "Contexte, objectif et usage de l’IA",
     "paragraphs": [
-      "Projet individuel RNCP40875, bloc BC3. L’objectif est de déployer puis d’exploiter une application web à trois niveaux sur Kubernetes, en mettant l’effort sur la chaîne qui l’entoure : conteneurs, orchestration, automatisation, supervision, sécurité et FinOps. Le fonctionnel reste volontairement réduit.",
+      "L’objectif est de déployer puis d’exploiter une application web à trois niveaux sur Kubernetes, en mettant l’effort sur la chaîne qui l’entoure : conteneurs, orchestration, automatisation, supervision, sécurité et FinOps. Le fonctionnel reste volontairement réduit.",
       "Domaine retenu : le support client d’une banque. Un client ouvre un ticket et joint un justificatif PDF ou PNG ; un agent suit et fait évoluer le statut ; chacun peut demander un export CSV des tickets auxquels il a accès, produit en tâche de fond. Quatre entités (utilisateur, ticket, pièce jointe, export) suffisent à couvrir le téléversement vers le stockage objet et le traitement asynchrone exigés par le sujet. Le domaine doit encore être validé par l’enseignant.",
       "Pourquoi la banque : ce contexte justifie des exigences fortes de confidentialité (pièces privées, chiffrement applicatif, cloisonnement strict entre clients) et donne de la matière au volet sécurité sans alourdir le métier.",
       "Tout est exécuté localement : Docker Compose pour le développement, cluster Kubernetes kind pour l’exploitation. L’infrastructure AWS cible est décrite en Terraform et validée, mais pas appliquée, faute de budget autorisé. Le rapport sépare ce qui a été exécuté et mesuré de ce qui est seulement préparé.",
-      "Usage de l’IA : j’ai utilisé des assistants d’IA générative (Codex, puis Claude pour la relecture finale) pour la réécriture des textes, la recherche et le sourçage des références (documentation des outils, catalogues de prix AWS, jeu de données) et la génération du rapport et du support. Les chiffres cités proviennent des exécutions du projet et renvoient chacun à un fichier de preuve ; j’assume le contenu et sa présentation."
+      "Usage de l’IA : j’ai utilisé des assistants d’IA générative (Codex, puis Claude pour la relecture finale) pour la réécriture des textes, la recherche et le sourçage des références (documentation des outils, catalogues de prix AWS, jeu de données) et la génération du rapport et du support. Les chiffres cités proviennent des exécutions du projet et renvoient chacun à un fichier de preuve."
     ],
     "table": null,
     "image": null,
