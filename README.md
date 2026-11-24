@@ -1,7 +1,5 @@
 # BC3 — Support bancaire cloud-native
 
-Thomas Gassmann · RNCP40875, bloc 3 · travail individuel.
-
 Application web de support client bancaire (tickets, pièces jointes privées, exports asynchrones), déployée sur Kubernetes, livrée par CI/CD, décrite en Terraform, supervisée, sécurisée et optimisée. Le fonctionnel est volontairement simple ; l’effort porte sur la chaîne d’exploitation.
 
 **Point à valider** : le domaine applicatif doit être validé par l’enseignant.
@@ -12,7 +10,7 @@ Application web de support client bancaire (tickets, pièces jointes privées, e
 |---|---|
 | [docs/rapport.md](docs/rapport.md) | Besoin, architecture, choix, résultats, limites, correspondance RNCP et ISO 27001 |
 | [Rapport PDF](output/pdf/rapport-bc3-thomas-gassmann.pdf) | Rapport de 13 pages (format demandé : 10 à 15 pages) |
-| [Support de soutenance](output/presentations/soutenance-bc3-thomas-gassmann.pptx) | 14 diapositives éditables |
+| [Support de soutenance](output/presentations/soutenance-bc3-thomas-gassmann.pptx) | 14 diapositives |
 | [docs/dictionnaire.md](docs/dictionnaire.md) | Termes techniques expliqués |
 | `docs/evidence/` | Preuves : tests, charge, alertes, sauvegardes, scans, FinOps, environnements |
 

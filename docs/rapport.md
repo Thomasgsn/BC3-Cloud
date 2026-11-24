@@ -1,7 +1,5 @@
 # Rapport BC3 — Support bancaire cloud-native
 
-Thomas Gassmann — RNCP40875, bloc 3 — travail individuel — 23 novembre 2026
-
 Version PDF (13 pages) : [rapport-bc3-thomas-gassmann.pdf](../output/pdf/rapport-bc3-thomas-gassmann.pdf).
 
 ## Besoin
