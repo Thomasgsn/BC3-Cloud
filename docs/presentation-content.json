@@ -13,7 +13,7 @@
     [
       "Chaîne d’exploitation prioritaire, fonctionnel limité à 4 entités",
       "Démontré : Compose, Kubernetes test/prod, logs, alerte, scans, FinOps",
-      "Écarts : CI jamais exécutée sur GitHub, apply AWS non fait"
+      "CI verte sur GitHub, images sur GHCR ; apply AWS non fait"
     ],
     "Rapport p.2 ; docs/rapport.md. Domaine à faire valider par l’enseignant."
   ],
@@ -47,7 +47,7 @@
   [
     "Scaling et perturbations",
     [
-      "4660 requêtes, 100,00 % réussies, p95 74 ms (v1.2.1)",
+      "4660 requêtes, 100,00 % réussies, p95 74 ms (v1.2.1) ; v1.3.0 rejouée : 100 % réussies, p95 117 ms",
       "Rolling maxUnavailable=0 ; correctif de clé : p95 680 → 74 ms"
     ],
     "Rapport p.6 ; docs/evidence/k8s/load-result.json ; resilience-load.json ; diagnosis/. Fenêtre locale avec pannes, pas SLA mensuelle."
@@ -116,9 +116,9 @@
   [
     "Difficultés, réserves et suites",
     [
-      "8 difficultés corrigées et retestées : socket, latence, backup…",
-      "Réserves : accord enseignant, registre, CI distante, apply AWS",
-      "Suites : run GitHub et publication, approbation prod, apply AWS"
+      "11 difficultés corrigées et retestées : socket, latence, backup, écarts Linux de la CI…",
+      "Réserves : accord enseignant, apply AWS, certification cloud",
+      "Suites : approbation prod, cluster persistant, apply AWS"
     ],
     "Rapport p.12-13 ; docs/rapport.md"
   ]

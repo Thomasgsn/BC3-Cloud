@@ -1,0 +1,66 @@
+{
+  "repository": "https://github.com/Thomasgsn/BC3-Cloud",
+  "run_url": "https://github.com/Thomasgsn/BC3-Cloud/actions/runs/45270784327",
+  "run_id": 45270784327,
+  "head_sha": "f22f7afe7e7f7a5f633a560267a743d978b5984e",
+  "event": "push",
+  "branch": "main",
+  "started_at": "2026-11-23T21:32:56Z",
+  "updated_at": "2026-11-23T21:45:59Z",
+  "conclusion": "success",
+  "jobs": [
+    {
+      "name": "Lint, audits, modèle et tests hors ligne",
+      "conclusion": "success",
+      "started_at": "2026-11-23T21:32:59Z",
+      "completed_at": "2026-11-23T21:33:56Z"
+    },
+    {
+      "name": "Terraform AWS (fmt, validate, tests simulés)",
+      "conclusion": "success",
+      "started_at": "2026-11-23T21:32:59Z",
+      "completed_at": "2026-11-23T21:33:35Z"
+    },
+    {
+      "name": "Build, scan Trivy et publication GHCR",
+      "conclusion": "success",
+      "started_at": "2026-11-23T21:33:59Z",
+      "completed_at": "2026-11-23T21:36:55Z"
+    },
+    {
+      "name": "Intégration Compose avec les images publiées",
+      "conclusion": "success",
+      "started_at": "2026-11-23T21:36:58Z",
+      "completed_at": "2026-11-23T21:38:58Z"
+    },
+    {
+      "name": "Déploiement Kubernetes (test puis promotion prod)",
+      "conclusion": "success",
+      "started_at": "2026-11-23T21:39:01Z",
+      "completed_at": "2026-11-23T21:45:59Z"
+    }
+  ],
+  "previous_failures_fixed": [
+    {
+      "run": 45256159322,
+      "cause": "Trivy ne pouvait pas écrire son rapport dans un dossier du runner Linux (conteneur sans capacités)",
+      "fix": "rapport écrit par le shell du runner"
+    },
+    {
+      "run": 45257944036,
+      "cause": "SeaweedFS (utilisateur seaweed) ne lisait pas les secrets 0600 ; modèle jamais promu sur un clone neuf",
+      "fix": "secrets copiés en root pour seaweed ; promotion après entraînement"
+    },
+    {
+      "run": 45263316836,
+      "cause": "CA locale figée dans le manifeste Grafana, différente de la CA régénérée sur le runner",
+      "fix": "CA lue depuis le Secret grafana-password"
+    },
+    {
+      "run": 45269601173,
+      "cause": "Erreur passagère « unknown blob » de GHCR au push du front",
+      "fix": "trois essais par push"
+    }
+  ],
+  "source": "API publique GitHub Actions, lue le 24/11/2026"
+}

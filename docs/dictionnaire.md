@@ -55,7 +55,7 @@ Ici : la CI échoue si une vulnérabilité HIGH ou CRITICAL a un correctif dispo
 ## GHCR
 
 GitHub Container Registry : registre d’images lié au dépôt GitHub.
-Ici : cible de publication des images par le workflow, au push sur `main` ; pas encore utilisée.
+Ici : les images sont publiées par le workflow à chaque push sur `main`, étiquetées avec le SHA du commit.
 
 ## AES-GCM
 

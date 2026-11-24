@@ -80,7 +80,7 @@ La chaîne locale enchaîne les mêmes scripts que les jobs GitHub Actions (`scr
 | `60-promote-prod.sh` | Promotion dans `bc3-prod` et contrôles d’isolation |
 | `70-terraform.sh` | Terraform AWS : fmt, validate, tests simulés |
 
-Le workflow [.github/workflows/ci.yml](.github/workflows/ci.yml) publie aussi les images sur GHCR au push sur `main`. **Il n’a jamais été exécuté sur GitHub.**
+Le workflow [.github/workflows/ci.yml](.github/workflows/ci.yml) publie aussi les images sur GHCR au push sur `main`. Il est vert sur GitHub depuis le 24 novembre ([run 45270784327](https://github.com/Thomasgsn/BC3-Cloud/actions/runs/45270784327)).
 
 ## Terraform
 
@@ -116,6 +116,6 @@ J’ai utilisé des assistants d’IA générative (Codex, puis Claude pour la r
 ## Limites principales
 
 - Aucun déploiement cloud réel : AWS est décrit et testé hors ligne seulement.
-- Workflow CI/CD jamais exécuté sur GitHub, images non publiées.
+- Le déploiement continu cible le cluster kind éphémère du runner, pas un cluster persistant.
 - Cluster local sur un seul hôte : pas de haute disponibilité physique.
 - Avis de sécurité HIGH sans correctif à trier avant toute production.

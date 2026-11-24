@@ -95,13 +95,15 @@ Une demande d’export est d’abord enregistrée en base, puis annoncée dans l
 
 Cluster [kind](dictionnaire.md#kind) à deux nœuds : Deployments, Services, [Ingress](dictionnaire.md#ingress), ConfigMaps, Secrets, PVC, requests/limits, [HPA](dictionnaire.md#hpa) et PDB. Déploiement en [rolling update](dictionnaire.md#rolling-update) sans perte de capacité (`maxUnavailable=0`) ; canary et blue/green, facultatifs, n’apportaient pas assez sur un seul hôte.
 
-| Essai (version 1.2.1, 250 s de charge) | Résultat |
-|---|---|
-| Requêtes réussies | 4 660 sur 4 660 |
-| Latence p95 | 74 ms |
-| HPA | 1 → 3 réplicas |
-| Reprise après suppression d’un pod | 10,2 s (scrutation toutes les 10 s environ) |
-| Configuration invalide | Rejetée, puis rollback et rolling réussis |
+| Essai (250 s de charge, 4 clients) | Version 1.2.1 | Version 1.3.0 (23 novembre) |
+|---|---|---|
+| Requêtes réussies | 4 660 sur 4 660 | 4 273 sur 4 273 |
+| Latence p95 | 74 ms | 117 ms (maximum 2,8 s) |
+| HPA | 1 → 3 réplicas | 1 → 3 réplicas |
+| Reprise après suppression d’un pod | 10,2 s (scrutation toutes les 10 s environ) | 10,2 s |
+| Configuration invalide | Rejetée, puis rollback et rolling réussis | Idem |
+
+La campagne 1.3.0 a tourné pendant que la pile BC1 occupait la même machine : la latence est plus haute, mais reste sous l’objectif de 500 ms. Preuves : `docs/evidence/k8s/load-result-1.3.0.json` et `resilience-load-1.3.0.json`.
 
 Le 23 novembre, le cluster a été recréé de zéro par l’étape de déploiement : 32 tests réussis dans le cluster et sauvegarde/restauration vérifiée. Preuves : `docs/evidence/k8s/`.
 
@@ -117,7 +119,7 @@ flowchart LR
   TF[Terraform AWS validé] -.-> X[EKS RDS S3 SQS non appliqués]
 ```
 
-Chaque job GitHub Actions appelle un script de `scripts/ci/`, et la chaîne locale `scripts/ci_local.sh` rejoue les mêmes scripts. Les pull requests exécutent lint, tests, build et scan ; la publication et le déploiement ne se font que sur push vers `main`. actionlint ne relève aucune erreur et les étapes de déploiement et de promotion ont tourné localement. **Le workflow n’a jamais été exécuté sur GitHub et les images ne sont pas publiées sur [GHCR](dictionnaire.md#ghcr).**
+Chaque job GitHub Actions appelle un script de `scripts/ci/`, et la chaîne locale `scripts/ci_local.sh` rejoue les mêmes scripts. Les pull requests exécutent lint, tests, build et scan ; la publication et le déploiement ne se font que sur push vers `main`. actionlint ne relève aucune erreur. Le 24 novembre, le workflow est passé au vert sur GitHub ([run 45270784327](https://github.com/Thomasgsn/BC3-Cloud/actions/runs/45270784327)) : les cinq jobs réussissent, les images sont publiées sur [GHCR](dictionnaire.md#ghcr), puis déployées dans un cluster kind éphémère du runner (`bc3-test`, puis promotion en `bc3-prod`). Les quatre premiers runs ont échoué sur des écarts entre macOS et Linux, listés dans les difficultés. Preuve : `docs/evidence/ci/github-run-45270784327.json`.
 
 [Terraform](dictionnaire.md#terraform) AWS décrit VPC, EKS, RDS Multi-AZ chiffré, S3, SQS et file d’échec, KMS, IAM et ECR ; validé et testé avec un provider simulé, jamais appliqué. La reconstruction locale passe par `terraform_data`, qui appelle le script de reconstruction (cluster, secrets et volumes neufs, 17 tests). Arbitrage : des providers `kind` et `kubernetes` ont été écartés, car `kubernetes_manifest` doit joindre le cluster dès le `plan`, et le chargement des images comme le chiffrement d’etcd exigeraient de toute façon des commandes shell.
 
@@ -172,6 +174,10 @@ Modèle TF-IDF + LinearSVC entraîné sur BANKING77 (77 intentions en anglais, l
 | Variable `S3_PORT` injectée par Kubernetes | Service Links désactivés |
 | Latence p95 de 680 ms (400 lectures de clé par réponse) | Une lecture par réponse : p95 74 ms |
 | Sauvegarde incohérente (écriture après le dump) | Dump et contrôles sur le même snapshot |
+| Premier run GitHub : rapport Trivy non écrit (scanner sans capacités sur Linux) | Rapport écrit par le shell du runner |
+| SeaweedFS ne lisait pas ses secrets `0600` sur Linux | Copie en root vers un dossier de l’utilisateur `seaweed` |
+| Modèle jamais promu sur un clone neuf (API en 503) | Promotion de la version retenue après l’entraînement |
+| CA locale figée dans le manifeste Grafana | CA lue depuis un Secret créé au déploiement |
 | Cluster kind disparu de Docker (23 novembre) | Recréé de zéro par la CI locale ; données internes de l’ancien cluster perdues |
 
 ## Correspondance RNCP
@@ -184,7 +190,7 @@ Modèle TF-IDF + LinearSVC entraîné sur BANKING77 (77 intentions en anglais, l
 | C6.4 Performance et coûts | SLO mesurés, deux optimisations, coût chiffré | Vérifié localement |
 | C6.1–C6.4 | Certification de fournisseur cloud | À réaliser par le candidat |
 | C7.1 Conteneurs et orchestration | Images multi-stage, Compose, Kubernetes | Vérifié |
-| C7.2 CI/CD | Pipeline découpé, tests automatisés | Vérifié localement ; run GitHub absent |
+| C7.2 CI/CD | Pipeline découpé, tests automatisés, images publiées | Vérifié sur GitHub Actions (run vert du 24 novembre) |
 | C7.3 Automatisation des flux | Exports asynchrones, contrôles de qualité | Vérifié ; revue de gouvernance absente |
 | C7.4 MLOps | Versions, promotion, rollback du modèle | Vérifié |
 | C8.1 Supervision et résilience | Prometheus, Grafana, Loki, alerte, HPA, pannes | Vérifié |
@@ -195,7 +201,7 @@ Modèle TF-IDF + LinearSVC entraîné sur BANKING77 (77 intentions en anglais, l
 | Limite | Conséquence |
 |---|---|
 | Aucun déploiement cloud | AWS décrit et testé hors ligne seulement |
-| Workflow GitHub jamais exécuté | Publication des images et CD non démontrées à distance |
+| Déploiement continu vers un cluster éphémère | Le CD vise le kind du runner, pas un cluster persistant ; pas de règle d’approbation sur la prod |
 | Un seul hôte | Pas de haute disponibilité physique |
 | Avis HIGH sans correctif | Triage nécessaire avant production |
 

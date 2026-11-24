@@ -28,7 +28,7 @@
       [
         "Conteneurisation (20)",
         "Images multi-stage non-root, Compose en une commande",
-        "Publication GHCR prête mais non exécutée"
+        "Images publiées sur GHCR par le workflow GitHub"
       ],
       [
         "Kubernetes (20)",
@@ -38,7 +38,7 @@
       [
         "CI/CD et IaC (20)",
         "Pipeline découpé, promotion test → prod, Terraform AWS validé",
-        "Workflow non exécuté à distance, pas d’apply AWS"
+        "Workflow vert sur GitHub ; pas d’apply AWS"
       ],
       [
         "Observabilité (10)",
@@ -147,11 +147,12 @@
       "Cluster kind à deux nœuds, avec un kubeconfig dédié au projet. Les images sont chargées localement. Deployments, Services, Ingress, ConfigMaps, Secrets, PVC, requests/limits, HPA et PDB sont appliqués. Limite : les deux nœuds partagent le même hôte, ce n’est pas de la haute disponibilité physique.",
       "Stratégie de déploiement : rolling update avec maxUnavailable=0, pour ne jamais réduire la capacité pendant une mise à jour. Canary et blue/green, facultatifs dans le sujet, n’apportaient pas assez sur un cluster mono-hôte pour justifier leur complexité.",
       "Campagne de charge sur la version 1.2.1 : 4660 requêtes, disponibilité 100,00 %, p95 0.074 s, 0 échec. Le HPA monte à 3 réplicas ; après suppression d’un pod, le service revient en 10.20 s, mesuré par scrutation toutes les dix secondes environ. Une configuration volontairement invalide est rejetée pendant que les anciens pods restent sains, puis rollback et rolling réussissent.",
+      "Campagne rejouée le 23 novembre sur la version 1.3.0 : 4273 requêtes, disponibilité 100,00 %, p95 0.117 s, HPA à 3 réplicas, reprise en 10.21 s, rollback de configuration réussi. La pile BC1 tournait sur la même machine : la latence est plus haute mais reste sous l’objectif de 500 ms.",
       "Un essai précédent donnait un p95 de 680 ms. Le profilage a montré 400 lectures de clé par réponse de 200 tickets. La version 1.2.1 lit la clé une fois par réponse, sans cache entre requêtes ; dix conversions passent de 0,422 à 0,052 s, avec un test de régression rouge puis vert."
     ],
     "table": null,
     "image": "docs/figures/hpa.svg",
-    "evidence": "evidence/k8s/load-result.json ; resilience-load.json ; diagnosis/"
+    "evidence": "evidence/k8s/load-result*.json ; resilience-load*.json ; diagnosis/"
   },
   {
     "title": "Supervision, alertes et sauvegardes",
@@ -171,13 +172,13 @@
     "paragraphs": [
       "Le pipeline est découpé en jobs GitHub Actions qui appellent chacun un script de scripts/ci/, rejoués dans le même ordre par la chaîne locale : lint et audits ; modèle et tests hors ligne ; builds multi-stage et scan Trivy bloquant ; publication sur GHCR avec le SHA du commit ; intégration Compose avec ces images ; déploiement dans bc3-test puis promotion des mêmes images dans bc3-prod.",
       "Dernière exécution complète : code de sortie 0. Le premier essai avait échoué après un backup pourtant réussi, car kubectl cp ne peut rien extraire d’un pod terminé ; le résultat est désormais lu dans les logs du job. En version 1.3.0, 32 tests passent sur Compose, 32 dans Kubernetes et 34 tests unitaires et hors ligne.",
-      "Les pull requests exécutent lint, tests, build et scan ; la publication et le déploiement ne se font que sur push vers main, avec droits minimaux par job. actionlint ne relève aucune erreur et les étapes de déploiement et de promotion ont tourné localement sur un cluster recréé de zéro. Le workflow n’a pas encore été exécuté à distance.",
+      "Les pull requests exécutent lint, tests, build et scan ; la publication et le déploiement ne se font que sur push vers main, avec droits minimaux par job. actionlint ne relève aucune erreur et les étapes de déploiement et de promotion ont tourné localement sur un cluster recréé de zéro. Le 24 novembre, le workflow est passé au vert sur GitHub (run 45270784327) : images publiées sur GHCR, intégration Compose, déploiement bc3-test et promotion bc3-prod sur un cluster kind éphémère du runner. Les quatre runs précédents ont révélé des écarts macOS/Linux, corrigés : écriture du rapport Trivy, lecture des secrets par SeaweedFS, promotion du modèle, CA de Grafana.",
       "Terraform AWS décrit VPC, sous-réseaux privés, NAT, EKS avec nœuds chiffrés, RDS Multi-AZ chiffré par KMS, S3 privé et versionné, SQS avec DLQ, IAM/Pod Identity et ECR. init, validate et des tests avec provider simulé passent ; un générateur produit 27 manifestes cloud acceptés en dry-run par Kubernetes. Aucune ressource AWS n’a été créée.",
       "Arbitrage : la reconstruction locale passe par un terraform_data qui appelle le script de reconstruction (cluster, secrets et volumes neufs, 17 tests). Des providers kind et kubernetes ont été écartés : kubernetes_manifest doit joindre le cluster dès le plan, ce qui empêche une création depuis zéro en une passe, et le chargement des images comme le chiffrement d’etcd exigeraient des local-exec."
     ],
     "table": null,
     "image": null,
-    "evidence": "evidence/ci/full-run.* ; evidence/reproduction/ ; infra/terraform/ ; .github/workflows/ci.yml"
+    "evidence": "evidence/ci/full-run.* ; evidence/ci/github-run-45270784327.json ; evidence/reproduction/ ; infra/terraform/ ; .github/workflows/ci.yml"
   },
   {
     "title": "MLOps et limites du benchmark",
@@ -291,17 +292,32 @@
         "Chaîne CI en échec",
         "kubectl cp sur un pod terminé",
         "Résultat lu dans les logs du job"
+      ],
+      [
+        "Premiers runs GitHub en échec",
+        "Droits de fichiers Linux ignorés par macOS",
+        "Rapport Trivy écrit par le shell, secrets SeaweedFS copiés"
+      ],
+      [
+        "API en 503 sur clone neuf",
+        "Modèle entraîné mais jamais promu",
+        "Promotion après l’entraînement"
+      ],
+      [
+        "Grafana refuse Loki sur le runner",
+        "CA locale figée dans le manifeste",
+        "CA lue depuis un Secret"
       ]
     ],
     "image": null,
-    "evidence": "docs/rapport.md ; evidence/diagnosis/ ; evidence/ci/attempt1-full-run.*"
+    "evidence": "docs/rapport.md ; evidence/diagnosis/ ; evidence/ci/attempt1-full-run.* ; evidence/ci/github-run-45270784327.json"
   },
   {
     "title": "Bilan, réserves et sources",
     "paragraphs": [
       "La démonstration suit ce parcours : connexion, ticket, pièce jointe, suggestion d’intention, export asynchrone, tableau de bord Grafana, puis preuves de scaling, de panne, de rollback, d’alerte et de restauration.",
-      "Réserves : accord de l’enseignant sur le domaine ; publication des images et exécution du workflow sur GitHub ; apply AWS, qui demande un budget autorisé ; certification de fournisseur cloud pour C6.1 à C6.4 ; triage des avis HIGH sans correctif ; validation de la politique de conservation.",
-      "Suites prioritaires : pousser le dépôt et faire tourner le workflow à distance, ce qui publiera les images sur GHCR ; poser une règle d’approbation sur l’environnement production ; appliquer Terraform sur un compte AWS avec plafond de dépense.",
+      "Réserves : accord de l’enseignant sur le domaine ; apply AWS, qui demande un budget autorisé ; certification de fournisseur cloud pour C6.1 à C6.4 ; triage des avis HIGH sans correctif ; validation de la politique de conservation.",
+      "Suites prioritaires : poser une règle d’approbation sur l’environnement production ; appliquer Terraform sur un compte AWS avec plafond de dépense.",
       "Sources : sujet et référentiel fournis ; dépôt BANKING77 à révision figée et sa licence ; documentation officielle des outils et catalogues de prix AWS cités dans docs/evidence/finops/. Rédaction et sourçage assistés par IA (Codex, Claude), comme indiqué en page 1."
     ],
     "table": null,
