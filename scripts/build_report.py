@@ -206,7 +206,10 @@ page(
     ],
     screenshots=(
         ("docs/evidence/screenshots/01-github-actions-run-9.png", "Run GitHub Actions n°9"),
-        ("docs/evidence/screenshots/02-charge-hpa-rollback-1.png", "Essai de charge : HPA, suppression de pod et rollback"),
+        (
+            "docs/evidence/screenshots/02-charge-hpa-rollback-1.png",
+            "Essai de charge : HPA, suppression de pod et rollback",
+        ),
     ),
     evidence="evidence/screenshots/ (manifest.json) ; evidence/k8s/",
 )
@@ -216,8 +219,14 @@ page(
         "Pendant le même essai, le tableau de bord Exploitation et SLO montre le débit monter à environ 20 requêtes par seconde et la latence p95 passer par un pic proche de 0,9 s avant de redescendre vers 0,1 s. Le panneau Loki affiche les redémarrages des pods API et la fin d’un export par le worker. Les règles d’alerte étaient chargées mais inactives à ce moment ; le cycle de l’alerte est prouvé séparément.",
     ],
     screenshots=(
-        ("docs/evidence/screenshots/04-grafana-exploitation-slo.png", "Grafana : tableau de bord Exploitation et SLO"),
-        ("docs/evidence/screenshots/05-grafana-logs-loki.png", "Grafana : logs API et worker (Loki)"),
+        (
+            "docs/evidence/screenshots/04-grafana-exploitation-slo.png",
+            "Grafana : tableau de bord Exploitation et SLO",
+        ),
+        (
+            "docs/evidence/screenshots/05-grafana-logs-loki.png",
+            "Grafana : logs API et worker (Loki)",
+        ),
     ),
     evidence="evidence/screenshots/ (manifest.json) ; evidence/k8s/alert-cycle.json",
 )
@@ -457,7 +466,11 @@ for i, p in enumerate(P):
     for shot, caption in p["screenshots"]:
         w, h = ImageReader(str(R / shot)).getSize()
         scale = min(503 / w, 262 / h)
-        story += [Image(str(R / shot), width=w * scale, height=h * scale), para(caption, small), Spacer(1, 6)]
+        story += [
+            Image(str(R / shot), width=w * scale, height=h * scale),
+            para(caption, small),
+            Spacer(1, 6),
+        ]
     story.append(para("Preuves : " + p["evidence"], small))
     if i < len(P) - 1:
         story.append(PageBreak())
