@@ -10,7 +10,8 @@
     ],
     "table": null,
     "image": null,
-    "evidence": "docs/rapport.md ; docs/evidence/"
+    "evidence": "docs/rapport.md ; docs/evidence/",
+    "screenshots": []
   },
   {
     "title": "Exigences et couverture de la grille",
@@ -57,7 +58,8 @@
       ]
     ],
     "image": null,
-    "evidence": "docs/rapport.md"
+    "evidence": "docs/rapport.md",
+    "screenshots": []
   },
   {
     "title": "Architecture et choix techniques",
@@ -94,7 +96,8 @@
       ]
     ],
     "image": null,
-    "evidence": "docs/rapport.md (diagrammes Mermaid) ; compose.yml ; infra/kubernetes/"
+    "evidence": "docs/rapport.md (diagrammes Mermaid) ; compose.yml ; infra/kubernetes/",
+    "screenshots": []
   },
   {
     "title": "Modèle de données et contrôles d’accès",
@@ -127,7 +130,8 @@
       ]
     ],
     "image": null,
-    "evidence": "src/rncp_bc3/db.py ; tests/integration/ ; evidence/followup/"
+    "evidence": "src/rncp_bc3/db.py ; tests/integration/ ; evidence/followup/",
+    "screenshots": []
   },
   {
     "title": "Objets privés et traitement asynchrone",
@@ -139,7 +143,8 @@
     ],
     "table": null,
     "image": "docs/evidence/browser/exports-desktop.png",
-    "evidence": "evidence/k8s/integration/{stack-flow,deadletter,bounded-retries}.json ; README.md"
+    "evidence": "evidence/k8s/integration/{stack-flow,deadletter,bounded-retries}.json ; README.md",
+    "screenshots": []
   },
   {
     "title": "Kubernetes et résilience mesurée",
@@ -152,7 +157,8 @@
     ],
     "table": null,
     "image": "docs/figures/hpa.svg",
-    "evidence": "evidence/k8s/load-result*.json ; resilience-load*.json ; diagnosis/"
+    "evidence": "evidence/k8s/load-result*.json ; resilience-load*.json ; diagnosis/",
+    "screenshots": []
   },
   {
     "title": "Supervision, alertes et sauvegardes",
@@ -165,7 +171,8 @@
     ],
     "table": null,
     "image": null,
-    "evidence": "evidence/k8s/{monitoring-ready,alert-cycle,backup-restore}.json ; evidence/followup/"
+    "evidence": "evidence/k8s/{monitoring-ready,alert-cycle,backup-restore}.json ; evidence/followup/",
+    "screenshots": []
   },
   {
     "title": "Automatisation et infrastructure déclarative",
@@ -178,7 +185,46 @@
     ],
     "table": null,
     "image": null,
-    "evidence": "evidence/ci/full-run.* ; evidence/ci/github-run-45270784327.json ; evidence/reproduction/ ; infra/terraform/ ; .github/workflows/ci.yml"
+    "evidence": "evidence/ci/full-run.* ; evidence/ci/github-run-45270784327.json ; evidence/reproduction/ ; infra/terraform/ ; .github/workflows/ci.yml",
+    "screenshots": []
+  },
+  {
+    "title": "Captures : CI et charge",
+    "paragraphs": [
+      "Captures réalisées le 24 novembre sur mon poste. En haut, le run n°9 du workflow sur le commit 18e21c6 : les cinq jobs réussissent en 12 min 43 s. En bas, l’essai de charge rejoué sur le cluster kind : le HPA demande 3 réplicas après 31 s, un pod API est supprimé, une configuration invalide est annulée par rollback, puis le redémarrage progressif se termine sous charge."
+    ],
+    "table": null,
+    "image": null,
+    "evidence": "evidence/screenshots/ (manifest.json) ; evidence/k8s/",
+    "screenshots": [
+      [
+        "docs/evidence/screenshots/01-github-actions-run-9.png",
+        "Run GitHub Actions n°9"
+      ],
+      [
+        "docs/evidence/screenshots/02-charge-hpa-rollback-1.png",
+        "Essai de charge : HPA, suppression de pod et rollback"
+      ]
+    ]
+  },
+  {
+    "title": "Captures : Grafana et Loki",
+    "paragraphs": [
+      "Pendant le même essai, le tableau de bord Exploitation et SLO montre le débit monter à environ 20 requêtes par seconde et la latence p95 passer par un pic proche de 0,9 s avant de redescendre vers 0,1 s. Le panneau Loki affiche les redémarrages des pods API et la fin d’un export par le worker. Les règles d’alerte étaient chargées mais inactives à ce moment ; le cycle de l’alerte est prouvé séparément."
+    ],
+    "table": null,
+    "image": null,
+    "evidence": "evidence/screenshots/ (manifest.json) ; evidence/k8s/alert-cycle.json",
+    "screenshots": [
+      [
+        "docs/evidence/screenshots/04-grafana-exploitation-slo.png",
+        "Grafana : tableau de bord Exploitation et SLO"
+      ],
+      [
+        "docs/evidence/screenshots/05-grafana-logs-loki.png",
+        "Grafana : logs API et worker (Loki)"
+      ]
+    ]
   },
   {
     "title": "MLOps et limites du benchmark",
@@ -191,7 +237,8 @@
     ],
     "table": null,
     "image": null,
-    "evidence": "infra/banking77.lock.json ; evidence/mlops/ ; src/rncp_bc3/intent.py"
+    "evidence": "infra/banking77.lock.json ; evidence/mlops/ ; src/rncp_bc3/intent.py",
+    "screenshots": []
   },
   {
     "title": "FinOps et deux optimisations",
@@ -203,7 +250,8 @@
     ],
     "table": null,
     "image": null,
-    "evidence": "evidence/finops/{native-probes,worker-image,cost-scenario}.json ; estimate_costs.py"
+    "evidence": "evidence/finops/{native-probes,worker-image,cost-scenario}.json ; estimate_costs.py",
+    "screenshots": []
   },
   {
     "title": "Sécurité et contrôles ISO 27001",
@@ -240,7 +288,8 @@
       ]
     ],
     "image": null,
-    "evidence": "evidence/security/ ; evidence/environments/ ; docs/rapport.md"
+    "evidence": "evidence/security/ ; evidence/environments/ ; docs/rapport.md",
+    "screenshots": []
   },
   {
     "title": "Difficultés rencontrées et corrections",
@@ -310,7 +359,8 @@
       ]
     ],
     "image": null,
-    "evidence": "docs/rapport.md ; evidence/diagnosis/ ; evidence/ci/attempt1-full-run.* ; evidence/ci/github-run-45270784327.json"
+    "evidence": "docs/rapport.md ; evidence/diagnosis/ ; evidence/ci/attempt1-full-run.* ; evidence/ci/github-run-45270784327.json",
+    "screenshots": []
   },
   {
     "title": "Bilan, réserves et sources",
@@ -322,6 +372,7 @@
     ],
     "table": null,
     "image": null,
-    "evidence": "README.md ; docs/rapport.md"
+    "evidence": "README.md ; docs/rapport.md",
+    "screenshots": []
   }
 ]

@@ -9,10 +9,11 @@ Application web de support client bancaire (tickets, pièces jointes privées, e
 | Document | Contenu |
 |---|---|
 | [docs/rapport.md](docs/rapport.md) | Besoin, architecture, choix, résultats, limites, correspondance RNCP et ISO 27001 |
-| [Rapport PDF](output/pdf/rapport-bc3-thomas-gassmann.pdf) | Rapport de 13 pages (format demandé : 10 à 15 pages) |
+| [Rapport PDF](output/pdf/rapport-bc3-thomas-gassmann.pdf) | Rapport de 15 pages (format demandé : 10 à 15 pages) |
 | [Support de soutenance](output/presentations/soutenance-bc3-thomas-gassmann.pptx) | 14 diapositives |
 | [docs/dictionnaire.md](docs/dictionnaire.md) | Termes techniques expliqués |
 | `docs/evidence/` | Preuves : tests, charge, alertes, sauvegardes, scans, FinOps, environnements |
+| `docs/evidence/screenshots/` | Captures d’écran : run GitHub Actions, essai de charge, Grafana, Loki, règles Prometheus |
 
 ## Composants
 

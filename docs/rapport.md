@@ -1,6 +1,6 @@
 # Rapport BC3 — Support bancaire cloud-native
 
-Version PDF (13 pages) : [rapport-bc3-thomas-gassmann.pdf](../output/pdf/rapport-bc3-thomas-gassmann.pdf).
+Version PDF (15 pages) : [rapport-bc3-thomas-gassmann.pdf](../output/pdf/rapport-bc3-thomas-gassmann.pdf).
 
 ## Besoin
 
@@ -105,6 +105,10 @@ La campagne 1.3.0 a tourné pendant que la pile BC1 occupait la même machine : 
 
 Le 23 novembre, le cluster a été recréé de zéro par l’étape de déploiement : 32 tests réussis dans le cluster et sauvegarde/restauration vérifiée. Preuves : `docs/evidence/k8s/`.
 
+Capture de l’essai rejoué le 24 novembre (`scripts/exercise_k8s.py`) : le HPA demande 3 réplicas après 31 s de charge, un pod API est supprimé, une configuration invalide est annulée par rollback, puis le redémarrage progressif se termine sans interrompre la charge.
+
+![Terminal de l’essai de charge : HPA, suppression de pod et rollback](evidence/screenshots/02-charge-hpa-rollback-1.png)
+
 ## CI/CD et infrastructure
 
 ```mermaid
@@ -118,6 +122,8 @@ flowchart LR
 ```
 
 Chaque job GitHub Actions appelle un script de `scripts/ci/`, et la chaîne locale `scripts/ci_local.sh` rejoue les mêmes scripts. Les pull requests exécutent lint, tests, build et scan ; la publication et le déploiement ne se font que sur push vers `main`. actionlint ne relève aucune erreur. Le 24 novembre, le workflow est passé au vert sur GitHub ([run 45270784327](https://github.com/Thomasgsn/BC3-Cloud/actions/runs/45270784327)) : les cinq jobs réussissent, les images sont publiées sur [GHCR](dictionnaire.md#ghcr), puis déployées dans un cluster kind éphémère du runner (`bc3-test`, puis promotion en `bc3-prod`). Les quatre premiers runs ont échoué sur des écarts entre macOS et Linux, listés dans les difficultés. Preuve : `docs/evidence/ci/github-run-45270784327.json`.
+
+![Run GitHub Actions n°9, cinq jobs verts sur le commit 18e21c6](evidence/screenshots/01-github-actions-run-9.png)
 
 [Terraform](dictionnaire.md#terraform) AWS décrit VPC, EKS, RDS Multi-AZ chiffré, S3, SQS et file d’échec, KMS, IAM et ECR ; validé et testé avec un provider simulé, jamais appliqué. La reconstruction locale passe par `terraform_data`, qui appelle le script de reconstruction (cluster, secrets et volumes neufs, 17 tests). Arbitrage : des providers `kind` et `kubernetes` ont été écartés, car `kubernetes_manifest` doit joindre le cluster dès le `plan`, et le chargement des images comme le chiffrement d’etcd exigeraient de toute façon des commandes shell.
 
@@ -133,6 +139,18 @@ Chaque job GitHub Actions appelle un script de `scripts/ci/`, et la chaîne loca
 | Sauvegarde | Dump chiffré en stockage objet, restauré dans une base neuve, 7 tables comparées |
 
 Pas de traces distribuées (facultatives dans le sujet).
+
+Captures du 24 novembre pendant l’essai de charge : le débit monte à environ 20 requêtes par seconde, la latence p95 connaît un pic proche de 0,9 s puis redescend vers 0,1 s, et les logs Loki montrent les redémarrages des pods API et la fin d’un export.
+
+![Grafana, tableau de bord Exploitation et SLO pendant la charge](evidence/screenshots/04-grafana-exploitation-slo.png)
+
+![Grafana, panneau des logs API et worker collectés par Loki](evidence/screenshots/05-grafana-logs-loki.png)
+
+Les trois règles d’alerte du groupe `bc3-slo` sont chargées dans Prometheus ; la capture les montre inactives, faute de panne à ce moment-là. Le déclenchement puis la résolution de `APIUnavailable` sont prouvés par `docs/evidence/k8s/alert-cycle.json`.
+
+![Prometheus, règles d’alerte APIUnavailable, APIErrorBudget et ExportBacklog](evidence/screenshots/07-prometheus-regles-alertes.png)
+
+Autres captures (métriques détaillées, suite du terminal de charge) : `docs/evidence/screenshots/`, décrites dans `manifest.json`.
 
 ## Sécurité et ISO 27001
 

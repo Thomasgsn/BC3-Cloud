@@ -1,4 +1,4 @@
-"""Rapport BC3 de 13 pages, construit à partir des preuves locales réellement produites."""
+"""Rapport BC3 de 15 pages, construit à partir des preuves locales réellement produites."""
 
 import json
 import os
@@ -53,7 +53,7 @@ def percent(x):
 P = []
 
 
-def page(title, paragraphs, rows=None, image=None, evidence=""):
+def page(title, paragraphs, rows=None, image=None, evidence="", screenshots=()):
     P.append(
         {
             "title": title,
@@ -61,6 +61,7 @@ def page(title, paragraphs, rows=None, image=None, evidence=""):
             "table": rows,
             "image": image,
             "evidence": evidence,
+            "screenshots": screenshots,
         }
     )
 
@@ -197,6 +198,28 @@ page(
         "Arbitrage : la reconstruction locale passe par un terraform_data qui appelle le script de reconstruction (cluster, secrets et volumes neufs, 17 tests). Des providers kind et kubernetes ont été écartés : kubernetes_manifest doit joindre le cluster dès le plan, ce qui empêche une création depuis zéro en une passe, et le chargement des images comme le chiffrement d’etcd exigeraient des local-exec.",
     ],
     evidence="evidence/ci/full-run.* ; evidence/ci/github-run-45270784327.json ; evidence/reproduction/ ; infra/terraform/ ; .github/workflows/ci.yml",
+)
+page(
+    "Captures : CI et charge",
+    [
+        "Captures réalisées le 24 novembre sur mon poste. En haut, le run n°9 du workflow sur le commit 18e21c6 : les cinq jobs réussissent en 12 min 43 s. En bas, l’essai de charge rejoué sur le cluster kind : le HPA demande 3 réplicas après 31 s, un pod API est supprimé, une configuration invalide est annulée par rollback, puis le redémarrage progressif se termine sous charge.",
+    ],
+    screenshots=(
+        ("docs/evidence/screenshots/01-github-actions-run-9.png", "Run GitHub Actions n°9"),
+        ("docs/evidence/screenshots/02-charge-hpa-rollback-1.png", "Essai de charge : HPA, suppression de pod et rollback"),
+    ),
+    evidence="evidence/screenshots/ (manifest.json) ; evidence/k8s/",
+)
+page(
+    "Captures : Grafana et Loki",
+    [
+        "Pendant le même essai, le tableau de bord Exploitation et SLO montre le débit monter à environ 20 requêtes par seconde et la latence p95 passer par un pic proche de 0,9 s avant de redescendre vers 0,1 s. Le panneau Loki affiche les redémarrages des pods API et la fin d’un export par le worker. Les règles d’alerte étaient chargées mais inactives à ce moment ; le cycle de l’alerte est prouvé séparément.",
+    ],
+    screenshots=(
+        ("docs/evidence/screenshots/04-grafana-exploitation-slo.png", "Grafana : tableau de bord Exploitation et SLO"),
+        ("docs/evidence/screenshots/05-grafana-logs-loki.png", "Grafana : logs API et worker (Loki)"),
+    ),
+    evidence="evidence/screenshots/ (manifest.json) ; evidence/k8s/alert-cycle.json",
 )
 page(
     "MLOps et limites du benchmark",
@@ -354,7 +377,7 @@ P[5]["image"] = "docs/figures/hpa.svg"
 (R / "docs/report-content.json").write_text(json.dumps(P, ensure_ascii=False, indent=2) + "\n")
 md = [
     "# Rapport technique BC3 - Thomas Gassmann",
-    "\nVersion PDF de 13 pages. Rédaction et sourçage assistés par IA (Codex, Claude).",
+    "\nVersion PDF de 15 pages. Rédaction et sourçage assistés par IA (Codex, Claude).",
 ]
 for i, p in enumerate(P, 1):
     md += ["\n## " + str(i) + ". " + p["title"], "\n\n".join(p["paragraphs"])]
@@ -431,6 +454,10 @@ for i, p in enumerate(P):
         w, h = ImageReader(str(path)).getSize()
         scale = min(503 / w, 240 / h)
         story += [Image(str(path), width=w * scale, height=h * scale), Spacer(1, 10)]
+    for shot, caption in p["screenshots"]:
+        w, h = ImageReader(str(R / shot)).getSize()
+        scale = min(503 / w, 262 / h)
+        story += [Image(str(R / shot), width=w * scale, height=h * scale), para(caption, small), Spacer(1, 6)]
     story.append(para("Preuves : " + p["evidence"], small))
     if i < len(P) - 1:
         story.append(PageBreak())
@@ -458,7 +485,7 @@ doc = SimpleDocTemplate(
 )
 doc.build(story, onFirstPage=footer, onLaterPages=footer)
 reader = PdfReader(out)
-assert len(reader.pages) == 13, len(reader.pages)
+assert len(reader.pages) == 15, len(reader.pages)
 (R / "docs/evidence/delivery").mkdir(parents=True, exist_ok=True)
 (R / "docs/evidence/delivery/pdf-text-check.json").write_text(
     json.dumps(

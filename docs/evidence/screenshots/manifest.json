@@ -1,0 +1,40 @@
+{
+  "date": "2026-11-24",
+  "author": "Thomas Gassmann",
+  "origin": "Captures d'écran réalisées par Thomas Gassmann sur son poste (navigateur et terminal macOS), converties de WebP en PNG. Seule retouche : sur les captures de navigateur (01, 04 à 07), la barre de favoris personnels (47 pixels de haut) a été retirée le 25 novembre 2026 ; la barre d'adresse et le contenu des pages sont intacts.",
+  "environment": "Cluster kind local rncp-bc3, namespace bc3-test ; Grafana https://localhost:8456 ; Prometheus https://localhost:8457 ; GitHub Actions du dépôt Thomasgsn/BC3-Cloud",
+  "limitations": [
+    "La capture Prometheus montre les règles inactives : elle ne montre pas une alerte déclenchée ; le cycle déclenchement/résolution est prouvé par docs/evidence/k8s/alert-cycle.json.",
+    "Cluster local mono-machine : ces captures ne démontrent pas une haute disponibilité réelle."
+  ],
+  "files": {
+    "01-github-actions-run-9.png": {
+      "sha256": "d0156a61ab475e9dec387cfe503625f8c76bf3f3c658533e7094b4193aef869b",
+      "description": "GitHub Actions, workflow BC3 CI/CD, run n°9 (45471165207) déclenché par push sur main, commit 18e21c6 : 5 jobs verts, durée totale 12 min 43 s."
+    },
+    "02-charge-hpa-rollback-1.png": {
+      "sha256": "284dd2f2dcbcea0bb54f8fa95d1f765354c0450694bc2a3f583bbcee87fa7ddb",
+      "description": "Terminal, scripts/exercise_k8s.py sur le cluster kind : montée de charge, HPA de 1 à 3 réplicas API, suppression d'un pod, configuration invalide puis rollback et redémarrage progressif."
+    },
+    "03-charge-hpa-rollback-2.png": {
+      "sha256": "b53b712465e7880852249f6473ac278226990467bc5e9eca66491bd5a358b6e0",
+      "description": "Suite du même terminal : rollout terminé, charge continue (3 865 requêtes à 210 s), HPA stable à 3 réplicas prêts."
+    },
+    "04-grafana-exploitation-slo.png": {
+      "sha256": "3dcb4043078d7f5701a35516500b807520b734ad83e8692720e556b854564e41",
+      "description": "Grafana, tableau de bord « BC3 · Exploitation et SLO » pendant la charge : disponibilité, latence p95, requêtes par seconde (montée à environ 20/s), âge des exports, jobs, CPU."
+    },
+    "05-grafana-logs-loki.png": {
+      "sha256": "98934a1d860a33de05c68606561970e56e4c1d8131f623c63b065c171c837226",
+      "description": "Même tableau de bord, panneau « Logs API et worker (Loki) » : redémarrages des pods API et événement export_complete du worker."
+    },
+    "06-grafana-metriques-prometheus.png": {
+      "sha256": "41979b0382e42cf1821404cfc3a8ec159713339ce60138f71d8f427fc46ce5da",
+      "description": "Grafana Drilldown Metrics sur la source BC3 Prometheus : métriques applicatives bc3_http_* pendant les deux phases de charge."
+    },
+    "07-prometheus-regles-alertes.png": {
+      "sha256": "4d3152361d5aba40a76345f135e2beb846ed7c66e040bd3706142cae26f37afe",
+      "description": "Prometheus, page Alerts : groupe bc3-slo avec les règles APIUnavailable, APIErrorBudget et ExportBacklog, toutes inactives au moment de la capture (pas d'alerte en cours)."
+    }
+  }
+}
